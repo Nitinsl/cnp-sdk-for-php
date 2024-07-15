@@ -6,150 +6,150 @@
     <xs:element name="authentication">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="user" type="xp:string20Type"/>
-                <xs:element name="password" type="xp:string20Type"/>
+                <xs:element name="user" type="xp:string20Type" />
+                <xs:element name="password" type="xp:string20Type" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
     <xs:simpleType name="string16Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="16"/>
+            <xs:maxLength value="16" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string18Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="18"/>
+            <xs:maxLength value="18" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string19Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="19"/>
+            <xs:maxLength value="19" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string20Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="20"/>
+            <xs:maxLength value="20" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="versionType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="10"/>
+            <xs:maxLength value="10" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="messageType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="512"/>
+            <xs:maxLength value="512" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string1Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="1"/>
+            <xs:maxLength value="1" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string2Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="2"/>
+            <xs:maxLength value="2" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="stringExactly2Type">
         <xs:restriction base="xs:string">
-            <xs:minLength value="2"/>
-            <xs:maxLength value="2"/>
+            <xs:minLength value="2" />
+            <xs:maxLength value="2" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string3Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="3"/>
+            <xs:maxLength value="3" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="responseType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="3"/>
+            <xs:maxLength value="3" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string4Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="4"/>
+            <xs:maxLength value="4" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string5Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="5"/>
+            <xs:maxLength value="5" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string8Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="8"/>
+            <xs:maxLength value="8" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="stringExactly8Type">
         <xs:restriction base="xs:string">
-            <xs:minLength value="8"/>
-            <xs:maxLength value="8"/>
+            <xs:minLength value="8" />
+            <xs:maxLength value="8" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string14Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="14"/>
+            <xs:maxLength value="14" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="stringExactly4Type">
         <xs:restriction base="xs:string">
-            <xs:minLength value="4"/>
-            <xs:maxLength value="4"/>
+            <xs:minLength value="4" />
+            <xs:maxLength value="4" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="cnpIdType">
         <xs:restriction base="xs:long">
-            <xs:totalDigits value="19"/>
+            <xs:totalDigits value="19" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string25Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="25"/>
+            <xs:maxLength value="25" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string36Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="36"/>
+            <xs:maxLength value="36" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string50Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="50"/>
+            <xs:maxLength value="50" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string64Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="64"/>
+            <xs:maxLength value="64" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string100Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="100"/>
+            <xs:maxLength value="100" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -162,515 +162,639 @@
 
     <xs:simpleType name="string150Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="150"/>
+            <xs:maxLength value="150" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string80Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="80"/>
+            <xs:maxLength value="80" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string128Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="128"/>
+            <xs:maxLength value="128" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string256Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="256"/>
+            <xs:maxLength value="256" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string512Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="512"/>
+            <xs:maxLength value="512" />
         </xs:restriction>
     </xs:simpleType>
 
 
     <xs:simpleType name="networkMessageValue">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="9999"/>
+            <xs:maxLength value="9999" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="stringMin1Max36CollapseWhiteSpaceType">
         <xs:restriction base="xs:string">
-            <xs:minLength value="1"/>
-            <xs:maxLength value="36"/>
+            <xs:minLength value="1" />
+            <xs:maxLength value="36" />
             <xs:whiteSpace value="collapse"/>
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="cardNumberLast4Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="4"/>
+            <xs:maxLength value="4" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="virtualAuthenticationKeyData">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="4"/>
+            <xs:maxLength value="4" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="virtualAuthenticationKeyPresenceIndicator">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="1"/>
+            <xs:maxLength value="1" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="authorizationSourcePlatform">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="1"/>
+            <xs:maxLength value="1" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="addressIndicator">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="1"/>
+            <xs:maxLength value="1" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="authenticationResultType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="1"/>
+            <xs:maxLength value="1" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="methodOfPaymentTypeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="MC"/>
-            <xs:enumeration value="VI"/>
-            <xs:enumeration value="AX"/>
-            <xs:enumeration value="DC"/>
-            <xs:enumeration value="DI"/>
-            <xs:enumeration value="PP"/>
-            <xs:enumeration value="JC"/>
-            <xs:enumeration value="EC"/>
-            <xs:enumeration value="GC"/>
-            <xs:enumeration value="PL"/>
-            <xs:enumeration value="IC"/>
-            <xs:enumeration value=""/>
+            <xs:enumeration value="MC" />
+            <xs:enumeration value="VI" />
+            <xs:enumeration value="AX" />
+            <xs:enumeration value="DC" />
+            <xs:enumeration value="DI" />
+            <xs:enumeration value="PP" />
+            <xs:enumeration value="JC" />
+            <xs:enumeration value="EC" />
+            <xs:enumeration value="GC" />
+            <xs:enumeration value="PL" />
+            <xs:enumeration value="IC" />
+            <xs:enumeration value="" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="actionTypeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="A"/>
-            <xs:enumeration value="D"/>
-            <xs:enumeration value="R"/>
-            <xs:enumeration value="AR"/>
-            <xs:enumeration value="G"/>
-            <xs:enumeration value="I"/>
-            <xs:enumeration value="J"/>
-            <xs:enumeration value="L"/>
-            <xs:enumeration value="LR"/>
-            <xs:enumeration value="P"/>
-            <xs:enumeration value="RR"/>
-            <xs:enumeration value="S"/>
-            <xs:enumeration value="T"/>
-            <xs:enumeration value="UR"/>
-            <xs:enumeration value="V"/>
-            <xs:enumeration value="W"/>
-            <xs:enumeration value="X"/>
-            <xs:enumeration value="FIFA"/>
-            <xs:enumeration value="FIVC"/>
-            <xs:enumeration value="FISC"/>
-            <xs:enumeration value="FISD"/>
-            <xs:enumeration value="FIPC"/>
-            <xs:enumeration value="FIPD"/>
-            <xs:enumeration value="FIRC"/>
-            <xs:enumeration value="FIRD"/>
-            <xs:enumeration value=""/>
+            <xs:enumeration value="A" />
+            <xs:enumeration value="D" />
+            <xs:enumeration value="R" />
+            <xs:enumeration value="AR" />
+            <xs:enumeration value="G" />
+            <xs:enumeration value="I" />
+            <xs:enumeration value="J" />
+            <xs:enumeration value="L" />
+            <xs:enumeration value="LR" />
+            <xs:enumeration value="P" />
+            <xs:enumeration value="RR" />
+            <xs:enumeration value="S" />
+            <xs:enumeration value="T" />
+            <xs:enumeration value="UR" />
+            <xs:enumeration value="V" />
+            <xs:enumeration value="W" />
+            <xs:enumeration value="X" />
+            <xs:enumeration value="FIFA" />
+            <xs:enumeration value="FIVC" />
+            <xs:enumeration value="FISC" />
+            <xs:enumeration value="FISD" />
+            <xs:enumeration value="FIPC" />
+            <xs:enumeration value="FIPD" />
+            <xs:enumeration value="FIRC" />
+            <xs:enumeration value="FIRD" />
+            <xs:enumeration value="" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="govtTaxTypeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="payment"/>
-            <xs:enumeration value="fee"/>
+            <xs:enumeration value="payment" />
+            <xs:enumeration value="fee" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="businessIndicatorEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="consumerBillPayment"/>
-            <xs:enumeration value="buyOnlinePickUpInStore"/>
-            <xs:enumeration value="highRiskSecuritiesPurchase"/>
-            <xs:enumeration value="fundTransfer"/>
-            <xs:enumeration value="walletTransfer"/>
+            <xs:enumeration value="consumerBillPayment" />
+            <xs:enumeration value="buyOnlinePickUpInStore" />
+            <xs:enumeration value="highRiskSecuritiesPurchase" />
+            <xs:enumeration value="fundTransfer" />                    <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="walletTransfer" />                  <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="accountToAccount" />                <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="bankInitiated" />                   <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="fundsDisbursement" />               <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="payrollDisbursement" />             <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="personToPerson" />                  <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="topUp" />                           <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="personToPersonCardAccount" />       <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="debitPrepaidAccount" />             <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="paymentOfOwnCreditCardBill" />      <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="businessDisbursement" />            <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="businessToBusinessTransfer" />      <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="governmentNonProfitDisbursement" /> <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="rapidMerchantSettlement" />         <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+            <xs:enumeration value="agentCashOut" />                    <!-- Deprecated in kit 281: moved to accountFundingTransactionTypeEnum -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="accountFundingTransactionTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="accountToAccount" />
+            <xs:enumeration value="agentCashOut" />
+            <xs:enumeration value="bankInitiated" />
+            <xs:enumeration value="businessDisbursement" />
+            <xs:enumeration value="businessToBusinessTransfer" />
+            <xs:enumeration value="debitPrepaidAccount" />
+            <xs:enumeration value="fundsDisbursement" />
+            <xs:enumeration value="fundTransfer" />
+            <xs:enumeration value="governmentNonProfitDisbursement" />
+            <xs:enumeration value="paymentOfOwnCreditCardBill" />
+            <xs:enumeration value="payrollDisbursement" />
+            <xs:enumeration value="personToPerson" />
+            <xs:enumeration value="personToPersonCardAccount" />
+            <xs:enumeration value="rapidMerchantSettlement" />
+            <xs:enumeration value="topUp" />
+            <xs:enumeration value="walletTransfer" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="accountFundingTransactionAccountNumberTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="other" />
+            <xs:enumeration value="RTNAndBAN" />
+            <xs:enumeration value="IBAN" />
+            <xs:enumeration value="cardAccount" />
+            <xs:enumeration value="email" />
+            <xs:enumeration value="phoneNumber" />
+            <xs:enumeration value="BANAndBIC" />
+            <xs:enumeration value="walletID" />
+            <xs:enumeration value="socialNetworkID" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="achTransactionAmountType">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="10" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="9999999999"/>
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="transactionAmountType">
         <xs:restriction base="xs:integer">
-            <xs:totalDigits value="12"/>
+            <xs:totalDigits value="12" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="discountPercentType">
         <xs:restriction base="xs:integer">
-            <xs:totalDigits value="8"/>
+            <xs:totalDigits value="8" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="loanToValueEstimator">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="8"/>
+            <xs:maxLength value="8" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="riskEstimator">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="8"/>
+            <xs:maxLength value="8" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="riskQueueAssignment">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="8"/>
+            <xs:maxLength value="8" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="merchantIdentificationType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="50"/>
+            <xs:maxLength value="50" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="currencyCodeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="AUD"/>
-            <xs:enumeration value="CAD"/>
-            <xs:enumeration value="CHF"/>
-            <xs:enumeration value="DKK"/>
-            <xs:enumeration value="EUR"/>
-            <xs:enumeration value="GBP"/>
-            <xs:enumeration value="HKD"/>
-            <xs:enumeration value="JPY"/>
-            <xs:enumeration value="NOK"/>
-            <xs:enumeration value="NZD"/>
-            <xs:enumeration value="SEK"/>
-            <xs:enumeration value="SGD"/>
-            <xs:enumeration value="USD"/>
+            <xs:enumeration value="AUD" />
+            <xs:enumeration value="CAD" />
+            <xs:enumeration value="CHF" />
+            <xs:enumeration value="DKK" />
+            <xs:enumeration value="EUR" />
+            <xs:enumeration value="GBP" />
+            <xs:enumeration value="HKD" />
+            <xs:enumeration value="JPY" />
+            <xs:enumeration value="NOK" />
+            <xs:enumeration value="NZD" />
+            <xs:enumeration value="SEK" />
+            <xs:enumeration value="SGD" />
+            <xs:enumeration value="USD" />
         </xs:restriction>
     </xs:simpleType>
 
-
+    <xs:simpleType name="stateTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AL" />
+            <xs:enumeration value="AK" />
+            <xs:enumeration value="AZ" />
+            <xs:enumeration value="AR" />
+            <xs:enumeration value="CA" />
+            <xs:enumeration value="CO" />
+            <xs:enumeration value="CT" />
+            <xs:enumeration value="DE" />
+            <xs:enumeration value="DC" />
+            <xs:enumeration value="FL" />
+            <xs:enumeration value="GA" />
+            <xs:enumeration value="HI" />
+            <xs:enumeration value="ID" />
+            <xs:enumeration value="IL" />
+            <xs:enumeration value="IN" />
+            <xs:enumeration value="IA" />
+            <xs:enumeration value="KS" />
+            <xs:enumeration value="KY" />
+            <xs:enumeration value="LA" />
+            <xs:enumeration value="ME" />
+            <xs:enumeration value="MD" />
+            <xs:enumeration value="MA" />
+            <xs:enumeration value="MI" />
+            <xs:enumeration value="MN" />
+            <xs:enumeration value="MS" />
+            <xs:enumeration value="MO" />
+            <xs:enumeration value="MT" />
+            <xs:enumeration value="NE" />
+            <xs:enumeration value="NV" />
+            <xs:enumeration value="NH" />
+            <xs:enumeration value="NJ" />
+            <xs:enumeration value="NM" />
+            <xs:enumeration value="NY" />
+            <xs:enumeration value="NC" />
+            <xs:enumeration value="ND" />
+            <xs:enumeration value="OH" />
+            <xs:enumeration value="OK" />
+            <xs:enumeration value="OR" />
+            <xs:enumeration value="PA" />
+            <xs:enumeration value="RI" />
+            <xs:enumeration value="SC" />
+            <xs:enumeration value="SD" />
+            <xs:enumeration value="TN" />
+            <xs:enumeration value="TX" />
+            <xs:enumeration value="UT" />
+            <xs:enumeration value="VT" />
+            <xs:enumeration value="VA" />
+            <xs:enumeration value="WA" />
+            <xs:enumeration value="WV" />
+            <xs:enumeration value="WI" />
+            <xs:enumeration value="WY" />
+            <xs:enumeration value="AB" />
+            <xs:enumeration value="BC" />
+            <xs:enumeration value="MB" />
+            <xs:enumeration value="NB" />
+            <xs:enumeration value="NL" />
+            <xs:enumeration value="NT" />
+            <xs:enumeration value="NS" />
+            <xs:enumeration value="ON" />
+            <xs:enumeration value="PE" />
+            <xs:enumeration value="QC" />
+            <xs:enumeration value="SK" />
+            <xs:enumeration value="YT" />
+            <xs:enumeration value="NU" />
+        </xs:restriction>
+    </xs:simpleType>
 
     <xs:simpleType name="countryTypeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="USA"/>
-            <xs:enumeration value="AF"/>
-            <xs:enumeration value="AX"/>
-            <xs:enumeration value="AL"/>
-            <xs:enumeration value="DZ"/>
-            <xs:enumeration value="AS"/>
-            <xs:enumeration value="AD"/>
-            <xs:enumeration value="AO"/>
-            <xs:enumeration value="AI"/>
-            <xs:enumeration value="AQ"/>
-            <xs:enumeration value="AG"/>
-            <xs:enumeration value="AR"/>
-            <xs:enumeration value="AM"/>
-            <xs:enumeration value="AW"/>
-            <xs:enumeration value="AU"/>
-            <xs:enumeration value="AT"/>
-            <xs:enumeration value="AZ"/>
-            <xs:enumeration value="BS"/>
-            <xs:enumeration value="BH"/>
-            <xs:enumeration value="BD"/>
-            <xs:enumeration value="BB"/>
-            <xs:enumeration value="BY"/>
-            <xs:enumeration value="BE"/>
-            <xs:enumeration value="BZ"/>
-            <xs:enumeration value="BJ"/>
-            <xs:enumeration value="BM"/>
-            <xs:enumeration value="BT"/>
-            <xs:enumeration value="BO"/>
-            <xs:enumeration value="BQ"/>
-            <xs:enumeration value="BA"/>
-            <xs:enumeration value="BW"/>
-            <xs:enumeration value="BV"/>
-            <xs:enumeration value="BR"/>
-            <xs:enumeration value="IO"/>
-            <xs:enumeration value="BN"/>
-            <xs:enumeration value="BG"/>
-            <xs:enumeration value="BF"/>
-            <xs:enumeration value="BI"/>
-            <xs:enumeration value="KH"/>
-            <xs:enumeration value="CM"/>
-            <xs:enumeration value="CA"/>
-            <xs:enumeration value="CV"/>
-            <xs:enumeration value="KY"/>
-            <xs:enumeration value="CF"/>
-            <xs:enumeration value="TD"/>
-            <xs:enumeration value="CL"/>
-            <xs:enumeration value="CN"/>
-            <xs:enumeration value="CX"/>
-            <xs:enumeration value="CC"/>
-            <xs:enumeration value="CO"/>
-            <xs:enumeration value="KM"/>
-            <xs:enumeration value="CG"/>
-            <xs:enumeration value="CD"/>
-            <xs:enumeration value="CK"/>
-            <xs:enumeration value="CR"/>
-            <xs:enumeration value="CI"/>
-            <xs:enumeration value="HR"/>
-            <xs:enumeration value="CU"/>
-            <xs:enumeration value="CW"/>
-            <xs:enumeration value="CY"/>
-            <xs:enumeration value="CZ"/>
-            <xs:enumeration value="DK"/>
-            <xs:enumeration value="DJ"/>
-            <xs:enumeration value="DM"/>
-            <xs:enumeration value="DO"/>
-            <xs:enumeration value="TL"/>
-            <xs:enumeration value="EC"/>
-            <xs:enumeration value="EG"/>
-            <xs:enumeration value="SV"/>
-            <xs:enumeration value="GQ"/>
-            <xs:enumeration value="ER"/>
-            <xs:enumeration value="EE"/>
-            <xs:enumeration value="ET"/>
-            <xs:enumeration value="FK"/>
-            <xs:enumeration value="FO"/>
-            <xs:enumeration value="FJ"/>
-            <xs:enumeration value="FI"/>
-            <xs:enumeration value="FR"/>
-            <xs:enumeration value="GF"/>
-            <xs:enumeration value="PF"/>
-            <xs:enumeration value="TF"/>
-            <xs:enumeration value="GA"/>
-            <xs:enumeration value="GM"/>
-            <xs:enumeration value="GE"/>
-            <xs:enumeration value="DE"/>
-            <xs:enumeration value="GH"/>
-            <xs:enumeration value="GI"/>
-            <xs:enumeration value="GR"/>
-            <xs:enumeration value="GL"/>
-            <xs:enumeration value="GD"/>
-            <xs:enumeration value="GP"/>
-            <xs:enumeration value="GU"/>
-            <xs:enumeration value="GT"/>
-            <xs:enumeration value="GG"/>
-            <xs:enumeration value="GN"/>
-            <xs:enumeration value="GW"/>
-            <xs:enumeration value="GY"/>
-            <xs:enumeration value="HT"/>
-            <xs:enumeration value="HM"/>
-            <xs:enumeration value="HN"/>
-            <xs:enumeration value="HK"/>
-            <xs:enumeration value="HU"/>
-            <xs:enumeration value="IS"/>
-            <xs:enumeration value="IN"/>
-            <xs:enumeration value="ID"/>
-            <xs:enumeration value="IR"/>
-            <xs:enumeration value="IQ"/>
-            <xs:enumeration value="IE"/>
-            <xs:enumeration value="IM"/>
-            <xs:enumeration value="IL"/>
-            <xs:enumeration value="IT"/>
-            <xs:enumeration value="JM"/>
-            <xs:enumeration value="JP"/>
-            <xs:enumeration value="JE"/>
-            <xs:enumeration value="JO"/>
-            <xs:enumeration value="KZ"/>
-            <xs:enumeration value="KE"/>
-            <xs:enumeration value="KI"/>
-            <xs:enumeration value="KP"/>
-            <xs:enumeration value="KR"/>
-            <xs:enumeration value="KW"/>
-            <xs:enumeration value="KG"/>
-            <xs:enumeration value="LA"/>
-            <xs:enumeration value="LV"/>
-            <xs:enumeration value="LB"/>
-            <xs:enumeration value="LS"/>
-            <xs:enumeration value="LR"/>
-            <xs:enumeration value="LY"/>
-            <xs:enumeration value="LI"/>
-            <xs:enumeration value="LT"/>
-            <xs:enumeration value="LU"/>
-            <xs:enumeration value="MO"/>
-            <xs:enumeration value="MK"/>
-            <xs:enumeration value="MG"/>
-            <xs:enumeration value="MW"/>
-            <xs:enumeration value="MY"/>
-            <xs:enumeration value="MV"/>
-            <xs:enumeration value="ML"/>
-            <xs:enumeration value="MT"/>
-            <xs:enumeration value="MH"/>
-            <xs:enumeration value="MQ"/>
-            <xs:enumeration value="MR"/>
-            <xs:enumeration value="MU"/>
-            <xs:enumeration value="YT"/>
-            <xs:enumeration value="MX"/>
-            <xs:enumeration value="FM"/>
-            <xs:enumeration value="MD"/>
-            <xs:enumeration value="MC"/>
-            <xs:enumeration value="MN"/>
-            <xs:enumeration value="MS"/>
-            <xs:enumeration value="MA"/>
-            <xs:enumeration value="MZ"/>
-            <xs:enumeration value="MM"/>
-            <xs:enumeration value="NA"/>
-            <xs:enumeration value="NR"/>
-            <xs:enumeration value="NP"/>
-            <xs:enumeration value="NL"/>
-            <xs:enumeration value="AN"/>
-            <xs:enumeration value="NC"/>
-            <xs:enumeration value="NZ"/>
-            <xs:enumeration value="NI"/>
-            <xs:enumeration value="NE"/>
-            <xs:enumeration value="NG"/>
-            <xs:enumeration value="NU"/>
-            <xs:enumeration value="NF"/>
-            <xs:enumeration value="MP"/>
-            <xs:enumeration value="NO"/>
-            <xs:enumeration value="OM"/>
-            <xs:enumeration value="PK"/>
-            <xs:enumeration value="PW"/>
-            <xs:enumeration value="PS"/>
-            <xs:enumeration value="PA"/>
-            <xs:enumeration value="PG"/>
-            <xs:enumeration value="PY"/>
-            <xs:enumeration value="PE"/>
-            <xs:enumeration value="PH"/>
-            <xs:enumeration value="PN"/>
-            <xs:enumeration value="PL"/>
-            <xs:enumeration value="PT"/>
-            <xs:enumeration value="PR"/>
-            <xs:enumeration value="QA"/>
-            <xs:enumeration value="RE"/>
-            <xs:enumeration value="RO"/>
-            <xs:enumeration value="RU"/>
-            <xs:enumeration value="RW"/>
-            <xs:enumeration value="BL"/>
-            <xs:enumeration value="KN"/>
-            <xs:enumeration value="LC"/>
-            <xs:enumeration value="MF"/>
-            <xs:enumeration value="VC"/>
-            <xs:enumeration value="WS"/>
-            <xs:enumeration value="SM"/>
-            <xs:enumeration value="ST"/>
-            <xs:enumeration value="SA"/>
-            <xs:enumeration value="SN"/>
-            <xs:enumeration value="SC"/>
-            <xs:enumeration value="SL"/>
-            <xs:enumeration value="SG"/>
-            <xs:enumeration value="SX"/>
-            <xs:enumeration value="SK"/>
-            <xs:enumeration value="SI"/>
-            <xs:enumeration value="SB"/>
-            <xs:enumeration value="SO"/>
-            <xs:enumeration value="ZA"/>
-            <xs:enumeration value="GS"/>
-            <xs:enumeration value="ES"/>
-            <xs:enumeration value="LK"/>
-            <xs:enumeration value="SH"/>
-            <xs:enumeration value="PM"/>
-            <xs:enumeration value="SD"/>
-            <xs:enumeration value="SR"/>
-            <xs:enumeration value="SJ"/>
-            <xs:enumeration value="SZ"/>
-            <xs:enumeration value="SE"/>
-            <xs:enumeration value="CH"/>
-            <xs:enumeration value="SY"/>
-            <xs:enumeration value="TW"/>
-            <xs:enumeration value="TJ"/>
-            <xs:enumeration value="TZ"/>
-            <xs:enumeration value="TH"/>
-            <xs:enumeration value="TG"/>
-            <xs:enumeration value="TK"/>
-            <xs:enumeration value="TO"/>
-            <xs:enumeration value="TT"/>
-            <xs:enumeration value="TN"/>
-            <xs:enumeration value="TR"/>
-            <xs:enumeration value="TM"/>
-            <xs:enumeration value="TC"/>
-            <xs:enumeration value="TV"/>
-            <xs:enumeration value="UG"/>
-            <xs:enumeration value="UA"/>
-            <xs:enumeration value="AE"/>
-            <xs:enumeration value="GB"/>
-            <xs:enumeration value="US"/>
-            <xs:enumeration value="UM"/>
-            <xs:enumeration value="UY"/>
-            <xs:enumeration value="UZ"/>
-            <xs:enumeration value="VU"/>
-            <xs:enumeration value="VA"/>
-            <xs:enumeration value="VE"/>
-            <xs:enumeration value="VN"/>
-            <xs:enumeration value="VG"/>
-            <xs:enumeration value="VI"/>
-            <xs:enumeration value="WF"/>
-            <xs:enumeration value="EH"/>
-            <xs:enumeration value="YE"/>
-            <xs:enumeration value="ZM"/>
-            <xs:enumeration value="ZW"/>
-            <xs:enumeration value="RS"/>
-            <xs:enumeration value="ME"/>
-            <xs:enumeration value="SS"/>
+            <xs:enumeration value="USA" />
+            <xs:enumeration value="AF" />
+            <xs:enumeration value="AX" />
+            <xs:enumeration value="AL" />
+            <xs:enumeration value="DZ" />
+            <xs:enumeration value="AS" />
+            <xs:enumeration value="AD" />
+            <xs:enumeration value="AO" />
+            <xs:enumeration value="AI" />
+            <xs:enumeration value="AQ" />
+            <xs:enumeration value="AG" />
+            <xs:enumeration value="AR" />
+            <xs:enumeration value="AM" />
+            <xs:enumeration value="AW" />
+            <xs:enumeration value="AU" />
+            <xs:enumeration value="AT" />
+            <xs:enumeration value="AZ" />
+            <xs:enumeration value="BS" />
+            <xs:enumeration value="BH" />
+            <xs:enumeration value="BD" />
+            <xs:enumeration value="BB" />
+            <xs:enumeration value="BY" />
+            <xs:enumeration value="BE" />
+            <xs:enumeration value="BZ" />
+            <xs:enumeration value="BJ" />
+            <xs:enumeration value="BM" />
+            <xs:enumeration value="BT" />
+            <xs:enumeration value="BO" />
+            <xs:enumeration value="BQ" />
+            <xs:enumeration value="BA" />
+            <xs:enumeration value="BW" />
+            <xs:enumeration value="BV" />
+            <xs:enumeration value="BR" />
+            <xs:enumeration value="IO" />
+            <xs:enumeration value="BN" />
+            <xs:enumeration value="BG" />
+            <xs:enumeration value="BF" />
+            <xs:enumeration value="BI" />
+            <xs:enumeration value="KH" />
+            <xs:enumeration value="CM" />
+            <xs:enumeration value="CA" />
+            <xs:enumeration value="CV" />
+            <xs:enumeration value="KY" />
+            <xs:enumeration value="CF" />
+            <xs:enumeration value="TD" />
+            <xs:enumeration value="CL" />
+            <xs:enumeration value="CN" />
+            <xs:enumeration value="CX" />
+            <xs:enumeration value="CC" />
+            <xs:enumeration value="CO" />
+            <xs:enumeration value="KM" />
+            <xs:enumeration value="CG" />
+            <xs:enumeration value="CD" />
+            <xs:enumeration value="CK" />
+            <xs:enumeration value="CR" />
+            <xs:enumeration value="CI" />
+            <xs:enumeration value="HR" />
+            <xs:enumeration value="CU" />
+            <xs:enumeration value="CW" />
+            <xs:enumeration value="CY" />
+            <xs:enumeration value="CZ" />
+            <xs:enumeration value="DK" />
+            <xs:enumeration value="DJ" />
+            <xs:enumeration value="DM" />
+            <xs:enumeration value="DO" />
+            <xs:enumeration value="TL" />
+            <xs:enumeration value="EC" />
+            <xs:enumeration value="EG" />
+            <xs:enumeration value="SV" />
+            <xs:enumeration value="GQ" />
+            <xs:enumeration value="ER" />
+            <xs:enumeration value="EE" />
+            <xs:enumeration value="ET" />
+            <xs:enumeration value="FK" />
+            <xs:enumeration value="FO" />
+            <xs:enumeration value="FJ" />
+            <xs:enumeration value="FI" />
+            <xs:enumeration value="FR" />
+            <xs:enumeration value="GF" />
+            <xs:enumeration value="PF" />
+            <xs:enumeration value="TF" />
+            <xs:enumeration value="GA" />
+            <xs:enumeration value="GM" />
+            <xs:enumeration value="GE" />
+            <xs:enumeration value="DE" />
+            <xs:enumeration value="GH" />
+            <xs:enumeration value="GI" />
+            <xs:enumeration value="GR" />
+            <xs:enumeration value="GL" />
+            <xs:enumeration value="GD" />
+            <xs:enumeration value="GP" />
+            <xs:enumeration value="GU" />
+            <xs:enumeration value="GT" />
+            <xs:enumeration value="GG" />
+            <xs:enumeration value="GN" />
+            <xs:enumeration value="GW" />
+            <xs:enumeration value="GY" />
+            <xs:enumeration value="HT" />
+            <xs:enumeration value="HM" />
+            <xs:enumeration value="HN" />
+            <xs:enumeration value="HK" />
+            <xs:enumeration value="HU" />
+            <xs:enumeration value="IS" />
+            <xs:enumeration value="IN" />
+            <xs:enumeration value="ID" />
+            <xs:enumeration value="IR" />
+            <xs:enumeration value="IQ" />
+            <xs:enumeration value="IE" />
+            <xs:enumeration value="IM" />
+            <xs:enumeration value="IL" />
+            <xs:enumeration value="IT" />
+            <xs:enumeration value="JM" />
+            <xs:enumeration value="JP" />
+            <xs:enumeration value="JE" />
+            <xs:enumeration value="JO" />
+            <xs:enumeration value="KZ" />
+            <xs:enumeration value="KE" />
+            <xs:enumeration value="KI" />
+            <xs:enumeration value="KP" />
+            <xs:enumeration value="KR" />
+            <xs:enumeration value="KW" />
+            <xs:enumeration value="KG" />
+            <xs:enumeration value="LA" />
+            <xs:enumeration value="LV" />
+            <xs:enumeration value="LB" />
+            <xs:enumeration value="LS" />
+            <xs:enumeration value="LR" />
+            <xs:enumeration value="LY" />
+            <xs:enumeration value="LI" />
+            <xs:enumeration value="LT" />
+            <xs:enumeration value="LU" />
+            <xs:enumeration value="MO" />
+            <xs:enumeration value="MK" />
+            <xs:enumeration value="MG" />
+            <xs:enumeration value="MW" />
+            <xs:enumeration value="MY" />
+            <xs:enumeration value="MV" />
+            <xs:enumeration value="ML" />
+            <xs:enumeration value="MT" />
+            <xs:enumeration value="MH" />
+            <xs:enumeration value="MQ" />
+            <xs:enumeration value="MR" />
+            <xs:enumeration value="MU" />
+            <xs:enumeration value="YT" />
+            <xs:enumeration value="MX" />
+            <xs:enumeration value="FM" />
+            <xs:enumeration value="MD" />
+            <xs:enumeration value="MC" />
+            <xs:enumeration value="MN" />
+            <xs:enumeration value="MS" />
+            <xs:enumeration value="MA" />
+            <xs:enumeration value="MZ" />
+            <xs:enumeration value="MM" />
+            <xs:enumeration value="NA" />
+            <xs:enumeration value="NR" />
+            <xs:enumeration value="NP" />
+            <xs:enumeration value="NL" />
+            <xs:enumeration value="AN" />
+            <xs:enumeration value="NC" />
+            <xs:enumeration value="NZ" />
+            <xs:enumeration value="NI" />
+            <xs:enumeration value="NE" />
+            <xs:enumeration value="NG" />
+            <xs:enumeration value="NU" />
+            <xs:enumeration value="NF" />
+            <xs:enumeration value="MP" />
+            <xs:enumeration value="NO" />
+            <xs:enumeration value="OM" />
+            <xs:enumeration value="PK" />
+            <xs:enumeration value="PW" />
+            <xs:enumeration value="PS" />
+            <xs:enumeration value="PA" />
+            <xs:enumeration value="PG" />
+            <xs:enumeration value="PY" />
+            <xs:enumeration value="PE" />
+            <xs:enumeration value="PH" />
+            <xs:enumeration value="PN" />
+            <xs:enumeration value="PL" />
+            <xs:enumeration value="PT" />
+            <xs:enumeration value="PR" />
+            <xs:enumeration value="QA" />
+            <xs:enumeration value="RE" />
+            <xs:enumeration value="RO" />
+            <xs:enumeration value="RU" />
+            <xs:enumeration value="RW" />
+            <xs:enumeration value="BL" />
+            <xs:enumeration value="KN" />
+            <xs:enumeration value="LC" />
+            <xs:enumeration value="MF" />
+            <xs:enumeration value="VC" />
+            <xs:enumeration value="WS" />
+            <xs:enumeration value="SM" />
+            <xs:enumeration value="ST" />
+            <xs:enumeration value="SA" />
+            <xs:enumeration value="SN" />
+            <xs:enumeration value="SC" />
+            <xs:enumeration value="SL" />
+            <xs:enumeration value="SG" />
+            <xs:enumeration value="SX" />
+            <xs:enumeration value="SK" />
+            <xs:enumeration value="SI" />
+            <xs:enumeration value="SB" />
+            <xs:enumeration value="SO" />
+            <xs:enumeration value="ZA" />
+            <xs:enumeration value="GS" />
+            <xs:enumeration value="ES" />
+            <xs:enumeration value="LK" />
+            <xs:enumeration value="SH" />
+            <xs:enumeration value="PM" />
+            <xs:enumeration value="SD" />
+            <xs:enumeration value="SR" />
+            <xs:enumeration value="SJ" />
+            <xs:enumeration value="SZ" />
+            <xs:enumeration value="SE" />
+            <xs:enumeration value="CH" />
+            <xs:enumeration value="SY" />
+            <xs:enumeration value="TW" />
+            <xs:enumeration value="TJ" />
+            <xs:enumeration value="TZ" />
+            <xs:enumeration value="TH" />
+            <xs:enumeration value="TG" />
+            <xs:enumeration value="TK" />
+            <xs:enumeration value="TO" />
+            <xs:enumeration value="TT" />
+            <xs:enumeration value="TN" />
+            <xs:enumeration value="TR" />
+            <xs:enumeration value="TM" />
+            <xs:enumeration value="TC" />
+            <xs:enumeration value="TV" />
+            <xs:enumeration value="UG" />
+            <xs:enumeration value="UA" />
+            <xs:enumeration value="AE" />
+            <xs:enumeration value="GB" />
+            <xs:enumeration value="US" />
+            <xs:enumeration value="UM" />
+            <xs:enumeration value="UY" />
+            <xs:enumeration value="UZ" />
+            <xs:enumeration value="VU" />
+            <xs:enumeration value="VA" />
+            <xs:enumeration value="VE" />
+            <xs:enumeration value="VN" />
+            <xs:enumeration value="VG" />
+            <xs:enumeration value="VI" />
+            <xs:enumeration value="WF" />
+            <xs:enumeration value="EH" />
+            <xs:enumeration value="YE" />
+            <xs:enumeration value="ZM" />
+            <xs:enumeration value="ZW" />
+            <xs:enumeration value="RS" />
+            <xs:enumeration value="ME" />
+            <xs:enumeration value="SS" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="addressLineType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="35"/>
+            <xs:maxLength value="35" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="cityType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="35"/>
+            <xs:maxLength value="35" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="customBillingCityType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="35"/>
+            <xs:maxLength value="35" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="stateType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="30"/>
+            <xs:maxLength value="30" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="zipType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="20"/>
+            <xs:maxLength value="20" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="emailType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="100"/>
+            <xs:maxLength value="100" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="phoneType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="20"/>
+            <xs:maxLength value="20" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="nameType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="100"/>
+            <xs:maxLength value="100" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="cvNumType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="4"/>
+            <xs:maxLength value="4" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="authCodeType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="6"/>
+            <xs:maxLength value="6" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="customerIdType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="50"/>
+            <xs:maxLength value="50" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="customBillingUrlType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="13"/>
+            <xs:maxLength value="13" />
             <xs:pattern value="[A-Z,a-z,0-9,/,\-,_,.]*"/>
         </xs:restriction>
     </xs:simpleType>
@@ -684,115 +808,115 @@
 
     <xs:simpleType name="driversLicenseType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="30"/>
+            <xs:maxLength value="30" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="stateCodeType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="2"/>
+            <xs:maxLength value="2" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="dateOfBirthType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="8"/>
+            <xs:maxLength value="8" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="firstNameType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="25"/>
+            <xs:maxLength value="25" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="sellerIdType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="20"/>
+            <xs:maxLength value="20" />
 
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="lastNameType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="25"/>
+            <xs:maxLength value="25" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="middleInitialType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="1"/>
+            <xs:maxLength value="1" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="companyName">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="40"/>
+            <xs:maxLength value="40" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="redeliveryCycle">
         <xs:restriction base="xs:integer">
-            <xs:totalDigits value="1"/>
+            <xs:totalDigits value="1" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="numberOfDeposits">
         <xs:restriction base="xs:integer">
-            <xs:totalDigits value="1"/>
+            <xs:totalDigits value="1" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:complexType name="contact">
         <xs:all>
-            <xs:element name="name" type="xp:nameType" minOccurs="0"/>
-            <xs:element name="firstName" type="xp:firstNameType" minOccurs="0"/>
-            <xs:element name="middleInitial" type="xp:middleInitialType" minOccurs="0"/>
-            <xs:element name="lastName" type="xp:lastNameType" minOccurs="0"/>
-            <xs:element name="companyName" type="xp:companyName" minOccurs="0"/>
-            <xs:element name="addressLine1" type="xp:addressLineType" minOccurs="0"/>
-            <xs:element name="addressLine2" type="xp:addressLineType" minOccurs="0"/>
-            <xs:element name="addressLine3" type="xp:addressLineType" minOccurs="0"/>
-            <xs:element name="city" type="xp:cityType" minOccurs="0"/>
-            <xs:element name="state" type="xp:stateType" minOccurs="0"/>
-            <xs:element name="zip" type="xp:zipType" minOccurs="0"/>
-            <xs:element name="country" type="xp:countryTypeEnum" minOccurs="0"/>
+            <xs:element name="name" type="xp:nameType" minOccurs="0" />
+            <xs:element name="firstName" type="xp:firstNameType" minOccurs="0" />
+            <xs:element name="middleInitial" type="xp:middleInitialType" minOccurs="0" />
+            <xs:element name="lastName" type="xp:lastNameType" minOccurs="0" />
+            <xs:element name="companyName" type="xp:companyName" minOccurs="0" />
+            <xs:element name="addressLine1" type="xp:addressLineType" minOccurs="0" />
+            <xs:element name="addressLine2" type="xp:addressLineType" minOccurs="0" />
+            <xs:element name="addressLine3" type="xp:addressLineType" minOccurs="0" />
+            <xs:element name="city" type="xp:cityType" minOccurs="0" />
+            <xs:element name="state" type="xp:stateType" minOccurs="0" />
+            <xs:element name="zip" type="xp:zipType" minOccurs="0" />
+            <xs:element name="country" type="xp:countryTypeEnum" minOccurs="0" />
             <xs:element name="email" minOccurs="0">
                 <xs:simpleType>
                     <xs:restriction base="xp:emailType">
-                        <xs:maxLength value="100"/>
+                        <xs:maxLength value="100" />
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="phone" type="xp:phoneType" minOccurs="0"/>
-            <xs:element name="sellerId" type="xp:sellerIdType" minOccurs="0"/>
+            <xs:element name="phone" type="xp:phoneType" minOccurs="0" />
+            <xs:element name="sellerId" type="xp:sellerIdType" minOccurs="0" />
             <xs:element name="url" type="xp:string35Type" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
 
-    <xs:element name="billToAddress" type="xp:contact"/>
+    <xs:element name="billToAddress" type="xp:contact" />
 
-    <xs:element name="retailerAddress" type="xp:contact"/>
+    <xs:element name="retailerAddress" type="xp:contact" />
 
     <xs:complexType name="address">
         <xs:all>
-            <xs:element name="addressLine1" type="xp:addressLineType" minOccurs="0"/>
-            <xs:element name="addressLine2" type="xp:addressLineType" minOccurs="0"/>
-            <xs:element name="addressLine3" type="xp:addressLineType" minOccurs="0"/>
-            <xs:element name="city" type="xp:cityType" minOccurs="0"/>
-            <xs:element name="state" type="xp:stateType" minOccurs="0"/>
-            <xs:element name="zip" type="xp:zipType" minOccurs="0"/>
-            <xs:element name="country" type="xp:countryTypeEnum" minOccurs="0"/>
+            <xs:element name="addressLine1" type="xp:addressLineType" minOccurs="0" />
+            <xs:element name="addressLine2" type="xp:addressLineType" minOccurs="0" />
+            <xs:element name="addressLine3" type="xp:addressLineType" minOccurs="0" />
+            <xs:element name="city" type="xp:cityType" minOccurs="0" />
+            <xs:element name="state" type="xp:stateType" minOccurs="0" />
+            <xs:element name="zip" type="xp:zipType" minOccurs="0" />
+            <xs:element name="country" type="xp:countryTypeEnum" minOccurs="0" />
         </xs:all>
     </xs:complexType>
 
     <xs:complexType name="mposType">
         <xs:sequence>
-            <xs:element name = "ksn" type="xp:ksnType"/>
-            <xs:element name = "formatId" type="xp:formatIdType"/>
-            <xs:element name = "encryptedTrack" type="xp:encryptedTrackType"/>
-            <xs:element name = "track1Status" type="xp:trackStatusType"/>
-            <xs:element name = "track2Status" type="xp:trackStatusType"/>
+            <xs:element name = "ksn" type="xp:ksnType" />
+            <xs:element name = "formatId" type="xp:formatIdType" />
+            <xs:element name = "encryptedTrack" type="xp:encryptedTrackType" />
+            <xs:element name = "track1Status" type="xp:trackStatusType" />
+            <xs:element name = "track2Status" type="xp:trackStatusType" />
         </xs:sequence>
     </xs:complexType>
 
@@ -800,16 +924,16 @@
         <xs:sequence>
             <xs:choice>
                 <xs:sequence>
-                    <xs:element name="type" type="xp:methodOfPaymentTypeEnum"/>
+                    <xs:element name="type" type="xp:methodOfPaymentTypeEnum" />
                     <xs:element name="number" type="xp:ccAccountNumberType" minOccurs="0"/>
-                    <xs:element name="expDate" type="xp:expDateType" minOccurs="0"/>
+                    <xs:element name="expDate" type="xp:expDateType" minOccurs="0" />
                 </xs:sequence>
                 <xs:sequence>
-                    <xs:element name="track" type="xp:trackDataType"/>
+                    <xs:element name="track" type="xp:trackDataType" />
                 </xs:sequence>
             </xs:choice>
-            <xs:element name="cardValidationNum" type="xp:cvNumType" minOccurs="0"/>
-            <xs:element name="pin" type="xp:pinType" minOccurs="0"/>
+            <xs:element name="cardValidationNum" type="xp:cvNumType" minOccurs="0" />
+            <xs:element name="pin" type="xp:pinType" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
 
@@ -821,14 +945,14 @@
                         <xs:sequence>
                             <xs:element name="type" type="xp:methodOfPaymentTypeEnum" fixed="GC"/>
                             <xs:element name="number" type="xp:ccAccountNumberType" minOccurs="0"/>
-                            <xs:element name="expDate" type="xp:expDateType" minOccurs="0"/>
+                            <xs:element name="expDate" type="xp:expDateType" minOccurs="0" />
                         </xs:sequence>
                         <xs:sequence>
-                            <xs:element name="track" type="xp:trackDataType"/>
+                            <xs:element name="track" type="xp:trackDataType" />
                         </xs:sequence>
                     </xs:choice>
-                    <xs:element name="cardValidationNum" type="xp:cvNumType" minOccurs="0"/>
-                    <xs:element name="pin" type="xp:pinType" minOccurs="0"/>
+                    <xs:element name="cardValidationNum" type="xp:cvNumType" minOccurs="0" />
+                    <xs:element name="pin" type="xp:pinType" minOccurs="0" />
                 </xs:sequence>
             </xs:restriction>
         </xs:complexContent>
@@ -837,7 +961,7 @@
     <xs:simpleType name="pinType">
         <xs:restriction base="xs:string">
             <xs:minLength value="4"/>
-            <xs:maxLength value="12"/>
+            <xs:maxLength value="12" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -847,34 +971,34 @@
                 <xs:element name="cnpToken" type="xp:ccAccountNumberType"/>
                 <xs:element name="tokenURL" type="xp:awpTokenUrlType"/>
             </xs:choice>
-            <xs:element name="expDate" type="xp:expDateType" minOccurs="0"/>
-            <xs:element name="cardValidationNum" type="xp:cvNumType" minOccurs="0"/>
-            <xs:element name="type" type="xp:methodOfPaymentTypeEnum" minOccurs="0"/>
-            <xs:element name="checkoutId" type="xp:checkoutIdType" minOccurs="0"/>
-            <xs:element name="authenticatedShopperID" type="xp:authenticatedShopperIDType" minOccurs="0"/>
+            <xs:element name="expDate" type="xp:expDateType" minOccurs="0" />
+            <xs:element name="cardValidationNum" type="xp:cvNumType" minOccurs="0" />
+            <xs:element name="type" type="xp:methodOfPaymentTypeEnum" minOccurs="0" />
+            <xs:element name="checkoutId" type="xp:checkoutIdType" minOccurs="0" />
+            <xs:element name="authenticatedShopperID" type="xp:authenticatedShopperIDType" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
 
     <xs:simpleType name="checkoutIdType">
         <xs:restriction base="xs:string">
-            <xs:minLength value="18"/>
-            <xs:maxLength value="18"/>
+            <xs:minLength value="18" />
+            <xs:maxLength value="18" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="authenticatedShopperIDType">
         <xs:restriction base="xs:string">
-            <xs:minLength value="1"/>
-            <xs:maxLength value="64"/>
+            <xs:minLength value="1" />
+            <xs:maxLength value="64" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:complexType name="cardPaypageType">
         <xs:sequence>
             <xs:element name="paypageRegistrationId" type="xp:string512Type"/>
-            <xs:element name="expDate" type="xp:expDateType" minOccurs="0"/>
-            <xs:element name="cardValidationNum" type="xp:cvNumType" minOccurs="0"/>
-            <xs:element name="type" type="xp:methodOfPaymentTypeEnum" minOccurs="0"/>
+            <xs:element name="expDate" type="xp:expDateType" minOccurs="0" />
+            <xs:element name="cardValidationNum" type="xp:cvNumType" minOccurs="0" />
+            <xs:element name="type" type="xp:methodOfPaymentTypeEnum" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
 
@@ -892,28 +1016,28 @@
     <xs:simpleType name="ksnType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
-            <xs:maxLength value="1028"/>
+            <xs:maxLength value="1028" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="formatIdType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
-            <xs:maxLength value="1028"/>
+            <xs:maxLength value="1028" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="encryptedTrackType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
-            <xs:maxLength value="1028"/>
+            <xs:maxLength value="1028" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="encryptedCcAccountNumberType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
-            <xs:maxLength value="1028"/>
+            <xs:maxLength value="1028" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -926,21 +1050,21 @@
 
     <xs:simpleType name="ccAccountNumberType">
         <xs:restriction base="xs:string">
-            <xs:minLength value="13"/>
-            <xs:maxLength value="25"/>
+            <xs:minLength value="13" />
+            <xs:maxLength value="25" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="expDateType">
         <xs:restriction base="xs:string">
-            <xs:minLength value="4"/>
-            <xs:maxLength value="4"/>
+            <xs:minLength value="4" />
+            <xs:maxLength value="4" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="trackDataType">
         <xs:restriction base="xs:string">
-            <xs:whiteSpace value="collapse"/>
-            <xs:minLength value="1"/>
-            <xs:maxLength value="256"/>
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1" />
+            <xs:maxLength value="256" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="awpTokenUrlType">
@@ -964,13 +1088,13 @@
 
     <xs:simpleType name="threatMetrixSessionIdType">
         <xs:restriction base="xs:token">
-            <xs:pattern value="[-a-zA-Z0-9_]{1,128}"/>
+            <xs:pattern value="[-a-zA-Z0-9_]{1,128}" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="webSessionIdType">
         <xs:restriction base="xs:token">
-            <xs:pattern value="[-a-zA-Z0-9_]{1,128}"/>
+            <xs:pattern value="[-a-zA-Z0-9_]{1,128}" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -984,7 +1108,7 @@
 
     <xs:simpleType name="customAttributeType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="200"/>
+            <xs:maxLength value="200" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -996,25 +1120,25 @@
 
     <xs:simpleType name="string15Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="15"/>
+            <xs:maxLength value="15" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string29Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="29"/>
+            <xs:maxLength value="29" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string30Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="30"/>
+            <xs:maxLength value="30" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="string35Type">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="35"/>
+            <xs:maxLength value="35" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -1026,19 +1150,19 @@
 
     <xs:simpleType name="lodgingDurationType">
         <xs:restriction base="xs:integer">
-            <xs:totalDigits value="4"/>
+            <xs:totalDigits value="4" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="csPhoneType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="17"/>
+            <xs:maxLength value="17" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="noOfAdultsType">
         <xs:restriction base="xs:integer">
-            <xs:totalDigits value="2"/>
+            <xs:totalDigits value="2" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -1050,110 +1174,110 @@
 
     <xs:simpleType name="numberOfPassengersType">
         <xs:restriction base="xs:integer">
-            <xs:minInclusive value="0"/>
-            <xs:maxInclusive value="99"/>
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="99" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="numberOfRoomsType">
         <xs:restriction base="xs:integer">
-            <xs:totalDigits value="2"/>
+            <xs:totalDigits value="2" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="smokingPreferenceType">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="1"/>
+            <xs:maxLength value="1" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="sequenceIndicatorType">
         <xs:restriction base="xs:integer">
-            <xs:totalDigits value="2"/>
+            <xs:totalDigits value="2" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="tripLegNumberType">
         <xs:restriction base="xs:integer">
-            <xs:minInclusive value="0"/>
-            <xs:totalDigits value="3"/>
+            <xs:minInclusive value="1" />
+            <xs:totalDigits value="3" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="lodgingExtraChargeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="RESTAURANT"/>
-            <xs:enumeration value="GIFTSHOP"/>
-            <xs:enumeration value="MINIBAR"/>
-            <xs:enumeration value="TELEPHONE"/>
-            <xs:enumeration value="OTHER"/>
-            <xs:enumeration value="LAUNDRY"/>
+            <xs:enumeration value="RESTAURANT" />
+            <xs:enumeration value="GIFTSHOP" />
+            <xs:enumeration value="MINIBAR" />
+            <xs:enumeration value="TELEPHONE" />
+            <xs:enumeration value="OTHER" />
+            <xs:enumeration value="LAUNDRY" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:element name="lodgingCharge">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="name" type="xp:lodgingExtraChargeEnum"/>
+                <xs:element name="name" type="xp:lodgingExtraChargeEnum" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
     <xs:simpleType name="travelPackageIndicatorEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="CarRentalReservation"/>
-            <xs:enumeration value="AirlineReservation"/>
-            <xs:enumeration value="Both"/>
-            <xs:enumeration value="Unknown"/>
+            <xs:enumeration value="CarRentalReservation" />
+            <xs:enumeration value="AirlineReservation" />
+            <xs:enumeration value="Both" />
+            <xs:enumeration value="Unknown" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="lodgingProgramCodeType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="LODGING"/>
-            <xs:enumeration value="NOSHOW"/>
-            <xs:enumeration value="ADVANCEDDEPOSIT"/>
+            <xs:enumeration value="LODGING" />
+            <xs:enumeration value="NOSHOW" />
+            <xs:enumeration value="ADVANCEDDEPOSIT" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="yesNoType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="Y"/>
-            <xs:enumeration value="N"/>
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:complexType name="additionalCOFData">
         <xs:all>
-            <xs:element name="totalPaymentCount" type="xp:string2Type" minOccurs="0"/>
-            <xs:element name="paymentType" type="xp:paymentTypeEnum" minOccurs="0"/>
-            <xs:element name="uniqueId" type="xp:string14Type" minOccurs="0"/>
-            <xs:element name="frequencyOfMIT" type="xp:frequencyOfMITEnum" minOccurs="0"/>
-            <xs:element name="validationReference" type="xp:string20Type" minOccurs="0"/>
-            <xs:element name="sequenceIndicator" type="xp:sequenceIndicatorType" minOccurs="0"/>
+            <xs:element name="totalPaymentCount" type="xp:string2Type" minOccurs="0" />
+            <xs:element name="paymentType" type="xp:paymentTypeEnum" minOccurs="0" />
+            <xs:element name="uniqueId" type="xp:string14Type" minOccurs="0" />
+            <xs:element name="frequencyOfMIT" type="xp:frequencyOfMITEnum" minOccurs="0" />
+            <xs:element name="validationReference" type="xp:string20Type" minOccurs="0" />
+            <xs:element name="sequenceIndicator" type="xp:sequenceIndicatorType" minOccurs="0" />
         </xs:all>
     </xs:complexType>
 
-    <xs:element name="additionalCOFData" type="xp:additionalCOFData"/>
+    <xs:element name="additionalCOFData" type="xp:additionalCOFData" />
 
     <xs:simpleType name="paymentTypeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="Fixed Amount"/>
-            <xs:enumeration value="Variable Amount"/>
+            <xs:enumeration value="Fixed Amount" />
+            <xs:enumeration value="Variable Amount" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="frequencyOfMITEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="Daily"/>
-            <xs:enumeration value="Weekly"/>
-            <xs:enumeration value="BiWeekly"/>
-            <xs:enumeration value="Monthly"/>
-            <xs:enumeration value="Quarterly"/>
-            <xs:enumeration value="BiAnnually"/>
-            <xs:enumeration value="Anually"/> <!--Incorrect spelling. deprecated field-->
-            <xs:enumeration value="Annually"/>
-            <xs:enumeration value="UNSCHEDULED"/>
+            <xs:enumeration value="Daily" />
+            <xs:enumeration value="Weekly" />
+            <xs:enumeration value="BiWeekly" />
+            <xs:enumeration value="Monthly" />
+            <xs:enumeration value="Quarterly" />
+            <xs:enumeration value="BiAnnually" />
+            <xs:enumeration value="Anually" /> <!--Incorrect spelling. deprecated field-->
+            <xs:enumeration value="Annually" />
+            <xs:enumeration value="UNSCHEDULED" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -1163,90 +1287,94 @@
             <xs:enumeration value="COUNTER_PICKUP"/>
             <xs:enumeration value="CURBSIDE_PICKUP"/>
             <xs:enumeration value="LOCKER_PICKUP"/>
+            <xs:enumeration value="STANDARD_SHIPPING"/>
+            <xs:enumeration value="EXPEDITED_SHIPPING"/>
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="orderChannelEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="WEB"/>
-            <xs:enumeration value="PHONE"/>
-            <xs:enumeration value="MOBILE_APP"/>
-            <xs:enumeration value="SOCIAL"/>
-            <xs:enumeration value="MARKETPLACE"/>
-            <xs:enumeration value="IN_STORE_KIOSK"/>
+            <xs:enumeration value="WEB" />
+            <xs:enumeration value="PHONE" />
+            <xs:enumeration value="MOBILE_APP" />
+            <xs:enumeration value="SOCIAL" />
+            <xs:enumeration value="MARKETPLACE" />
+            <xs:enumeration value="IN_STORE_KIOSK" />
             <xs:enumeration value="MIT"/>
+            <xs:enumeration value="SCAN_AND_GO"/>
+            <xs:enumeration value="SMART_TV"/>
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="productEnrolledEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="GUARPAY1"/>
-            <xs:enumeration value="GUARPAY2"/>
-            <xs:enumeration value="GUARPAY3"/>
+            <xs:enumeration value="GUARPAY1" />
+            <xs:enumeration value="GUARPAY2" />
+            <xs:enumeration value="GUARPAY3" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="decisionPurposeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="CONSIDER_DECISION"/>
-            <xs:enumeration value="INFORMATION_ONLY"/>
+            <xs:enumeration value="CONSIDER_DECISION" />
+            <xs:enumeration value="INFORMATION_ONLY" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="fraudSwitchIndicatorEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="PRE"/>
-            <xs:enumeration value="POST"/>
+            <xs:enumeration value="PRE" />
+            <xs:enumeration value="POST" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="time24HourType">
         <xs:restriction base="xs:string">
-            <xs:pattern value="(([01][0-9])|([2][0-3])):[0-5][0-9]"/>
+            <xs:pattern value="(([01][0-9])|([2][0-3])):[0-5][0-9]" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="creditReasonIndicatorEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="A"/>
-            <xs:enumeration value="B"/>
-            <xs:enumeration value="C"/>
-            <xs:enumeration value="O"/>
-            <xs:enumeration value="P"/>
+            <xs:enumeration value="A" />
+            <xs:enumeration value="B" />
+            <xs:enumeration value="C" />
+            <xs:enumeration value="O" />
+            <xs:enumeration value="P" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="ticketChangeIndicatorEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="C"/>
-            <xs:enumeration value="N"/>
+            <xs:enumeration value="C" />
+            <xs:enumeration value="N" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="computerizedReservationSystemEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="STRT"/>
-            <xs:enumeration value="PARS"/>
-            <xs:enumeration value="DATS"/>
-            <xs:enumeration value="SABR"/>
-            <xs:enumeration value="DALA"/>
-            <xs:enumeration value="BLAN"/>
-            <xs:enumeration value="DERD"/>
-            <xs:enumeration value="TUID"/>
+            <xs:enumeration value="STRT" />
+            <xs:enumeration value="PARS" />
+            <xs:enumeration value="DATS" />
+            <xs:enumeration value="SABR" />
+            <xs:enumeration value="DALA" />
+            <xs:enumeration value="BLAN" />
+            <xs:enumeration value="DERD" />
+            <xs:enumeration value="TUID" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="serviceClassEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="First"/>
-            <xs:enumeration value="Business"/>
-            <xs:enumeration value="Economy"/>
+            <xs:enumeration value="First" />
+            <xs:enumeration value="Business" />
+            <xs:enumeration value="Economy" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="numberOfAggregateOrderCount">
         <xs:restriction base="xs:integer">
-            <xs:totalDigits value="8"/>
+            <xs:totalDigits value="8" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -1267,8 +1395,8 @@
 
     <!--    <xs:include schemaLocation="cnpCommon_v12.24.xsd"/>-->
 
-    <xs:element name="recurringTransaction" type="xp:recurringTransactionType" abstract="true"/>
-    <xs:element name="recurringTransactionResponse" type="xp:recurringTransactionResponseType" abstract="true"/>
+    <xs:element name="recurringTransaction" type="xp:recurringTransactionType" abstract="true" />
+    <xs:element name="recurringTransactionResponse" type="xp:recurringTransactionResponseType" abstract="true" />
     <xs:complexType name="cnpTransactionInterface" abstract="true"/>
 
     <xs:complexType name="recurringTransactionType">
@@ -1282,10 +1410,10 @@
         <xs:complexContent>
             <xs:extension base="xp:cnpTransactionInterface">
                 <xs:sequence>
-                    <xs:element name="cnpTxnId" type="xp:cnpIdType"/>
-                    <xs:element name="response" type="xp:responseType"/>
-                    <xs:element name="message" type="xs:string"/>
-                    <xs:element name="responseTime" type="xs:dateTime"/>
+                    <xs:element name="cnpTxnId" type="xp:cnpIdType" />
+                    <xs:element name="response" type="xp:responseType" />
+                    <xs:element name="message" type="xs:string" />
+                    <xs:element name="responseTime" type="xs:dateTime" />
                     <xs:element name="location" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
@@ -1297,7 +1425,7 @@
             <xs:complexContent>
                 <xs:extension base="xp:recurringTransactionType">
                     <xs:sequence>
-                        <xs:element name="subscriptionId" type="xp:cnpIdType"/>
+                        <xs:element name="subscriptionId" type="xp:cnpIdType" />
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
@@ -1309,13 +1437,13 @@
             <xs:complexContent>
                 <xs:extension base="xp:recurringTransactionType">
                     <xs:sequence>
-                        <xs:element name="subscriptionId" type="xp:cnpIdType"/>
-                        <xs:element name="planCode" type="xp:string25Type" minOccurs="0"/>
-                        <xs:element ref="xp:billToAddress" minOccurs="0"/>
+                        <xs:element name="subscriptionId" type="xp:cnpIdType" />
+                        <xs:element name="planCode" type="xp:string25Type" minOccurs="0" />
+                        <xs:element ref="xp:billToAddress" minOccurs="0" />
                         <xs:choice minOccurs="0">
-                            <xs:element name="card" type="xp:cardType"/>
-                            <xs:element name="token" type="xp:cardTokenType"/>
-                            <xs:element name="paypage" type="xp:cardPaypageType"/>
+                            <xs:element name="card" type="xp:cardType" />
+                            <xs:element name="token" type="xp:cardTokenType" />
+                            <xs:element name="paypage" type="xp:cardPaypageType" />
                         </xs:choice>
                         <xs:element name="billingDate" type="xs:date" minOccurs="0"/>
                         <xs:element name="createDiscount" type="xp:createDiscountType" minOccurs="0" maxOccurs="unbounded"/>
@@ -1355,8 +1483,8 @@
             <xs:complexContent>
                 <xs:extension base="xp:recurringTransactionType">
                     <xs:sequence>
-                        <xs:element name="planCode" type="xp:string25Type"/>
-                        <xs:element name="active" type="xs:boolean"/>
+                        <xs:element name="planCode" type="xp:string25Type" />
+                        <xs:element name="active" type="xs:boolean" />
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
@@ -1368,7 +1496,7 @@
             <xs:complexContent>
                 <xs:extension base="xp:recurringTransactionResponseType">
                     <xs:sequence>
-                        <xs:element name="subscriptionId" type="xp:cnpIdType"/>
+                        <xs:element name="subscriptionId" type="xp:cnpIdType" />
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
@@ -1380,7 +1508,7 @@
             <xs:complexContent>
                 <xs:extension base="xp:recurringTransactionResponseType">
                     <xs:sequence>
-                        <xs:element name="subscriptionId" type="xp:cnpIdType"/>
+                        <xs:element name="subscriptionId" type="xp:cnpIdType" />
                         <xs:element name="tokenResponse" type="xp:tokenResponseType" minOccurs="0"/>
                     </xs:sequence>
                 </xs:extension>
@@ -1415,7 +1543,7 @@
     <!--Recurring Types -->
     <xs:complexType name="recurringSubscriptionType">
         <xs:sequence>
-            <xs:element name="planCode" type="xp:string25Type"/>
+            <xs:element name="planCode" type="xp:string25Type" />
             <xs:element name="numberOfPayments" type="xp:numberOfPaymentsType" minOccurs="0"/>
             <xs:element name="startDate" type="xs:date" minOccurs="0"/>
             <xs:element name="amount" type="xp:transactionAmountType" minOccurs="0"/>
@@ -1426,64 +1554,64 @@
 
     <xs:simpleType name="numberOfPaymentsType">
         <xs:restriction base="xs:integer">
-            <xs:minInclusive value="1"/>
-            <xs:maxInclusive value="99"/>
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="99" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="intervalTypeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="ANNUAL"/>
-            <xs:enumeration value="SEMIANNUAL"/>
-            <xs:enumeration value="QUARTERLY"/>
-            <xs:enumeration value="MONTHLY"/>
-            <xs:enumeration value="WEEKLY"/>
+            <xs:enumeration value="ANNUAL" />
+            <xs:enumeration value="SEMIANNUAL" />
+            <xs:enumeration value="QUARTERLY" />
+            <xs:enumeration value="MONTHLY" />
+            <xs:enumeration value="WEEKLY" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="trialIntervalTypeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="MONTH"/>
-            <xs:enumeration value="DAY"/>
+            <xs:enumeration value="MONTH" />
+            <xs:enumeration value="DAY" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:complexType name="cnpInternalRecurringRequestType">
         <xs:sequence>
-            <xs:element name="subscriptionId" type="xp:cnpIdType"/>
-            <xs:element name="recurringTxnId" type="xp:cnpIdType"/>
-            <xs:element name="finalPayment" type="xs:boolean"/>
+            <xs:element name="subscriptionId" type="xp:cnpIdType" />
+            <xs:element name="recurringTxnId" type="xp:cnpIdType" />
+            <xs:element name="finalPayment" type="xs:boolean" />
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="recurringRequestType">
         <xs:sequence>
-            <xs:element name="createSubscription" type="xp:recurringSubscriptionType"/>
+            <xs:element name="createSubscription" type="xp:recurringSubscriptionType" />
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="recurringResponseType">
         <xs:sequence>
-            <xs:element name="subscriptionId" type="xp:cnpIdType"/>
-            <xs:element name="responseCode" type="xp:responseType"/>
-            <xs:element name="responseMessage" type="xp:messageType"/>
+            <xs:element name="subscriptionId" type="xp:cnpIdType" />
+            <xs:element name="responseCode" type="xp:responseType" />
+            <xs:element name="responseMessage" type="xp:messageType" />
             <xs:element name="recurringTxnId" type="xp:cnpIdType" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="createDiscountType">
         <xs:sequence>
-            <xs:element name="discountCode" type="xp:string25Type"/>
-            <xs:element name="name" type="xp:nameType"/>
-            <xs:element name="amount" type="xp:transactionAmountType"/>
-            <xs:element name="startDate" type="xs:date"/>
-            <xs:element name="endDate" type="xs:date"/>
+            <xs:element name="discountCode" type="xp:string25Type" />
+            <xs:element name="name" type="xp:nameType" />
+            <xs:element name="amount" type="xp:transactionAmountType" />
+            <xs:element name="startDate" type="xs:date" />
+            <xs:element name="endDate" type="xs:date" />
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="updateDiscountType">
         <xs:sequence>
-            <xs:element name="discountCode" type="xp:string25Type"/>
+            <xs:element name="discountCode" type="xp:string25Type" />
             <xs:element name="name" type="xp:nameType" minOccurs="0"/>
             <xs:element name="amount" type="xp:transactionAmountType" minOccurs="0"/>
             <xs:element name="startDate" type="xs:date" minOccurs="0"/>
@@ -1493,23 +1621,23 @@
 
     <xs:complexType name="deleteDiscountType">
         <xs:sequence>
-            <xs:element name="discountCode" type="xp:string25Type"/>
+            <xs:element name="discountCode" type="xp:string25Type" />
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="createAddOnType">
         <xs:sequence>
-            <xs:element name="addOnCode" type="xp:string25Type"/>
-            <xs:element name="name" type="xp:nameType"/>
-            <xs:element name="amount" type="xp:transactionAmountType"/>
-            <xs:element name="startDate" type="xs:date"/>
-            <xs:element name="endDate" type="xs:date"/>
+            <xs:element name="addOnCode" type="xp:string25Type" />
+            <xs:element name="name" type="xp:nameType" />
+            <xs:element name="amount" type="xp:transactionAmountType" />
+            <xs:element name="startDate" type="xs:date" />
+            <xs:element name="endDate" type="xs:date" />
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="updateAddOnType">
         <xs:sequence>
-            <xs:element name="addOnCode" type="xp:string25Type"/>
+            <xs:element name="addOnCode" type="xp:string25Type" />
             <xs:element name="name" type="xp:nameType" minOccurs="0"/>
             <xs:element name="amount" type="xp:transactionAmountType" minOccurs="0"/>
             <xs:element name="startDate" type="xs:date" minOccurs="0"/>
@@ -1519,7 +1647,7 @@
 
     <xs:complexType name="deleteAddOnType">
         <xs:sequence>
-            <xs:element name="addOnCode" type="xp:string25Type"/>
+            <xs:element name="addOnCode" type="xp:string25Type" />
         </xs:sequence>
     </xs:complexType>
 
@@ -1707,8 +1835,7 @@
                             <xs:element name="skipRealtimeAU" type="xs:boolean" minOccurs="0"/>
                             <xs:element name="merchantCategoryCode" type="xp:stringExactly4Type" minOccurs="0"/>
                             <xs:element name="businessIndicator" type="xp:businessIndicatorEnum" minOccurs="0"/>
-                            <xs:element name="orderChannel" type="xp:orderChannelEnum" minOccurs="0">
-                            </xs:element>
+                            <xs:element name="orderChannel" type="xp:orderChannelEnum" minOccurs="0"/>
                             <xs:element name="fraudCheckStatus" type="xp:string50Type" minOccurs="0"/>
                             <xs:element name="crypto" type="xs:boolean" minOccurs="0"/>
                             <xs:element name="overridePolicy" type="xp:string150Type" minOccurs="0"/>
@@ -1719,6 +1846,8 @@
                             <xs:element name="fraudSwitchIndicator" type="xp:fraudSwitchIndicatorEnum" minOccurs="0"/>
                             <xs:element ref="xp:passengerTransportData" minOccurs="0"/>
                             <xs:element name="authIndicator" type="xp:authIndicatorEnum" minOccurs="0"/>
+                            <xs:element ref="xp:accountFundingTransactionData" minOccurs="0"/>
+                            <xs:element name="fraudCheckAction" type="xp:fraudCheckActionEnum" minOccurs="0"/>
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -1832,6 +1961,7 @@
                         <xs:element name="businessIndicator" type="xp:businessIndicatorEnum" minOccurs="0"/>
                         <xs:element ref="xp:passengerTransportData" minOccurs="0"/>
                         <xs:element name="foreignRetailerIndicator" type="xp:foreignRetailerIndicatorEnum" minOccurs="0"/>
+                        <xs:element ref="xp:accountFundingTransactionData" minOccurs="0"/>
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
@@ -1875,6 +2005,7 @@
                         <xs:element name="crypto" type="xs:boolean" minOccurs="0"/>
                         <xs:element ref="xp:passengerTransportData" minOccurs="0"/>
                         <xs:element name="foreignRetailerIndicator" type="xp:foreignRetailerIndicatorEnum" minOccurs="0"/>
+                        <xs:element ref="xp:accountFundingTransactionData" minOccurs="0"/>
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
@@ -1932,7 +2063,8 @@
                         <xs:element name="recyclingRequest" type="xp:recyclingRequestType" minOccurs="0"/>
                         <xs:element name="fraudFilterOverride" type="xs:boolean" minOccurs="0"/>
                         <xs:element name="recurringRequest" type="xp:recurringRequestType" minOccurs="0"/>
-                        <xs:element name="cnpInternalRecurringRequest" type="xp:cnpInternalRecurringRequestType" minOccurs="0"/>
+                        <xs:element name="cnpInternalRecurringRequest" type="xp:cnpInternalRecurringRequestType"
+                                    minOccurs="0"/>
                         <xs:element name="debtRepayment" type="xs:boolean" minOccurs="0"/>
                         <xs:element name="advancedFraudChecks" type="xp:advancedFraudChecksType" minOccurs="0"/>
                         <xs:element ref="xp:wallet" minOccurs="0"/>
@@ -1954,6 +2086,8 @@
                         <xs:element name="fraudSwitchIndicator" type="xp:fraudSwitchIndicatorEnum" minOccurs="0"/>
                         <xs:element ref="xp:passengerTransportData" minOccurs="0"/>
                         <xs:element name="foreignRetailerIndicator" type="xp:foreignRetailerIndicatorEnum" minOccurs="0"/>
+                        <xs:element ref="xp:accountFundingTransactionData" minOccurs="0"/>
+                        <xs:element name="fraudCheckAction" type="xp:fraudCheckActionEnum" minOccurs="0"/>
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
@@ -2034,6 +2168,7 @@
                         <xs:element name="payPalNotes" type="xp:payPalNotesType" minOccurs="0"/>
                         <xs:element name="actionReason" type="xp:actionReasonType" minOccurs="0"/>
                         <xs:element name="businessIndicator" type="xp:businessIndicatorEnum" minOccurs="0"/>
+                        <xs:element ref="xp:accountFundingTransactionData" minOccurs="0"/>
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
@@ -2281,8 +2416,8 @@
     <xs:simpleType name="actionReasonType">
         <xs:restriction base="xs:string">
             <xs:maxLength value="255"/>
-            <!-- <xs:enumeration value="UNKNOWN"/>
-            <xs:enumeration value="SUSPECT_FRAUD"/> -->
+            <!-- <xs:enumeration value="UNKNOWN" />
+            <xs:enumeration value="SUSPECT_FRAUD" /> -->
         </xs:restriction>
     </xs:simpleType>
 
@@ -2357,7 +2492,8 @@
                     </xs:choice>
                     <xs:choice>
                         <xs:element name="cardValidationNum" type="xp:cvNumType" minOccurs="0"/>
-                        <xs:element name="encryptedCardValidationNum" type="xp:encryptedCcAccountNumberType" minOccurs="0"/>
+                        <xs:element name="encryptedCardValidationNum" type="xp:encryptedCcAccountNumberType"
+                                    minOccurs="0"/>
                     </xs:choice>
                 </xs:sequence>
             </xs:extension>
@@ -2468,7 +2604,6 @@
     </xs:simpleType>
 
 
-
     <xs:simpleType name="businessApplicationIdentifierEnum">
         <xs:restriction base="xs:string">
             <xs:enumeration value="CB"/>
@@ -2513,7 +2648,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="networkSubField" >
+    <xs:complexType name="networkSubField">
         <xs:sequence>
             <xs:element name="fieldValue" type="xp:networkMessageValue" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
@@ -3104,7 +3239,7 @@
                             <xs:element name="secondaryAmount" type="xp:transactionAmountType" minOccurs="0"/>
                             <xs:element name="orderSource" type="xp:orderSourceType"/>
                             <xs:element ref="xp:billToAddress"/>
-                            <xs:element ref="xp:shipToAddress"  minOccurs="0"/>
+                            <xs:element ref="xp:shipToAddress" minOccurs="0"/>
                             <xs:choice>
                                 <xs:element name="echeck" type="xp:echeckType"/>
                                 <xs:element name="echeckToken" type="xp:echeckTokenType"/>
@@ -3138,7 +3273,10 @@
                                 <xs:element name="secondaryAmount" type="xp:transactionAmountType" minOccurs="0"/>
                                 <xs:element name="orderSource" type="xp:orderSourceType"/>
                                 <xs:element ref="xp:billToAddress"/>
-                                <xs:choice><xs:element name="echeck" type="xp:echeckType"/><xs:element name="echeckToken" type="xp:echeckTokenType"/></xs:choice>
+                                <xs:choice>
+                                    <xs:element name="echeck" type="xp:echeckType"/>
+                                    <xs:element name="echeckToken" type="xp:echeckTokenType"/>
+                                </xs:choice>
                                 <xs:element ref="xp:customBilling" minOccurs="0"/>
                                 <xs:element name="merchantData" type="xp:merchantDataType" minOccurs="0"/>
                                 <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0"/>
@@ -3156,9 +3294,11 @@
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:sequence>
                         <xs:element name="orderId" type="xp:string256Type"/>
-                        <xs:element name="amount" type="xp:transactionAmountType"/> <!-- required but not tied to sale -->
+                        <xs:element name="amount"
+                                    type="xp:transactionAmountType"/> <!-- required but not tied to sale -->
                         <xs:element name="orderSource" type="xp:orderSourceType"/>
-                        <xs:element ref="xp:billToAddress" minOccurs="1"/>  <!-- must supply street, city and state as 2 digit postal state -->
+                        <xs:element ref="xp:billToAddress"
+                                    minOccurs="1"/>  <!-- must supply street, city and state as 2 digit postal state -->
                         <xs:choice>
                             <xs:element name="echeck" type="xp:echeckType"/>
                             <xs:element name="echeckToken" type="xp:echeckTokenType"/>
@@ -3350,6 +3490,14 @@
             </xs:complexContent>
         </xs:complexType>
     </xs:element>
+    <xs:complexType name="finicityAccountInfoType">
+        <xs:all>
+            <xs:element name="accountId" type="xs:string"/>
+            <xs:element name="accType" type="xp:echeckAccountTypeEnum"/>
+            <xs:element name="realAccNum" type="xp:echeckAccountNumberType"/>
+            <xs:element name="routingNum" type="xp:routingNumberType"/>
+        </xs:all>
+    </xs:complexType>
 
     <xs:complexType name="echeckType">
         <xs:all>
@@ -3358,6 +3506,8 @@
             <xs:element name="routingNum" type="xp:routingNumberType"/>
             <xs:element name="checkNum" type="xp:checkNumberType" minOccurs="0"/>
             <xs:element name="ccdPaymentInformation" type="xp:string80Type" minOccurs="0"/>
+            <xs:element name="echeckCustomerId" type="xp:string25Type" minOccurs="0"/>
+            <xs:element name="accountId" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
 
@@ -3624,7 +3774,8 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:element name="updateCardValidationNumOnToken" substitutionGroup="xp:transaction" type="xp:updateCardValidationNumOnToken"/>
+    <xs:element name="updateCardValidationNumOnToken" substitutionGroup="xp:transaction"
+                type="xp:updateCardValidationNumOnToken"/>
 
     <xs:complexType name="updateCardValidationNumOnToken">
         <xs:complexContent>
@@ -3690,7 +3841,8 @@
                         <xs:element name="accountPasshash" minOccurs="0">
                             <xs:simpleType>
                                 <xs:restriction base="xs:string">
-                                    <xs:pattern value="[a-fA-F0-9]{128}|[a-fA-F0-9]{96}|[a-fA-F0-9]{64}|[a-fA-F0-9]{56}"/>
+                                    <xs:pattern
+                                            value="[a-fA-F0-9]{128}|[a-fA-F0-9]{96}|[a-fA-F0-9]{64}|[a-fA-F0-9]{56}"/>
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:element>
@@ -3823,7 +3975,7 @@
 
     <xs:simpleType name="processingTypeEnum">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="accountFunding"/>
+            <xs:enumeration value="accountFunding"/> <!-- Deprecated in kit 281: see accountFundingTransactionData -->
             <xs:enumeration value="initialRecurring"/>
             <xs:enumeration value="initialInstallment"/>
             <xs:enumeration value="initialCOF"/>
@@ -4000,7 +4152,7 @@
                         <xs:sequence>
                             <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType"/>
                             <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
+                            <xs:element name="amount" type="xp:achTransactionAmountType"/>
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -4016,7 +4168,7 @@
                         <xs:sequence>
                             <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType"/>
                             <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
+                            <xs:element name="amount" type="xp:achTransactionAmountType"/>
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -4075,7 +4227,7 @@
                                 <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType"/>
                             </xs:choice>
                             <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
+                            <xs:element name="amount" type="xp:achTransactionAmountType"/>
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -4094,7 +4246,7 @@
                                 <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType"/>
                             </xs:choice>
                             <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
+                            <xs:element name="amount" type="xp:achTransactionAmountType"/>
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -4296,8 +4448,8 @@
         <xs:complexType>
             <xs:all>
                 <xs:element name="networkName" type="xp:string25Type" minOccurs="0"/>
-                <xs:element name="debitResponse" type="xp:responseType" minOccurs="0"  />
-                <xs:element name="debitMessage" type="xp:messageType" minOccurs="0"  />
+                <xs:element name="debitResponse" type="xp:responseType" minOccurs="0"/>
+                <xs:element name="debitMessage" type="xp:messageType" minOccurs="0"/>
             </xs:all>
         </xs:complexType>
     </xs:element>
@@ -4317,8 +4469,10 @@
                     <xs:choice>
                         <xs:sequence>
                             <xs:choice>
-                                <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" minOccurs="0"/>
-                                <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" minOccurs="0"/>
+                                <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType"
+                                            minOccurs="0"/>
+                                <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType"
+                                            minOccurs="0"/>
                             </xs:choice>
                             <xs:choice>
                                 <xs:element name="customerName" type="xp:string256Type"/>
@@ -4473,7 +4627,8 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="translateToLowValueTokenRequest" substitutionGroup="xp:transaction" type="xp:translateToLowValueTokenRequestType"/>
+    <xs:element name="translateToLowValueTokenRequest" substitutionGroup="xp:transaction"
+                type="xp:translateToLowValueTokenRequestType"/>
 
     <xs:complexType name="translateToLowValueTokenRequestType">
         <xs:complexContent>
@@ -4584,7 +4739,8 @@
                         <xs:element name="postDate" type="xs:date" minOccurs="0"/>
                         <xs:element name="message" type="xp:messageType"/>
                         <xs:element name="location" type="xs:string" minOccurs="0"/>
-                        <xs:element name="recyclingResponse" type="xp:depositTransactionReversalRecyclingResponseType" minOccurs="0"/>
+                        <xs:element name="recyclingResponse" type="xp:depositTransactionReversalRecyclingResponseType"
+                                    minOccurs="0"/>
                     </xs:all>
 
                 </xs:extension>
@@ -4629,7 +4785,8 @@
                         <xs:element name="postDate" type="xs:date" minOccurs="0"/>
                         <xs:element name="message" type="xp:messageType"/>
                         <xs:element name="location" type="xs:string" minOccurs="0"/>
-                        <xs:element name="recyclingResponse" type="xp:refundTransactionReversalRecyclingResponseType" minOccurs="0"/>
+                        <xs:element name="recyclingResponse" type="xp:refundTransactionReversalRecyclingResponseType"
+                                    minOccurs="0"/>
                     </xs:all>
 
                 </xs:extension>
@@ -4686,14 +4843,15 @@
                 <xs:element name="issueDate" type="xs:date" minOccurs="0"/>
                 <xs:element name="travelAgencyCode" type="xp:stringExactly8Type" minOccurs="0"/>
                 <xs:element name="travelAgencyName" type="xp:string25Type" minOccurs="0"/>
-                <xs:element name="computerizedReservationSystem" type="xp:computerizedReservationSystemEnum" minOccurs="0"/>
+                <xs:element name="computerizedReservationSystem" type="xp:computerizedReservationSystemEnum"
+                            minOccurs="0"/>
                 <xs:element name="creditReasonIndicator" type="xp:creditReasonIndicatorEnum" minOccurs="0"/>
                 <xs:element name="ticketChangeIndicator" type="xp:ticketChangeIndicatorEnum" minOccurs="0"/>
                 <xs:element name="ticketIssuerAddress" type="xp:string16Type" minOccurs="0"/>
                 <xs:element name="exchangeTicketNumber" type="xp:string15Type" minOccurs="0"/>
                 <xs:element name="exchangeAmount" type="xp:transactionAmountType" minOccurs="0"/>
                 <xs:element name="exchangeFeeAmount" type="xp:transactionAmountType" minOccurs="0"/>
-                <xs:element ref="xp:tripLegData" minOccurs="1" maxOccurs="99"/>
+                <xs:element ref="xp:tripLegData" minOccurs="1" maxOccurs="998"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -4770,7 +4928,6 @@
             <xs:element name="tag" type="xp:string100Type" minOccurs="0" maxOccurs="5"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:element name="subscription">
         <xs:complexType >
             <xs:all>
@@ -4793,6 +4950,49 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="accountFundingTransactionData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="receiverFirstName" type="xp:string35Type" minOccurs="0"/>
+                <xs:element name="receiverLastName" type="xp:string35Type" minOccurs="0"/>
+                <xs:element name="receiverState" type="xp:stateTypeEnum" minOccurs="0"/>
+                <xs:element name="receiverCountry" type="xp:countryTypeEnum" minOccurs="0"/>
+                <xs:element name="receiverAccountNumberType" type="xp:accountFundingTransactionAccountNumberTypeEnum" minOccurs="0"/>
+                <xs:element name="receiverAccountNumber" type="xp:string50Type" minOccurs="0"/>
+                <xs:element name="accountFundingTransactionType" type="xp:accountFundingTransactionTypeEnum" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="fraudCheckActionEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="APPROVED_SKIP_FRAUD_CHECK"/>
+            <xs:enumeration value="DECLINED_NEED_FRAUD_CHECK"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="postCheckoutRedirectUrl">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="200"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:simpleType name="provider">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AFFIRM" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="inquiryResultType">
+        <xs:all>
+            <xs:element name="response" type="xp:responseType" minOccurs="0"/>
+            <xs:element name="message" type="xp:messageType" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+
     <!--cnpBatch-->
 
     <!--    <xs:include schemaLocation="cnpTransaction_v12.24.xsd"/>-->
@@ -4800,33 +5000,33 @@
     <xs:element name="cnpRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="xp:authentication"/>
+                <xs:element ref="xp:authentication" />
                 <xs:choice>
-                    <xs:element ref="xp:batchRequest" minOccurs="0" maxOccurs="unbounded"/>
-                    <xs:element ref="xp:RFRRequest" minOccurs="0"/>
+                    <xs:element ref="xp:batchRequest" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:element ref="xp:RFRRequest" minOccurs="0" />
                 </xs:choice>
             </xs:sequence>
-            <xs:attribute name="version" type="xp:versionType" use="required"/>
-            <xs:attribute name="id" type="xp:string25Type" use="optional"/>
-            <xs:attribute name="numBatchRequests" type="xs:integer" use="required"/>
+            <xs:attribute name="version" type="xp:versionType" use="required" />
+            <xs:attribute name="id" type="xp:string25Type" use="optional" />
+            <xs:attribute name="numBatchRequests" type="xs:integer" use="required" />
         </xs:complexType>
     </xs:element>
     <xs:element name="RFRRequest">
         <xs:complexType>
             <xs:choice>
-                <xs:element name="cnpSessionId" type="xp:cnpIdType"/>
-                <xs:element ref="xp:accountUpdateFileRequestData"/>
+                <xs:element name="cnpSessionId" type="xp:cnpIdType" />
+                <xs:element ref="xp:accountUpdateFileRequestData" />
             </xs:choice>
         </xs:complexType>
     </xs:element>
     <xs:element name="batchRequest">
         <xs:complexType>
             <xs:choice>
-                <xs:element ref="xp:transaction" maxOccurs="unbounded"/>
-                <xs:element ref="xp:recurringTransaction" maxOccurs="unbounded"/>
+                <xs:element ref="xp:transaction" maxOccurs="unbounded" />
+                <xs:element ref="xp:recurringTransaction" maxOccurs="unbounded" />
             </xs:choice>
-            <xs:attribute name="merchantSdk" type="xs:string" use="optional"/>
-            <xs:attribute name="id" type="xp:string25Type" use="optional"/>
+            <xs:attribute name="merchantSdk" type="xs:string" use="optional" />
+            <xs:attribute name="id" type="xp:string25Type" use="optional" />
             <xs:attribute name="numAuths" type="xs:integer" use="optional"  default="0"/>
             <xs:attribute name="authAmount" type="xp:batchTotalAmountType" use="optional"  default="0"/>
             <xs:attribute name="numAuthReversals" type="xs:integer" use="optional"  default="0"/>
@@ -4910,7 +5110,7 @@
             <xs:attribute name="customerCreditAmount" type="xp:batchTotalAmountType" use="optional"  default="0"/>
             <xs:attribute name="customerDebitAmount" type="xp:batchTotalAmountType" use="optional"  default="0"/>
             <xs:attribute name="sameDayFunding" type="xs:boolean" use="optional"  default="0"/>
-            <xs:attribute name="merchantId" type="xp:merchantIdentificationType" use="required"/>
+            <xs:attribute name="merchantId" type="xp:merchantIdentificationType" use="required" />
         </xs:complexType>
     </xs:element>
 
@@ -4924,8 +5124,8 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="orderId" type="xp:string256Type"/>
-                        <xs:element ref="xp:cardOrToken"/>
+                        <xs:element name="orderId" type="xp:string256Type" />
+                        <xs:element ref="xp:cardOrToken" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -4936,32 +5136,32 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:choice>
-                    <xs:element ref="xp:batchResponse" minOccurs="0" maxOccurs="unbounded"/>
-                    <xs:element ref="xp:RFRResponse"/>
+                    <xs:element ref="xp:batchResponse" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:element ref="xp:RFRResponse" />
                 </xs:choice>
             </xs:sequence>
-            <xs:attribute name="version" type="xp:versionType" use="required"/>
-            <xs:attribute name="id" type="xp:string25Type" use="optional"/>
-            <xs:attribute name="response" type="xp:responseType" use="required"/>
-            <xs:attribute name="message" type="xp:messageType" use="required"/>
-            <xs:attribute name="cnpSessionId" type="xp:cnpIdType" use="required"/>
+            <xs:attribute name="version" type="xp:versionType" use="required" />
+            <xs:attribute name="id" type="xp:string25Type" use="optional" />
+            <xs:attribute name="response" type="xp:responseType" use="required" />
+            <xs:attribute name="message" type="xp:messageType" use="required" />
+            <xs:attribute name="cnpSessionId" type="xp:cnpIdType" use="required" />
         </xs:complexType>
     </xs:element>
     <xs:element name="RFRResponse">
         <xs:complexType>
-            <xs:attribute name="response" type="xp:responseType" use="required"/>
-            <xs:attribute name="message" type="xp:messageType" use="required"/>
+            <xs:attribute name="response" type="xp:responseType" use="required" />
+            <xs:attribute name="message" type="xp:messageType" use="required" />
         </xs:complexType>
     </xs:element>
     <xs:element name="batchResponse">
         <xs:complexType>
             <xs:choice>
-                <xs:element ref="xp:transactionResponse" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element ref="xp:recurringTransactionResponse" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="xp:transactionResponse" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="xp:recurringTransactionResponse" minOccurs="0" maxOccurs="unbounded" />
             </xs:choice>
-            <xs:attribute name="id" type="xp:string25Type"/>
-            <xs:attribute name="cnpBatchId" type="xp:cnpIdType" use="required"/>
-            <xs:attribute name="merchantId" type="xp:merchantIdentificationType" use="required"/>
+            <xs:attribute name="id" type="xp:string25Type" />
+            <xs:attribute name="cnpBatchId" type="xp:cnpIdType" use="required" />
+            <xs:attribute name="merchantId" type="xp:merchantIdentificationType" use="required" />
             <xs:attribute name="numAccountUpdates" type="xs:integer" use="optional"  default="0"/>
         </xs:complexType>
     </xs:element>
@@ -4971,15 +5171,15 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType"/>
-                        <xs:element name="orderId" type="xp:string256Type"/>
-                        <xs:element name="response" type="xp:responseType"/>
-                        <xs:element name="responseTime" type="xs:dateTime"/>
-                        <xs:element name="message" type="xp:messageType"/>
-                        <xs:element name="updatedCard" type="xp:cardType" minOccurs="0"/>
-                        <xs:element name="originalCard" type="xp:cardType" minOccurs="0"/>
-                        <xs:element name="updatedToken" type="xp:cardTokenTypeAU" minOccurs="0"/>
-                        <xs:element name="originalToken" type="xp:cardTokenTypeAU" minOccurs="0"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" />
+                        <xs:element name="orderId" type="xp:string256Type" />
+                        <xs:element name="response" type="xp:responseType" />
+                        <xs:element name="responseTime" type="xs:dateTime" />
+                        <xs:element name="message" type="xp:messageType" />
+                        <xs:element name="updatedCard" type="xp:cardType" minOccurs="0" />
+                        <xs:element name="originalCard" type="xp:cardType" minOccurs="0" />
+                        <xs:element name="updatedToken" type="xp:cardTokenTypeAU" minOccurs="0" />
+                        <xs:element name="originalToken" type="xp:cardTokenTypeAU" minOccurs="0" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -4998,20 +5198,20 @@
 
     <xs:simpleType name="batchTotalAmountType">
         <xs:restriction base="xs:integer">
-            <xs:totalDigits value="10"/>
+            <xs:totalDigits value="10" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="template">
         <xs:restriction base="xs:string">
-            <xs:maxLength value="25"/>
+            <xs:maxLength value="25" />
         </xs:restriction>
     </xs:simpleType>
     <xs:element name="accountUpdateFileRequestData">
         <xs:complexType>
             <xs:all>
-                <xs:element name="merchantId" type="xp:merchantIdentificationType"/>
-                <xs:element name="postDay" type="xs:date" minOccurs="0"/>
+                <xs:element name="merchantId" type="xp:merchantIdentificationType" />
+                <xs:element name="postDay" type="xs:date" minOccurs="0" />
             </xs:all>
         </xs:complexType>
     </xs:element>
@@ -5021,11 +5221,11 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:sequence>
-                        <xs:element name="orderId" type="xp:string256Type"/>
-                        <xs:element name="orderSource" type="xp:orderSourceType"/>
-                        <xs:element ref="xp:billToAddress"/>
+                        <xs:element name="orderId" type="xp:string256Type" />
+                        <xs:element name="orderSource" type="xp:orderSourceType" />
+                        <xs:element ref="xp:billToAddress" />
                         <xs:element name="echeck" type="xp:echeckType"/>
-                        <xs:element name="merchantData" type="xp:merchantDataType" minOccurs="0"/>
+                        <xs:element name="merchantData" type="xp:merchantDataType" minOccurs="0" />
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
@@ -5037,11 +5237,11 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:sequence>
-                        <xs:element name="orderId" type="xp:string256Type"/>
-                        <xs:element name="orderSource" type="xp:orderSourceType"/>
-                        <xs:element ref="xp:billToAddress"/>
+                        <xs:element name="orderId" type="xp:string256Type" />
+                        <xs:element name="orderSource" type="xp:orderSourceType" />
+                        <xs:element ref="xp:billToAddress" />
                         <xs:element name="echeck" type="xp:echeckType"/>
-                        <xs:element name="merchantData" type="xp:merchantDataType" minOccurs="0"/>
+                        <xs:element name="merchantData" type="xp:merchantDataType" minOccurs="0" />
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
@@ -5053,10 +5253,10 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType"/>
-                        <xs:element name="response" type="xp:responseType"/>
-                        <xs:element name="responseTime" type="xs:dateTime"/>
-                        <xs:element name="message" type="xp:messageType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" />
+                        <xs:element name="response" type="xp:responseType" />
+                        <xs:element name="responseTime" type="xs:dateTime" />
+                        <xs:element name="message" type="xp:messageType" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5068,10 +5268,10 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType"/>
-                        <xs:element name="response" type="xp:responseType"/>
-                        <xs:element name="responseTime" type="xs:dateTime"/>
-                        <xs:element name="message" type="xp:messageType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" />
+                        <xs:element name="response" type="xp:responseType" />
+                        <xs:element name="responseTime" type="xs:dateTime" />
+                        <xs:element name="message" type="xp:messageType" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5089,9 +5289,9 @@
                                 <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" minOccurs="0"/>
                             </xs:choice>
                             <xs:element name="vendorName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckTypeCtx"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:achTransactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckTypeCtx" />
                             <xs:element name="vendorAddress" type="xp:address"  minOccurs="0"/>
                         </xs:sequence>
                     </xs:choice>
@@ -5107,13 +5307,13 @@
                     <xs:choice>
                         <xs:sequence>
                             <xs:choice>
-                                <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" minOccurs="0"/>
+                                <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" minOccurs="0" />
                                 <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" minOccurs="0"/>
                             </xs:choice>
                             <xs:element name="vendorName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckTypeCtx"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:achTransactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckTypeCtx" />
                             <xs:element name="vendorAddress" type="xp:address"  minOccurs="0"/>
                         </xs:sequence>
                     </xs:choice>
@@ -5129,12 +5329,12 @@
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:choice>
                         <xs:sequence>
-                            <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType"/>
+                            <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" />
                             <xs:element name="submerchantName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckTypeCtx"/>
-                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:achTransactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckTypeCtx" />
+                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0" />
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -5148,12 +5348,12 @@
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:choice>
                         <xs:sequence>
-                            <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType"/>
+                            <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" />
                             <xs:element name="submerchantName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckTypeCtx"/>
-                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:achTransactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckTypeCtx" />
+                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0" />
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -5167,12 +5367,12 @@
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:choice>
                         <xs:sequence>
-                            <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType"/>
+                            <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" />
                             <xs:element name="customerName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckTypeCtx"/>
-                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:transactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckTypeCtx" />
+                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0" />
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -5186,12 +5386,12 @@
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:choice>
                         <xs:sequence>
-                            <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType"/>
+                            <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" />
                             <xs:element name="customerName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckTypeCtx"/>
-                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:transactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckTypeCtx" />
+                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0" />
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -5206,23 +5406,23 @@
 
     <xs:complexType name="baseRequest">
         <xs:sequence>
-            <xs:element ref="xp:authentication"/>
+            <xs:element ref="xp:authentication" />
             <xs:choice>
-                <xs:element ref="xp:transaction"/>
-                <xs:element ref="xp:recurringTransaction"/>
+                <xs:element ref="xp:transaction" />
+                <xs:element ref="xp:recurringTransaction" />
             </xs:choice>
         </xs:sequence>
-        <xs:attribute name="version" type="xp:versionType" use="required"/>
+        <xs:attribute name="version" type="xp:versionType" use="required" />
     </xs:complexType>
 
     <xs:element name="cnpOnlineRequest">
         <xs:complexType>
             <xs:complexContent>
                 <xs:extension base="xp:baseRequest">
-                    <xs:attribute name="merchantId" type="xp:merchantIdentificationType" use="required"/>
-                    <xs:attribute name="merchantSdk" type="xs:string" use="optional"/>
+                    <xs:attribute name="merchantId" type="xp:merchantIdentificationType" use="required" />
+                    <xs:attribute name="merchantSdk" type="xs:string" use="optional" />
                     <xs:attribute name="loggedInUser" type="xs:string" use="optional"/>
-                    <xs:attribute name="sameDayFunding" type="xs:boolean" use="optional"/>
+                    <xs:attribute name="sameDayFunding" type="xs:boolean" use="optional" />
                 </xs:extension>
             </xs:complexContent>
         </xs:complexType>
@@ -5231,12 +5431,12 @@
     <xs:element name="cnpOnlineResponse">
         <xs:complexType>
             <xs:choice>
-                <xs:element ref="xp:transactionResponse" minOccurs="0"/>
-                <xs:element ref="xp:recurringTransactionResponse" minOccurs="0"/>
+                <xs:element ref="xp:transactionResponse" minOccurs="0" />
+                <xs:element ref="xp:recurringTransactionResponse" minOccurs="0" />
             </xs:choice>
-            <xs:attribute name="response" type="xp:responseType" use="required"/>
-            <xs:attribute name="message" type="xp:messageType" use="required"/>
-            <xs:attribute name="version" type="xp:versionType" use="required"/>
+            <xs:attribute name="response" type="xp:responseType" use="required" />
+            <xs:attribute name="message" type="xp:messageType" use="required" />
+            <xs:attribute name="version" type="xp:versionType" use="required" />
         </xs:complexType>
     </xs:element>
 
@@ -5245,8 +5445,8 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType"/>
-                        <xs:element ref="xp:processingInstructions" minOccurs="0"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" />
+                        <xs:element ref="xp:processingInstructions" minOccurs="0" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5258,15 +5458,15 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType"/>
-                        <xs:element name="response" type="xp:responseType"/>
-                        <xs:element name="responseTime" type="xs:dateTime"/>
-                        <xs:element name="postDate" type="xs:date"/>
-                        <xs:element name="message" type="xp:messageType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" />
+                        <xs:element name="response" type="xp:responseType" />
+                        <xs:element name="responseTime" type="xs:dateTime" />
+                        <xs:element name="postDate" type="xs:date" />
+                        <xs:element name="message" type="xp:messageType" />
                         <xs:element name="location" type="xs:string" minOccurs="0"/>
-                        <xs:element name="recyclingResponse" type="xp:voidRecyclingResponseType" minOccurs="0"/>
+                        <xs:element name="recyclingResponse" type="xp:voidRecyclingResponseType" minOccurs="0" />
                         <!-- Introduced as part of Guaranteed Payments -->
-                        <xs:element name="checkoutId" type="xp:string256Type" minOccurs="0"/>
+                        <xs:element name="checkoutId" type="xp:string256Type" minOccurs="0" />
                     </xs:all>
 
                 </xs:extension>
@@ -5276,7 +5476,7 @@
 
     <xs:complexType name="voidRecyclingResponseType">
         <xs:sequence>
-            <xs:element name="creditCnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
+            <xs:element name="creditCnpTxnId" type="xp:cnpIdType" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
 
@@ -5285,7 +5485,7 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5297,14 +5497,14 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType"/>
-                        <xs:element name="response" type="xp:responseType"/>
-                        <xs:element name="responseTime" type="xs:dateTime"/>
-                        <xs:element name="postDate" type="xs:date"/>
-                        <xs:element name="message" type="xp:messageType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" />
+                        <xs:element name="response" type="xp:responseType" />
+                        <xs:element name="responseTime" type="xs:dateTime" />
+                        <xs:element name="postDate" type="xs:date" />
+                        <xs:element name="message" type="xp:messageType" />
                         <xs:element name="location" type="xs:string" minOccurs="0"/>
                         <!-- Introduced as part of Guaranteed Payments -->
-                        <xs:element name="checkoutId" type="xp:string256Type" minOccurs="0"/>
+                        <xs:element name="checkoutId" type="xp:string256Type" minOccurs="0" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5316,13 +5516,13 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
-                        <xs:element name="card" type="xp:giftCardCardType"/>
-                        <xs:element name="originalRefCode" type="xp:authCodeType"/>
-                        <xs:element name="originalAmount" type="xp:transactionAmountType"/>
-                        <xs:element name="originalTxnTime" type="xs:dateTime"/>
-                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType"/>
-                        <xs:element name="originalSequenceNumber" type="xp:sequenceType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0" />
+                        <xs:element name="card" type="xp:giftCardCardType" />
+                        <xs:element name="originalRefCode" type="xp:authCodeType" />
+                        <xs:element name="originalAmount" type="xp:transactionAmountType" />
+                        <xs:element name="originalTxnTime" type="xs:dateTime" />
+                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType" />
+                        <xs:element name="originalSequenceNumber" type="xp:sequenceType" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5334,13 +5534,13 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
-                        <xs:element name="card" type="xp:giftCardCardType"/>
-                        <xs:element name="originalRefCode" type="xp:authCodeType"/>
-                        <xs:element name="originalAmount" type="xp:transactionAmountType"/>
-                        <xs:element name="originalTxnTime" type="xs:dateTime"/>
-                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType"/>
-                        <xs:element name="originalSequenceNumber" type="xp:sequenceType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0" />
+                        <xs:element name="card" type="xp:giftCardCardType" />
+                        <xs:element name="originalRefCode" type="xp:authCodeType" />
+                        <xs:element name="originalAmount" type="xp:transactionAmountType" />
+                        <xs:element name="originalTxnTime" type="xs:dateTime" />
+                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType" />
+                        <xs:element name="originalSequenceNumber" type="xp:sequenceType" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5352,14 +5552,14 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
-                        <xs:element name="card" type="xp:giftCardCardType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0" />
+                        <xs:element name="card" type="xp:giftCardCardType" />
                         <xs:element name="virtualGiftCardBin" type="xs:string" minOccurs="0"/>
-                        <xs:element name="originalRefCode" type="xp:authCodeType"/>
-                        <xs:element name="originalAmount" type="xp:transactionAmountType"/>
-                        <xs:element name="originalTxnTime" type="xs:dateTime"/>
-                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType"/>
-                        <xs:element name="originalSequenceNumber" type="xp:sequenceType"/>
+                        <xs:element name="originalRefCode" type="xp:authCodeType" />
+                        <xs:element name="originalAmount" type="xp:transactionAmountType" />
+                        <xs:element name="originalTxnTime" type="xs:dateTime" />
+                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType" />
+                        <xs:element name="originalSequenceNumber" type="xp:sequenceType" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5371,12 +5571,12 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
-                        <xs:element name="card" type="xp:giftCardCardType"/>
-                        <xs:element name="originalRefCode" type="xp:authCodeType"/>
-                        <xs:element name="originalTxnTime" type="xs:dateTime"/>
-                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType"/>
-                        <xs:element name="originalSequenceNumber" type="xp:sequenceType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0" />
+                        <xs:element name="card" type="xp:giftCardCardType" />
+                        <xs:element name="originalRefCode" type="xp:authCodeType" />
+                        <xs:element name="originalTxnTime" type="xs:dateTime" />
+                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType" />
+                        <xs:element name="originalSequenceNumber" type="xp:sequenceType" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5388,13 +5588,13 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
-                        <xs:element name="card" type="xp:giftCardCardType"/>
-                        <xs:element name="originalRefCode" type="xp:authCodeType"/>
-                        <xs:element name="originalAmount" type="xp:transactionAmountType"/>
-                        <xs:element name="originalTxnTime" type="xs:dateTime"/>
-                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType"/>
-                        <xs:element name="originalSequenceNumber" type="xp:sequenceType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0" />
+                        <xs:element name="card" type="xp:giftCardCardType" />
+                        <xs:element name="originalRefCode" type="xp:authCodeType" />
+                        <xs:element name="originalAmount" type="xp:transactionAmountType" />
+                        <xs:element name="originalTxnTime" type="xs:dateTime" />
+                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType" />
+                        <xs:element name="originalSequenceNumber" type="xp:sequenceType" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5406,13 +5606,13 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
-                        <xs:element name="card" type="xp:giftCardCardType"/>
-                        <xs:element name="originalRefCode" type="xp:authCodeType"/>
-                        <xs:element name="originalAmount" type="xp:transactionAmountType"/>
-                        <xs:element name="originalTxnTime" type="xs:dateTime"/>
-                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType"/>
-                        <xs:element name="originalSequenceNumber" type="xp:sequenceType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0" />
+                        <xs:element name="card" type="xp:giftCardCardType" />
+                        <xs:element name="originalRefCode" type="xp:authCodeType" />
+                        <xs:element name="originalAmount" type="xp:transactionAmountType" />
+                        <xs:element name="originalTxnTime" type="xs:dateTime" />
+                        <xs:element name="originalSystemTraceId" type="xp:systemTraceType" />
+                        <xs:element name="originalSequenceNumber" type="xp:sequenceType" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5424,10 +5624,10 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:sequence>
-                        <xs:element name="origId" type="xp:string25Type" minOccurs="0"/>
-                        <xs:element name="origActionType" type="xp:actionTypeEnum" minOccurs="0"/>
-                        <xs:element name="origCnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
-                        <xs:element name="showStatusOnly" type="xp:yesNoType" minOccurs="0"/>
+                        <xs:element name="origId" type="xp:stringMin1Max36CollapseWhiteSpaceType" minOccurs="0" />
+                        <xs:element name="origActionType" type="xp:actionTypeEnum" minOccurs="0" />
+                        <xs:element name="origCnpTxnId" type="xp:cnpIdType" minOccurs="0" />
+                        <xs:element name="showStatusOnly" type="xp:yesNoType" minOccurs="0" />
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
@@ -5439,21 +5639,21 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="response" type="xp:responseType"/>
-                        <xs:element name="responseTime" type="xs:dateTime"/>
-                        <xs:element name="message" type="xp:messageType"/>
+                        <xs:element name="response" type="xp:responseType" />
+                        <xs:element name="responseTime" type="xs:dateTime" />
+                        <xs:element name="message" type="xp:messageType" />
                         <xs:element name="location" type="xs:string" minOccurs="0"/>
                         <xs:element name="matchCount" minOccurs="0">
                             <xs:simpleType>
                                 <xs:restriction base="xs:int">
-                                    <xs:totalDigits value="4"/>
+                                    <xs:totalDigits value="4" />
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:element>
                         <xs:element name="results_max10" minOccurs="0">
                             <xs:complexType>
                                 <xs:choice>
-                                    <xs:element ref="xp:transactionResponse" minOccurs="0" maxOccurs="10"/>
+                                    <xs:element ref="xp:transactionResponse" minOccurs="0" maxOccurs="10" />
                                 </xs:choice>
                             </xs:complexType>
                         </xs:element>
@@ -5468,9 +5668,9 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType"/>
-                        <xs:element name="response" type="xp:responseType"/>
-                        <xs:element name="message" type="xp:messageType"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" />
+                        <xs:element name="response" type="xp:responseType" />
+                        <xs:element name="message" type="xp:messageType" />
                         <xs:element name="location" type="xs:string" minOccurs="0"/>
                     </xs:all>
                 </xs:extension>
@@ -5483,8 +5683,8 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="serviceId" type="xp:cnpIdType"/>
-                        <xs:element name="pathId" type="xp:cnpIdType"/>
+                        <xs:element name="serviceId" type="xp:cnpIdType" />
+                        <xs:element name="pathId" type="xp:cnpIdType" />
                     </xs:all>
                 </xs:extension>
             </xs:complexContent>
@@ -5496,9 +5696,9 @@
             <xs:complexContent>
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:all>
-                        <xs:element name="cnpTxnId" type="xp:cnpIdType"/>
-                        <xs:element name="response" type="xp:responseType"/>
-                        <xs:element name="responseTime" type="xs:dateTime"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" />
+                        <xs:element name="response" type="xp:responseType" />
+                        <xs:element name="responseTime" type="xs:dateTime" />
                         <xs:element name="message" type="xs:string"/>
                         <xs:element name="location" type="xs:string" minOccurs="0"/>
                     </xs:all>
@@ -5514,13 +5714,13 @@
                     <xs:choice>
                         <xs:sequence>
                             <xs:choice>
-                                <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" minOccurs="0"/>
-                                <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" minOccurs="0"/>
+                                <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" minOccurs="0" />
+                                <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" minOccurs="0" />
                             </xs:choice>
                             <xs:element name="vendorName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckType"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:achTransactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckType" />
                             <xs:element name="vendorAddress" type="xp:address"  minOccurs="0"/>
                         </xs:sequence>
                     </xs:choice>
@@ -5536,13 +5736,13 @@
                     <xs:choice>
                         <xs:sequence>
                             <xs:choice>
-                                <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" minOccurs="0"/>
-                                <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" minOccurs="0"/>
+                                <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" minOccurs="0" />
+                                <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" minOccurs="0" />
                             </xs:choice>
                             <xs:element name="vendorName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckType"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:achTransactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckType" />
                             <xs:element name="vendorAddress" type="xp:address"  minOccurs="0"/>
                         </xs:sequence>
                     </xs:choice>
@@ -5558,12 +5758,12 @@
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:choice>
                         <xs:sequence>
-                            <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType"/>
+                            <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" />
                             <xs:element name="submerchantName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckType"/>
-                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:achTransactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckType" />
+                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0" />
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -5577,12 +5777,12 @@
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:choice>
                         <xs:sequence>
-                            <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType"/>
+                            <xs:element name="fundingSubmerchantId" type="xp:merchantIdentificationType" />
                             <xs:element name="submerchantName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckType"/>
-                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:achTransactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckType" />
+                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0" />
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -5596,12 +5796,12 @@
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:choice>
                         <xs:sequence>
-                            <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType"/>
+                            <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" />
                             <xs:element name="customerName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckType"/>
-                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:transactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckType" />
+                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0" />
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
@@ -5615,18 +5815,235 @@
                 <xs:extension base="xp:transactionTypeWithReportGroup">
                     <xs:choice>
                         <xs:sequence>
-                            <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType"/>
+                            <xs:element name="fundingCustomerId" type="xp:merchantIdentificationType" />
                             <xs:element name="customerName" type="xp:string256Type"/>
-                            <xs:element name="fundsTransferId" type="xp:string36Type"/>
-                            <xs:element name="amount" type="xp:transactionAmountType"/>
-                            <xs:element name="accountInfo" type="xp:echeckType"/>
-                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0"/>
+                            <xs:element name="fundsTransferId" type="xp:string36Type" />
+                            <xs:element name="amount" type="xp:transactionAmountType" />
+                            <xs:element name="accountInfo" type="xp:echeckType" />
+                            <xs:element name="customIdentifier" type="xp:string15Type" minOccurs="0" />
                         </xs:sequence>
                     </xs:choice>
                 </xs:extension>
             </xs:complexContent>
         </xs:complexType>
     </xs:element>-->
+
+    <xs:element name="BNPLAuthorizationRequest" substitutionGroup="xp:transaction">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="amount" type="xp:transactionAmountType" />
+                        <xs:element name="orderId" type="xp:string256Type" minOccurs="0"/>
+                        <xs:element name="provider" type="xp:provider" minOccurs="1"/>
+                        <xs:element ref="xp:postCheckoutRedirectUrl" minOccurs="0" />
+                        <xs:element ref="xp:customerInfo" minOccurs="0" />
+                        <xs:element ref="xp:billToAddress" minOccurs="0" />
+                        <xs:element ref="xp:shipToAddress" minOccurs="0" />
+                        <xs:element ref="xp:enhancedData" minOccurs="0" />
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BNPLCaptureRequest" substitutionGroup="xp:transaction">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="amount" type="xp:transactionAmountType" minOccurs="1"/>
+                        <xs:element name="orderId" type="xp:string256Type" minOccurs="0"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="1" />
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BNPLRefundRequest" substitutionGroup="xp:transaction">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="amount" type="xp:transactionAmountType" minOccurs="1"/>
+                        <xs:element name="orderId" type="xp:string256Type" minOccurs="0"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="1" />
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BNPLCancelRequest" substitutionGroup="xp:transaction">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="amount" type="xp:transactionAmountType" minOccurs="1"/>
+                        <xs:element name="orderId" type="xp:string256Type" minOccurs="0"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="1" />
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BNPLInquiryRequest" substitutionGroup="xp:transaction">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="orderId" type="xp:string256Type" minOccurs="0"/>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="1" />
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="finicityUrlRequest" substitutionGroup="xp:transaction">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="firstName" type="xp:string30Type"  minOccurs="0"  />
+                        <xs:element name="lastName" type="xp:string30Type"  minOccurs="0"  />
+                        <xs:element name="phoneNumber" type="xp:phoneType"  minOccurs="0"  />
+                        <xs:element name="email" type="xp:emailType"  minOccurs="0" />
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="finicityUrlResponse" substitutionGroup="xp:transactionResponse">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
+                        <xs:element name="response" type="xp:responseType" minOccurs="0"/>
+                        <xs:element name="responseTime" type="xs:dateTime" minOccurs="0"/>
+                        <xs:element name="message" type="xp:messageType" minOccurs="0"/>
+                        <xs:element name="location" type="xs:string" minOccurs="0"/>
+                        <xs:element name="echeckCustomerId" type="xp:string25Type" minOccurs="0"/>
+                        <xs:element name="url" type="xs:string" minOccurs="0"/>
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="finicityAccountRequest" substitutionGroup="xp:transaction">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="echeckCustomerId" type="xp:string25Type"  minOccurs="0" />
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="finicityAccountResponse" substitutionGroup="xp:transactionResponse">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
+                        <xs:element name="response" type="xp:responseType" minOccurs="0"/>
+                        <xs:element name="responseTime" type="xs:dateTime" minOccurs="0"/>
+                        <xs:element name="message" type="xp:messageType" minOccurs="0"/>
+                        <xs:element name="location" type="xs:string" minOccurs="0"/>
+                        <xs:element name="finicityAccount" type="xp:finicityAccountInfoType" minOccurs="0" />
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BNPLAuthResponse" substitutionGroup="xp:transactionResponse">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
+                        <xs:element name="response" type="xp:responseType" minOccurs="0"/>
+                        <xs:element name="responseTime" type="xs:dateTime" minOccurs="0"/>
+                        <xs:element name="message" type="xp:messageType" minOccurs="0"/>
+                        <xs:element name="location" type="xs:string" minOccurs="0"/>
+                        <xs:element name="checkoutUrl" type="xs:string" minOccurs="0"/>
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BNPLCaptureResponse" substitutionGroup="xp:transactionResponse">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
+                        <xs:element name="response" type="xp:responseType" minOccurs="0"/>
+                        <xs:element name="responseTime" type="xs:dateTime" minOccurs="0"/>
+                        <xs:element name="message" type="xp:messageType" minOccurs="0"/>
+                        <xs:element name="location" type="xs:string" minOccurs="0"/>
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BNPLRefundResponse" substitutionGroup="xp:transactionResponse">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
+                        <xs:element name="response" type="xp:responseType" minOccurs="0"/>
+                        <xs:element name="responseTime" type="xs:dateTime" minOccurs="0"/>
+                        <xs:element name="message" type="xp:messageType" minOccurs="0"/>
+                        <xs:element name="location" type="xs:string" minOccurs="0"/>
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BNPLCancelResponse" substitutionGroup="xp:transactionResponse">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
+                        <xs:element name="response" type="xp:responseType" minOccurs="0"/>
+                        <xs:element name="responseTime" type="xs:dateTime" minOccurs="0"/>
+                        <xs:element name="message" type="xp:messageType" minOccurs="0"/>
+                        <xs:element name="location" type="xs:string" minOccurs="0"/>
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BNPLInquiryResponse" substitutionGroup="xp:transactionResponse">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="xp:transactionTypeWithReportGroup">
+                    <xs:all>
+                        <xs:element name="cnpTxnId" type="xp:cnpIdType" minOccurs="0"/>
+                        <xs:element name="response" type="xp:responseType" minOccurs="0"/>
+                        <xs:element name="responseTime" type="xs:dateTime" minOccurs="0"/>
+                        <xs:element name="message" type="xp:messageType" minOccurs="0"/>
+                        <xs:element name="location" type="xs:string" minOccurs="0"/>
+                        <xs:element name="inquiryResult" type="xp:inquiryResultType" minOccurs="0"/>
+                    </xs:all>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
 
 
 </xs:schema>
