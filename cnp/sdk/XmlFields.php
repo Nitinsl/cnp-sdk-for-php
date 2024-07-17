@@ -738,8 +738,10 @@ class XmlFields
                         "accNum" =>XmlFields::returnArrayValue($hash_in, "accNum"),
                         "routingNum" =>XmlFields::returnArrayValue($hash_in, "routingNum"),
                         "checkNum" =>XmlFields::returnArrayValue($hash_in, "checkNum"),
-            			"ccdPaymentInformation" =>XmlFields::returnArrayValue($hash_in, "ccdPaymentInformation")
-            		
+            			"ccdPaymentInformation" =>XmlFields::returnArrayValue($hash_in, "ccdPaymentInformation"),
+            			"echeckCustomerId" =>XmlFields::returnArrayValue($hash_in, "echeckCustomerId"),
+            			"accountId" =>XmlFields::returnArrayValue($hash_in, "accountId")
+
             );
 
             return $hash_out;
@@ -1070,6 +1072,49 @@ class XmlFields
                 "sellerId" => XmlFields::returnArrayValue($hash_in, 'sellerId', 100),
                 "sellerTags" => XmlFields::sellerTagsType(XmlFields::returnArrayValue($hash_in, 'sellerTags')),
                 "username" => XmlFields::returnArrayValue($hash_in, 'username', 100),
+            );
+
+            return $hash_out;
+        }
+    }
+
+    public static function accountFundingTransactionData($hash_in)
+    {
+        if (isset($hash_in)){
+            $hash_out = array(
+                "receiverFirstName" => XmlFields::returnArrayValue($hash_in, 'receiverFirstName', 35),
+                "receiverLastName" => XmlFields::returnArrayValue($hash_in, 'receiverLastName', 35),
+                "receiverState" => XmlFields::returnArrayValue($hash_in, 'receiverState'),
+                "receiverCountry" => XmlFields::returnArrayValue($hash_in, 'receiverCountry'),
+                "receiverAccountNumber" => XmlFields::returnArrayValue($hash_in, 'receiverAccountNumber', 50),
+                "receiverAccountNumberType" => XmlFields::returnArrayValue($hash_in, 'receiverAccountNumberType'),
+                "accountFundingTransactionType" => XmlFields::returnArrayValue($hash_in, 'accountFundingTransactionType'),
+            );
+
+            return $hash_out;
+        }
+    }
+
+    public static function finicityAccountInfoType($hash_in)
+    {
+        if (isset($hash_in)){
+            $hash_out = array(
+                "accountId" => XmlFields::returnArrayValue($hash_in, 'accountId'),
+                "accType" => XmlFields::returnArrayValue($hash_in, 'accType'),
+                "realAccNum" => XmlFields::returnArrayValue($hash_in, 'receiverState',17),
+                "routingNum" => XmlFields::returnArrayValue($hash_in, 'routingNum',9),
+            );
+
+            return $hash_out;
+        }
+    }
+
+    public static function inquiryResultType($hash_in)
+    {
+        if (isset($hash_in)){
+            $hash_out = array(
+                "response" => XmlFields::returnArrayValue($hash_in, 'response',3),
+                "message" => XmlFields::returnArrayValue($hash_in, 'message',512),
             );
 
             return $hash_out;
