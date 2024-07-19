@@ -44,10 +44,19 @@ class CaptureGivenAuthFunctionalTest extends \PHPUnit_Framework_TestCase
                 'authDate' => '2002-10-09', 'authCode' => '543216',
                 'authAmount' => '12345'),
             'orderSource' => 'ecommerce',
+            'businessIndicator'=>'agentCashOut',
             'card' => array(
                 'type' => 'VI',
                 'number' => '4100000000000000',
-                'expDate' => '1210'));
+                'expDate' => '1210'),
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Harry',
+                'receiverState' => 'NU',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '1234567890',
+                'accountFundingTransactionType' => 'personToPerson',
+                'receiverAccountNumberType' => 'email'
+            ));
 
         $initialize = new CnpOnlineRequest();
         $captureGivenAuthResponse = $initialize->captureGivenAuthRequest($hash_in);
@@ -610,7 +619,7 @@ class CaptureGivenAuthFunctionalTest extends \PHPUnit_Framework_TestCase
                 'dutyAmount' => '0',
                 'discountCode' => 'OneTimeDiscount11',
                 'discountPercent' => '11',
-                'fulfilmentMethodType' => 'DELIVERY',
+                'fulfilmentMethodType' => 'STANDARD_SHIPPING',
                 'shipmentId' => '12222222',
                 'lineItemData' => array(
                     'itemSequenceNumber' => '1',

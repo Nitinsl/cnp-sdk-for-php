@@ -65,7 +65,7 @@ class EcheckCreditFunctionalTest extends \PHPUnit_Framework_TestCase
             'verify' => 'true',
             'orderId' => '12345',
             'orderSource' => 'ecommerce',
-            'echeck' => array('accType' => 'Checking', 'accNum' => '12345657890', 'routingNum' => '123456789', 'checkNum' => '123455'),
+            'echeck' => array('accType' => 'Checking', 'accNum' => '12345657890', 'routingNum' => '123456789', 'checkNum' => '123455','accountId' => 'account'),
             'billToAddress' => array('name' => 'Bob', 'city' => 'lowell', 'state' => 'MA', 'email' => 'vantiv.com'));
 
         $initialize = new CnpOnlineRequest();

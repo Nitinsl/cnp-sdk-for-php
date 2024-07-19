@@ -55,7 +55,7 @@ class EcheckRedepositFunctionalTest extends \PHPUnit_Framework_TestCase
             'orderId' => '12345',
             'cnpTxnId' => '123456789012345678',
             'orderSource' => 'ecommerce',
-            'echeck' => array('accType' => 'Checking', 'accNum' => '12345657890', 'routingNum' => '123456789', 'checkNum' => '123455'),
+            'echeck' => array('accType' => 'Checking', 'accNum' => '12345657890', 'routingNum' => '123456789', 'checkNum' => '123455','accountId' => 'account1234'),
             'billToAddress' => array('name' => 'Bob', 'city' => 'lowell', 'state' => 'MA', 'email' => 'vantiv.com'));
 
         $initialize = new CnpOnlineRequest();

@@ -41,7 +41,7 @@ class FundingInstructionOnlineFunctionalTest extends \PHPUnit_Framework_TestCase
             'fundingSubmerchantId' => '2111',
             'submerchantName' => '001',
             'fundsTransferId' => '12345678',
-            'amount' => '13',
+            'amount' => '1512151215',
             'accountInfo' => array(
                 'accType' => 'Checking',
                 'accNum' => '12345657890',
@@ -83,7 +83,7 @@ class FundingInstructionOnlineFunctionalTest extends \PHPUnit_Framework_TestCase
             'fundingSubmerchantId' => '2111',
             'submerchantName' => '001',
             'fundsTransferId' => '12345678',
-            'amount' => '13',
+            'amount' => '151215',
             'accountInfo' => array(
                 'accType' => 'Checking',
                 'accNum' => '12345657890',
@@ -264,7 +264,7 @@ class FundingInstructionOnlineFunctionalTest extends \PHPUnit_Framework_TestCase
         $hash_in = array('id' => 'id',
             'fundingSubmerchantId' => '2111',
             'fundsTransferId' => '12345678',
-            'amount' => '13',
+            'amount' => '13'
         );
         $initialize = new CnpOnlineRequest();
         $reserveDebitResponse = $initialize->reserveDebit($hash_in);
@@ -343,7 +343,7 @@ class FundingInstructionOnlineFunctionalTest extends \PHPUnit_Framework_TestCase
             'fundingSubmerchantId' => '2111',
             'vendorName' => 'Super Secret Tech Inc.',
             'fundsTransferId' => '12345678',
-            'amount' => '13',
+            'amount' => '15121512',
             'accountInfo' => array(
                 'accType' => 'Checking',
                 'accNum' => '12345657890',

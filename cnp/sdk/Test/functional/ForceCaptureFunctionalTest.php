@@ -49,6 +49,19 @@ class ForceCaptureFunctionalTest extends \PHPUnit_Framework_TestCase
                 'type' => 'VI',
                 'number' => '4100000000000000',
                 'expDate' => '1210'
+            ),
+            'businessIndicator'=>'debitPrepaidAccount',
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1210'),
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Smith',
+                'receiverState' => 'QC',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '1234567890',
+                'accountFundingTransactionType' => 'rapidMerchantSettlement',
+                'receiverAccountNumberType' => 'other'
             ));
 
         $initialize = new CnpOnlineRequest();
@@ -380,7 +393,7 @@ class ForceCaptureFunctionalTest extends \PHPUnit_Framework_TestCase
                 'dutyAmount' => '0',
                 'discountCode' => 'OneTimeDiscount11',
                 'discountPercent' => '11',
-                'fulfilmentMethodType' => 'DELIVERY',
+                'fulfilmentMethodType' => 'EXPEDITED_SHIPPING',
                 'shipmentId' => '12222222',
                 'lineItemData' => array(
                     'itemSequenceNumber' => '1',

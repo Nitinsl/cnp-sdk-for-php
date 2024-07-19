@@ -179,7 +179,33 @@ class CaptureFunctionalTest extends \PHPUnit_Framework_TestCase
                     'serviceClass' => 'First',
                     'departureDate' => '2022-09-20',
                     'originCity' => 'BOS')),
-        'foreignRetailerIndicator' => 'F'
+        'foreignRetailerIndicator' => 'F',
+            'enhancedData' => array(
+                'detailTax0' => array(
+                    'taxAmount' => '200',
+                    'taxRate' => '0.06',
+                    'taxIncludedInTotal' => true
+                ),
+                'lineItemData0' => array(
+                    'itemSequenceNumber' => '1',
+                    'itemDescription' => 'product 1',
+                    'productCode' => '123',
+                    'quantity' => 3,
+                    'unitOfMeasure' => 'unit',
+                    'taxAmount' => 200,
+                    'detailTax' => array(
+                        'taxIncludedInTotal' => true,
+                        'taxAmount' => 200
+                    ),
+                    'itemCategory' => 'Aparel',
+                    'itemSubCategory' => 'Clothing',
+                    'productId' => '1001',
+                    'productName' => 'N1',
+                ),
+                'salesTax' => '500',
+                'taxExempt' => false,
+                'fulfilmentMethodType' => 'EXPEDITED_SHIPPING'
+            ),
         );
 
         $initialize = new CnpOnlineRequest();

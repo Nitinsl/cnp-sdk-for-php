@@ -46,7 +46,20 @@ class CreditFunctionalTest extends \PHPUnit_Framework_TestCase
             'orderId' => '2111',
             'reportGroup' => 'Planets',
             'orderSource' => 'ecommerce',
-            'amount' => '123');
+            'amount' => '123',
+            'businessIndicator'=>'rapidMerchantSettlement',
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1210'),
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Jon',
+                'receiverState' => 'AZ',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '4356872257i',
+                'accountFundingTransactionType' => 'paymentOfOwnCreditCardBill',
+                'receiverAccountNumberType' => 'cardAccount'
+            ));
 
         $initialize = new CnpOnlineRequest();
         $creditResponse = $initialize->creditRequest($hash_in);
@@ -356,7 +369,7 @@ class CreditFunctionalTest extends \PHPUnit_Framework_TestCase
                 'dutyAmount' => '0',
                 'discountCode' => 'OneTimeDiscount11',
                 'discountPercent' => '11',
-                'fulfilmentMethodType' => 'DELIVERY',
+                'fulfilmentMethodType' => 'EXPEDITED_SHIPPING',
                 'shipmentId' => '12222222',
                 'lineItemData' => array(
                     'itemSequenceNumber' => '1',

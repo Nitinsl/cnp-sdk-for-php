@@ -48,7 +48,16 @@ class AuthFunctionalTest extends \PHPUnit_Framework_TestCase
             'orderId' => '22@33',
             'reportGroup' => 'Planets',
             'orderSource' => 'ecommerce',
-            'amount' => '0');
+            'businessIndicator'=>'agentCashOut',
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Smith',
+                'receiverState' => 'AZ',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '1234567890',
+                'accountFundingTransactionType' => 'walletTransfer',
+                'receiverAccountNumberType' => 'cardAccount'
+                ),
+            'amount' => '1512');
 
         $initialize = new CnpOnlineRequest();
         $authorizationResponse = $initialize->authorizationRequest($hash_in);
@@ -66,9 +75,20 @@ class AuthFunctionalTest extends \PHPUnit_Framework_TestCase
                 'expDate' => '1213',
                 'cardValidationNum' => '1213'),
             'id' => '1211',
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Smith',
+                'receiverState' => 'AZ',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '1234567890',
+                'accountFundingTransactionType' => 'walletTransfer',
+                'receiverAccountNumberType' => 'socialNetworkID'
+            ),
+
             'orderId' => '22@33',
             'reportGroup' => 'Planets',
             'orderSource' => 'ecommerce',
+            'orderChannel' => 'SCAN_AND_GO',
+            'fraudCheckAction' => 'DECLINED_NEED_FRAUD_CHECK',
             'amount' => '0',
             'enhancedData' => array(
                 'detailTax0' => array(
@@ -109,7 +129,8 @@ class AuthFunctionalTest extends \PHPUnit_Framework_TestCase
                     )
                 ),
                 'salesTax' => '500',
-                'taxExempt' => false
+                'taxExempt' => false,
+                'fulfilmentMethodType' => 'STANDARD_SHIPPING'
             ),
         );
 

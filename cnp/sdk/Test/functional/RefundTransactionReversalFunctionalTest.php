@@ -42,7 +42,31 @@ class RefundTransactionReversalFunctionalTest extends \PHPUnit_Framework_TestCas
             'cnpTxnId' => '12345678000',
             'amount' => '123',
             'pin' => '1234',
-            'surchargeAmount' => '4321'
+            'surchargeAmount' => '4321',
+            'enhancedData' => array(
+                'customerReference' => 'cust ref sale1',
+                'salesTax' => '1000',
+                'discountAmount' => '0',
+                'shippingAmount' => '0',
+                'dutyAmount' => '0',
+                'lineItemData' => array(
+                    'itemSequenceNumber' => '1',
+                    'itemDescription' => 'Clothes',
+                    'productCode' => 'TB123',
+                    'quantity' => '1',
+                    'unitOfMeasure' => 'EACH',
+                    'lineItemTotal' => '9900',
+                    'lineItemTotalWithTax' => '10000',
+                    'itemDiscountAmount' => '0',
+                    'commodityCode' => '301',
+                    'unitCost' => '31.02',
+                    'itemCategory' => 'Aparel',
+                    'itemSubCategory' => 'Clothing',
+                ),
+                'discountCode' => 'OneTimeDiscount11',
+                'discountPercent' => '11',
+                'fulfilmentMethodType' => 'EXPEDITED_SHIPPING',
+            )
         );
 
         $initilaize = new CnpOnlineRequest();
