@@ -15,7 +15,7 @@ class BNPLCancelRequestTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_BNPL_Cancel_Request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1291',
             'orderId' => '3191',
             'reportGroup' => 'Planets',

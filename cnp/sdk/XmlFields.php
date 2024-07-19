@@ -1082,12 +1082,12 @@ class XmlFields
     {
         if (isset($hash_in)){
             $hash_out = array(
-                "receiverFirstName" => XmlFields::returnArrayValue($hash_in, 'receiverFirstName', 35),
-                "receiverLastName" => XmlFields::returnArrayValue($hash_in, 'receiverLastName', 35),
+                "receiverFirstName" => XmlFields::returnArrayValue($hash_in, 'receiverFirstName'),
+                "receiverLastName" => XmlFields::returnArrayValue($hash_in, 'receiverLastName'),
                 "receiverState" => XmlFields::returnArrayValue($hash_in, 'receiverState'),
                 "receiverCountry" => XmlFields::returnArrayValue($hash_in, 'receiverCountry'),
-                "receiverAccountNumber" => XmlFields::returnArrayValue($hash_in, 'receiverAccountNumber', 50),
                 "receiverAccountNumberType" => XmlFields::returnArrayValue($hash_in, 'receiverAccountNumberType'),
+                "receiverAccountNumber" => XmlFields::returnArrayValue($hash_in, 'receiverAccountNumber'),
                 "accountFundingTransactionType" => XmlFields::returnArrayValue($hash_in, 'accountFundingTransactionType'),
             );
 

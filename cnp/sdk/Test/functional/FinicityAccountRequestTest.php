@@ -16,7 +16,6 @@ class finicityAccountRequestTest extends \PHPUnit_Framework_TestCase
     public function test_simple_finicity_Account_Request()
     {
         $hash_in = array('id' => 'id',
-            'id' => '1211',
             'reportGroup' => 'Planets',
             'echeckCustomerId' => 'abcdef'
         );

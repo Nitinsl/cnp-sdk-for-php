@@ -563,4 +563,32 @@ class CreditUnitTest extends \PHPUnit_Framework_TestCase
         $cnpTest->creditRequest($hash_in);;
     }
 
+    public function test_credit_with_accountFundingTransactionData()
+    {
+        $hash_in = array('id' => 'id',
+            'amount' => '123',
+            'payPalNotes' => 'Notes',
+            'cnpTxnId' => '12345678000',
+            'accountFundingTransactionData' => array(
+                'receiverFirstName' => 'abc',
+                'receiverLastName' => 'xyz',
+                'receiverState' => 'NY',
+                'receiverCountry' => 'US',
+                'receiverAccountNumberType' => 'IBAN',
+                'receiverAccountNumber' => '12345',
+                'accountFundingTransactionType' => 'agentCashOut'
+            ),
+        );
+
+        $mock = $this->getMock('cnp\sdk\CnpXmlMapper');
+        $mock
+            ->expects($this->once())
+            ->method('request')
+            ->with($this->matchesRegularExpression('/.*<accountFundingTransactionData>.*<receiverFirstName>abc.*<receiverLastName>xyz.*<receiverState>NY.*<receiverCountry>US.*<receiverAccountNumberType>IBAN.*<receiverAccountNumber>12345.*<accountFundingTransactionType>agentCashOut.*/'));
+
+        $cnpTest = new CnpOnlineRequest();
+        $cnpTest->newXML = $mock;
+        $cnpTest->creditRequest($hash_in);;
+    }
+
 }

@@ -14,7 +14,7 @@ class FinicityUnitTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_finicity_url_request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1211',
             'reportGroup' => 'Planets',
             'firstName' => 'abcd',
@@ -35,7 +35,7 @@ class FinicityUnitTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_finicity_account_request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1212',
             'reportGroup' => 'Planets',
             'echeckCustomerId' => 'abcdefg'

@@ -15,7 +15,7 @@ class BNPLInquiryRequestTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_BNPL_Inquiry_Request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1491',
             'orderId' => '4191',
             'cnpTxnId' => '011210745239578000',

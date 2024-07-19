@@ -16,7 +16,7 @@ class finicityUrlRequestTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_finicity_Url_Request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1211',
             'firstName' => 'abc',
             'lastName' => 'xyz',

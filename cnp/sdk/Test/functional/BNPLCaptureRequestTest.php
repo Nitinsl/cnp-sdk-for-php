@@ -15,7 +15,7 @@ class BNPLCaptureRequestTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_BNPL_Capture_Request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1211',
             'orderId' => '2111',
             'reportGroup' => 'Planets',

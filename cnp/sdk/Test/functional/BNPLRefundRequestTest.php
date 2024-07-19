@@ -15,7 +15,7 @@ class BNPLRefundRequestTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_BNPL_Refund_Request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1291',
             'orderId' => '2191',
             'reportGroup' => 'Planets',

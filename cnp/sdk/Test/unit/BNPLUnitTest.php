@@ -14,7 +14,7 @@ class BNPLUnitTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_BNPL_auth_request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1281',
             'orderId' => '2191',
             'reportGroup' => 'Planets',
@@ -99,7 +99,7 @@ class BNPLUnitTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_BNPL_capture_request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1284',
             'orderId' => '2111',
             'reportGroup' => 'Planets',
@@ -118,7 +118,7 @@ class BNPLUnitTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_BNPL_refund_request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1285',
             'orderId' => '2112',
             'reportGroup' => 'Planets',
@@ -137,7 +137,7 @@ class BNPLUnitTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_BNPL_cancel_request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1286',
             'orderId' => '2113',
             'reportGroup' => 'Planets',
@@ -156,7 +156,7 @@ class BNPLUnitTest extends \PHPUnit_Framework_TestCase
 
     public function test_simple_BNPL_inquiry_request()
     {
-        $hash_in = array('id' => 'id',
+        $hash_in = array(
             'id' => '1287',
             'reportGroup' => 'Planets',
             'orderId' => '2114',

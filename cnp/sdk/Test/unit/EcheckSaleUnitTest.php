@@ -83,12 +83,12 @@ class EcheckSaleUnitTest extends \PHPUnit_Framework_TestCase
     			'secondaryAmount' => '2000',
     			'orderSource'=>'ecommerce',
     			'billToAddress' => array(),
-    			'echeck' => array('accType'=>'Checking','routingNum'=>'123123123','accNum'=>'12345657890','checkNum'=>'123455'));
+    			'echeck' => array('accType'=>'Checking','routingNum'=>'123123123','accNum'=>'12345657890','checkNum'=>'123455','echeckCustomerId'=>'1234567','accountId'=>'012345'));
     	
     	$mock = $this->getMock('cnp\sdk\CnpXmlMapper');
     	$mock->expects($this->once())
     	->method('request')
-    	->with($this->matchesRegularExpression('/.*<secondaryAmount>2000.*<accType>Checking.*<accNum>12345657890.*<routingNum>123123123.*<checkNum>123455.*/'));
+    	->with($this->matchesRegularExpression('/.*<secondaryAmount>2000.*<accType>Checking.*<accNum>12345657890.*<routingNum>123123123.*<checkNum>123455.*<echeckCustomerId>1234567.*<accountId>012345.*/'));
     	//'/.*<cnpTxnId>12.*<orderSource>ecommerce.*<accType>Checking.*<accNum>12345657890.*<routingNum>123123.*<checkNum>123455.*/'
     	$cnpTest = new CnpOnlineRequest();
     	$cnpTest->newXML = $mock;

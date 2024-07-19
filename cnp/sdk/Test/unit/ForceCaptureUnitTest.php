@@ -513,4 +513,37 @@ class ForceCaptureUnitTest extends \PHPUnit_Framework_TestCase
         $cnpTest->newXML = $mock;
         $cnpTest->forceCaptureRequest($hash_in);
     }
+
+    public function test_forceCapture_with_accountFundingTransactionData()
+    {
+        $hash_in = array('id' => 'id',
+            'orderId' => '12344',
+            'amount' => '1000',
+            'orderSource' => 'ecommerce',
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1210'
+            ),
+            'accountFundingTransactionData' => array(
+                'receiverFirstName' => 'abc',
+                'receiverLastName' => 'xyz',
+                'receiverState' => 'TX',
+                'receiverCountry' => 'US',
+                'receiverAccountNumberType' => 'walletID',
+                'receiverAccountNumber' => '12345',
+                'accountFundingTransactionType' => 'fundTransfer'
+            ),
+
+        );
+
+        $mock = $this->getMock('cnp\sdk\CnpXmlMapper');
+        $mock	->expects($this->once())
+            ->method('request')
+            ->with($this->matchesRegularExpression('/.*<accountFundingTransactionData>.*<receiverFirstName>abc.*<receiverLastName>xyz.*<receiverState>TX.*<receiverCountry>US.*<receiverAccountNumberType>walletID.*<receiverAccountNumber>12345.*<accountFundingTransactionType>fundTransfer.*/'));
+
+        $cnpTest = new CnpOnlineRequest();
+        $cnpTest->newXML = $mock;
+        $cnpTest->forceCaptureRequest($hash_in);
+    }
 }
