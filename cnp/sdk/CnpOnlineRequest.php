@@ -755,7 +755,7 @@ class CnpOnlineRequest
             'cnpTxnId' => (XmlFields::returnArrayValue($hash_in, 'cnpTxnId')),
             'amount' => XmlFields::returnArrayValue($hash_in, 'amount'),
             'surchargeAmount' => XmlFields::returnArrayValue($hash_in, 'surchargeAmount'),
-            'enhancedData' => XmlFields::enhancedData($hash_in, 'enhancedData'),
+            'enhancedData' => (XmlFields::enhancedData(XmlFields::returnArrayValue($hash_in, 'enhancedData'))),
             'processingInstructions' => XmlFields::processingInstructions($hash_in, 'processingInstructions'),
             'customBilling' => XmlFields::customBilling($hash_in, 'customBilling'),
             'lodgingInfo' => XmlFields::lodgingInfo($hash_in, 'lodgingInfo'),
@@ -779,7 +779,7 @@ class CnpOnlineRequest
             'cnpTxnId' => (XmlFields::returnArrayValue($hash_in, 'cnpTxnId')),
             'amount' => XmlFields::returnArrayValue($hash_in, 'amount'),
             'surchargeAmount' => XmlFields::returnArrayValue($hash_in, 'surchargeAmount'),
-            'enhancedData' => XmlFields::enhancedData($hash_in, 'enhancedData'),
+            'enhancedData' => (XmlFields::enhancedData(XmlFields::returnArrayValue($hash_in, 'enhancedData'))),
             'processingInstructions' => XmlFields::processingInstructions($hash_in, 'processingInstructions'),
             'customBilling' => XmlFields::customBilling($hash_in, 'customBilling'),
             'lodgingInfo' => XmlFields::lodgingInfo($hash_in, 'lodgingInfo'),
@@ -1367,7 +1367,9 @@ class CnpOnlineRequest
     public function fastAccessFunding($hash_in)
     {
         $hash_out = array(
+            'fundingCustomerId' => XmlFields::returnArrayValue($hash_in, 'fundingCustomerId'),
             'fundingSubmerchantId' => XmlFields::returnArrayValue($hash_in, 'fundingSubmerchantId'),
+            'customerName' => XmlFields::returnArrayValue($hash_in, 'customerName'),
             'submerchantName' => XmlFields::returnArrayValue($hash_in, 'submerchantName'),
             'fundsTransferId' => XmlFields::returnArrayValue($hash_in, 'fundsTransferId'),
             'amount' => XmlFields::returnArrayValue($hash_in, 'amount'),
@@ -1377,9 +1379,8 @@ class CnpOnlineRequest
             //
             'card' => (XmlFields::cardType(XmlFields::returnArrayValue($hash_in, 'card'))),
             'token' => (XmlFields::cardTokenType(XmlFields::returnArrayValue($hash_in, 'token'))),
-            'paypage' => (XmlFields::cardPaypageType(XmlFields::returnArrayValue($hash_in, 'paypage'))),
-            'fundingCustomerId' => XmlFields::returnArrayValue($hash_in, 'fundingCustomerId'),
-            'customerName' => XmlFields::returnArrayValue($hash_in, 'customerName')
+            'paypage' => (XmlFields::cardPaypageType(XmlFields::returnArrayValue($hash_in, 'paypage')))
+
         );
         $fastAccessFunding = $this->processRequest($hash_out, $hash_in, "fastAccessFunding");
         return $fastAccessFunding;
