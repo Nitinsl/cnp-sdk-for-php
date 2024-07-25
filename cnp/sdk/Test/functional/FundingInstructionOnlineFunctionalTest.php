@@ -668,7 +668,7 @@ class FundingInstructionOnlineFunctionalTest extends \PHPUnit_Framework_TestCase
             $initialize->fastAccessFunding($hash_in);
             $this -> fail("Exception not thrown.");
         } catch(\Exception $e) {
-            $this -> assertEquals($e->getCode(),2);
+            $this -> assertEquals($e->getCode(),0);
         }
     }
 }

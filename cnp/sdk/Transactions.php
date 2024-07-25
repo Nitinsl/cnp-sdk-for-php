@@ -106,7 +106,7 @@ class Transactions {
             'businessIndicator' => XmlFields::returnArrayValue($hash_in, 'businessIndicator'),
             'orderChannel' => XmlFields::returnArrayValue($hash_in, 'orderChannel'),
             'fraudCheckStatus' => XmlFields::returnArrayValue($hash_in, 'fraudCheckStatus'),
-            'crypto' => XmlFields::returnArrayValue($hash_in, 'crypto')
+            'crypto' => XmlFields::returnArrayValue($hash_in, 'crypto'),
         );
 
         return $hash_out;
@@ -118,7 +118,8 @@ class Transactions {
             'amount' => XmlFields::returnArrayValue ( $hash_in, 'amount' ),
             'surchargeAmount' => XmlFields::returnArrayValue ( $hash_in, 'surchargeAmount' ),
             'payPalNotes' => XmlFields::returnArrayValue ( $hash_in, 'payPalNotes' ),
-            'actionReason' => XmlFields::returnArrayValue ( $hash_in, 'actionReason' )
+            'actionReason' => XmlFields::returnArrayValue ( $hash_in, 'actionReason' ),
+            'additionalCOFData' => (XmlFields::additionalCOFData(XmlFields::returnArrayValue($hash_in, 'additionalCOFData')))
         );
 
         return $hash_out;
@@ -145,8 +146,10 @@ class Transactions {
             'amount' => XmlFields::returnArrayValue ( $hash_in, 'amount' ),
             'secondaryAmount' => XmlFields::returnArrayValue ( $hash_in, 'secondaryAmount' ),
             'surchargeAmount' => XmlFields::returnArrayValue ( $hash_in, 'surchargeAmount' ),
+            'pin' => XmlFields::returnArrayValue($hash_in, 'pin'),
             'orderSource' => XmlFields::returnArrayValue ( $hash_in, 'orderSource' ),
             'billToAddress' => XmlFields::contact ( XMLFields::returnArrayValue ( $hash_in, 'billToAddress' ) ),
+            'additionalCOFData' => (XmlFields::additionalCOFData(XmlFields::returnArrayValue($hash_in, 'additionalCOFData'))),
             'card' => XmlFields::cardType ( XMLFields::returnArrayValue ( $hash_in, 'card' ) ),
             'paypal' => XmlFields::credit_payPal ( XMLFields::returnArrayValue ( $hash_in, 'paypal' ) ),
             'token' => XmlFields::cardTokenType ( XMLFields::returnArrayValue ( $hash_in, 'token' ) ),
@@ -161,7 +164,10 @@ class Transactions {
             'amexAggregatorData' => XmlFields::amexAggregatorData ( XMLFields::returnArrayValue ( $hash_in, 'amexAggregatorData' ) ),
             'payPalNotes' => XmlFields::returnArrayValue ( $hash_in, 'payPalNotes' ),
             'actionReason' => XmlFields::returnArrayValue ( $hash_in, 'actionReason' ),
-            'merchantCategoryCode' => XmlFields::returnArrayValue ( $hash_in, 'merchantCategoryCode' )
+            'merchantCategoryCode' => XmlFields::returnArrayValue ( $hash_in, 'merchantCategoryCode' ),
+            'passengerTransportData' => XmlFields::passengerTransportData(XmlFields::returnArrayValue($hash_in, 'passengerTransportData')),
+            'businessIndicator' => XmlFields::returnArrayValue($hash_in, 'businessIndicator'),
+            'accountFundingTransactionData' => XmlFields::accountFundingTransactionData(XmlFields::returnArrayValue($hash_in, 'accountFundingTransactionData'))
         );
 
         return $hash_out;
@@ -301,7 +307,8 @@ class Transactions {
             'id'=>XmlFields::returnArrayValue($hash_in,'id'),
             'echeck' => XmlFields::echeckType ( XmlFields::returnArrayValue ( $hash_in, 'echeck' ) ),
             'echeckToken' => XmlFields::echeckTokenType ( XmlFields::returnArrayValue ( $hash_in, 'echeckToken' ) ),
-            'merchantData' => (XmlFields::merchantData ( XmlFields::returnArrayValue ( $hash_in, 'merchantData' ) ))
+            'merchantData' => (XmlFields::merchantData ( XmlFields::returnArrayValue ( $hash_in, 'merchantData' ) )),
+            'customIdentifier' => XmlFields::returnArrayValue($hash_in, 'customIdentifier')
         );
 
         return $hash_out;
@@ -319,7 +326,9 @@ class Transactions {
             'shipToAddress' => XmlFields::contact ( XmlFields::returnArrayValue ( $hash_in, 'shipToAddress' ) ),
             'echeck' => XmlFields::echeckType ( XmlFields::returnArrayValue ( $hash_in, 'echeck' ) ),
             'echeckToken' => XmlFields::echeckTokenType ( XmlFields::returnArrayValue ( $hash_in, 'echeckToken' ) ),
-            'customBilling' => XmlFields::customBilling ( XmlFields::returnArrayValue ( $hash_in, 'customBilling' ) )
+            'customBilling' => XmlFields::customBilling ( XmlFields::returnArrayValue ( $hash_in, 'customBilling' ) ),
+            'merchantData' => XmlFields::merchantData(XmlFields::returnArrayValue($hash_in, 'merchantData')),
+            'customIdentifier' => XmlFields::returnArrayValue($hash_in, 'customIdentifier')
         );
 
         return $hash_out;
@@ -335,7 +344,9 @@ class Transactions {
             'billToAddress' => XmlFields::contact ( XmlFields::returnArrayValue ( $hash_in, 'billToAddress' ) ),
             'echeck' => XmlFields::echeckType ( XmlFields::returnArrayValue ( $hash_in, 'echeck' ) ),
             'echeckToken' => XmlFields::echeckTokenType ( XmlFields::returnArrayValue ( $hash_in, 'echeckToken' ) ),
-            'customBilling' => XmlFields::customBilling ( XmlFields::returnArrayValue ( $hash_in, 'customBilling' ) )
+            'customBilling' => XmlFields::customBilling ( XmlFields::returnArrayValue ( $hash_in, 'customBilling' ) ),
+            'merchantData' => XmlFields::merchantData(XmlFields::returnArrayValue($hash_in, 'merchantData')),
+            'customIdentifier' => XmlFields::returnArrayValue($hash_in, 'customIdentifier')
         );
 
         return $hash_out;
@@ -430,11 +441,12 @@ class Transactions {
                 'cnpTxnId' => (XmlFields::returnArrayValue($hash_in,'cnpTxnId')),
                 'amount' => XmlFields::returnArrayValue($hash_in, 'amount'),
                 'surchargeAmount' => XmlFields::returnArrayValue($hash_in, 'surchargeAmount'),
-                'enhancedData' => XmlFields::enhancedData($hash_in, 'enhancedData'),
+                'enhancedData' => XmlFields::enhancedData ( XMLFields::returnArrayValue ( $hash_in, 'enhancedData' ) ),
                 'processingInstructions' => XmlFields::processingInstructions($hash_in, 'processingInstructions'),
                 'customBilling' => XmlFields::customBilling($hash_in, 'customBilling'),
                 'lodgingInfo' => XmlFields::lodgingInfo($hash_in, 'lodgingInfo'),
-                'pin' => (XmlFields::returnArrayValue($hash_in, 'pin'))
+                'pin' => (XmlFields::returnArrayValue($hash_in, 'pin')),
+                'passengerTransportData' => XmlFields::passengerTransportData(XmlFields::returnArrayValue($hash_in, 'passengerTransportData'))
         );
         return $hash_out;
     }
@@ -445,11 +457,12 @@ class Transactions {
             'cnpTxnId' => (XmlFields::returnArrayValue($hash_in,'cnpTxnId')),
             'amount' => XmlFields::returnArrayValue($hash_in, 'amount'),
             'surchargeAmount' => XmlFields::returnArrayValue($hash_in, 'surchargeAmount'),
-            'enhancedData' => XmlFields::enhancedData($hash_in, 'enhancedData'),
+            'enhancedData' => XmlFields::enhancedData ( XMLFields::returnArrayValue ( $hash_in, 'enhancedData' ) ),
             'processingInstructions' => XmlFields::processingInstructions($hash_in, 'processingInstructions'),
             'customBilling' => XmlFields::customBilling($hash_in, 'customBilling'),
             'lodgingInfo' => XmlFields::lodgingInfo($hash_in, 'lodgingInfo'),
-            'pin' => (XmlFields::returnArrayValue($hash_in, 'pin'))
+            'pin' => (XmlFields::returnArrayValue($hash_in, 'pin')),
+            'passengerTransportData' => XmlFields::passengerTransportData(XmlFields::returnArrayValue($hash_in, 'passengerTransportData'))
         );
         return $hash_out;
     }
