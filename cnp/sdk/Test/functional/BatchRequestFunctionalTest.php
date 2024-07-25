@@ -479,7 +479,9 @@ class BatchRequestFunctionalTest extends \PHPUnit_Framework_TestCase
                 'accType' => 'Checking',
                 'accNum' => '12345657890',
                 'routingNum' => '123456789',
-                'checkNum' => '123455'
+                'checkNum' => '123455',
+                'echeckCustomerId'=>'1234567',
+                'accountId'=>'012345'
             )
         );
         $batch_request = new BatchRequest ($this->direct);
@@ -2810,6 +2812,572 @@ class BatchRequestFunctionalTest extends \PHPUnit_Framework_TestCase
 
         );
         $batch->addAuth($hash_in);
+
+        $request->addBatchRequest($batch);
+
+        $resp = new CnpResponseProcessor($request->sendToCnp());
+
+        $message = $resp->getXmlReader()->getAttribute("message");
+        $response = $resp->getXmlReader()->getAttribute("response");
+        $this->assertEquals("Valid Format", $message);
+        $this->assertEquals(0, $response);
+
+    }
+
+    public function test_batch_passengerTransportData_fraudCheckAction()
+    {
+        if(strtolower($this->preliveStatus) == 'down'){
+            $this->markTestSkipped('Prelive is not available');
+        }
+
+        $request = new CnpRequest();
+
+        $batch = new BatchRequest();
+        $hash_in = array('id' => '123',
+            'card' => array('type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1210'),
+            'orderId' => '22@33',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'amount' => '1000',
+            'orderChannel' => 'SCAN_AND_GO',
+            'businessIndicator'=>'agentCashOut',
+            'passengerTransportData' =>array(
+                'passengerName' =>'Mrs. Abc',
+                'ticketNumber' =>'ATL456789010000' ,
+                'issuingCarrier' =>'AMTK',
+                'carrierName' =>'AMTK',
+                'restrictedTicketIndicator' =>'99999',
+                'numberOfAdults' =>'3',
+                'numberOfChildren' =>'0',
+                'customerCode' =>'Railway',
+                'arrivalDate' =>'2023-09-20',
+                'issueDate' =>'2023-09-10',
+                'travelAgencyCode' =>'12345678',
+                'travelAgencyName' =>'Travel R Us23456789054321',
+                'computerizedReservationSystem' =>'STRT',
+                'creditReasonIndicator' =>'P',
+                'ticketChangeIndicator' =>'C',
+                'ticketIssuerAddress' =>'99 Second St',
+                'exchangeTicketNumber' =>'123456789012346',
+                'exchangeAmount' =>'500006',
+                'exchangeFeeAmount' =>'5006',
+                'tripLegData' =>array(
+                    'tripLegNumber' =>'12' ,
+                    'serviceClass' =>'First',
+                    'departureDate' =>'2023-09-20',
+                    'originCity' =>'BOS')
+            ),
+            'fraudCheckAction' => 'APPROVED_SKIP_FRAUD_CHECK'
+        );
+        $batch->addAuth($hash_in);
+
+        $hash_in = array(
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1210'
+            ),
+            'id' => '1211',
+            'orderId' => '2111',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'amount' => '123',
+            'additionalCOFData' => array(
+                'totalPaymentCount' => 'ND',
+                'paymentType' => 'Fixed Amount',
+                'uniqueId' => '234GTYH654RF13',
+                'frequencyOfMIT' => 'Annually',
+                'validationReference' => 'ANBH789UHY564RFC@EDB',
+                'sequenceIndicator' => '86',
+            ),
+            'businessIndicator'=>'agentCashOut',
+            'passengerTransportData' =>array(
+                'passengerName' =>'Mrs. Huxley234567890123456789',
+                'ticketNumber' =>'ATL456789012345' ,
+                'issuingCarrier' =>'AMTK',
+                'carrierName' =>'AMTK',
+                'restrictedTicketIndicator' =>'99999',
+                'numberOfAdults' =>'2',
+                'numberOfChildren' =>'0',
+                'customerCode' =>'Railway',
+                'arrivalDate' =>'2022-09-20',
+                'issueDate' =>'2022-09-10',
+                'travelAgencyCode' =>'12345678',
+                'travelAgencyName' =>'Travel R Us23456789012345',
+                'computerizedReservationSystem' =>'STRT',
+                'creditReasonIndicator' =>'P',
+                'ticketChangeIndicator' =>'C',
+                'ticketIssuerAddress' =>'99 Second St',
+                'exchangeTicketNumber' =>'123456789012346',
+                'exchangeAmount' =>'500046',
+                'exchangeFeeAmount' =>'5046',
+                'tripLegData' =>array(
+                    'tripLegNumber' =>'10' ,
+                    'serviceClass' =>'First',
+                    'departureDate' =>'2022-09-20',
+                    'originCity' =>'BOS')
+            ),
+            'accountFundingTransactionData' => array(
+                'receiverFirstName' => 'abcd',
+                'receiverLastName' => 'wxyz',
+                'receiverState' => 'AK',
+                'receiverCountry' => 'AD',
+                'receiverAccountNumberType' => 'BANAndBIC',
+                'receiverAccountNumber' => '123456',
+                'accountFundingTransactionType' => 'accountToAccount'
+            )
+
+        );
+        $batch->addCredit($hash_in);
+
+        $hash_in = array(
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1210'
+            ),
+            'id' => '1211',
+            'cnpTxnId' => '12345678000',
+            'orderId' => '2111',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'amount' => '123',
+            'additionalCOFData' => array(
+                'totalPaymentCount' => 'ND',
+                'paymentType' => 'Fixed Amount',
+                'uniqueId' => '12345678u',
+                'frequencyOfMIT' => 'Annually',
+                'validationReference' => 'ANBH789UHY564RFC@EDB',
+                'sequenceIndicator' => '86'
+            ),
+
+        );
+        $batch->addAuthReversal($hash_in);
+
+        $hash_in = array(
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1210'
+            ),
+            'id' => '1211',
+            'orderId' => '2111',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'amount' => '123',
+            'echeck' => array('accType' => 'Checking', 'accNum' => '12345657890', 'routingNum' => '123456789', 'checkNum' => '123455', 'ccdPaymentInformation' => 'ccd'),
+            'billToAddress' => array('name' => 'Bob', 'city' => 'lowell', 'state' => 'MA', 'email' => 'vantiv.com'),
+            'customBilling' => array('city' => 'Boston', 'descriptor' => 'descriptor'),
+            'merchantData' => array('campaign' => 'camping'),
+            'customIdentifier' => 'identifier'
+        );
+
+        $batch->addEcheckSale($hash_in);
+
+        $request->addBatchRequest($batch);
+
+        $resp = new CnpResponseProcessor($request->sendToCnp());
+
+        $message = $resp->getXmlReader()->getAttribute("message");
+        $response = $resp->getXmlReader()->getAttribute("response");
+        $this->assertEquals("Valid Format", $message);
+        $this->assertEquals(0, $response);
+
+    }
+
+    public function test_batch_with_accountFundingTransactionData_fraudCheckAction()
+    {
+        if(strtolower($this->preliveStatus) == 'down'){
+            $this->markTestSkipped('Prelive is not available');
+        }
+
+        $request = new CnpRequest();
+
+        $batch = new BatchRequest($this->direct);
+        $hash_in = array(
+            'id' => 'id',
+            'orderId' => '82364_cnpApiAuth',
+            'amount' => '1001',
+            'orderSource' => 'telephone',
+            'customerInfo' => array(
+                'accountUsername' => 'username123',
+                'userAccountNumber' => '7647326235897',
+                'userAccountEmail' => 'dummtemail@abc.com',
+                'membershipId' => '23874682304',
+                'membershipPhone' => '16818807607551094758',
+                'membershipEmail' => 'email@abc.com',
+                'membershipName' => 'member123',
+                'accountCreatedDate' => '2050-07-17',
+                'userAccountPhone' => '1392345678',
+            ),
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4005518220000002',
+                'expDate' => '0150',
+                'cardValidationNum' => '987',
+            ),
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Jon',
+                'receiverState' => 'CA',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '4356872257i',
+                'accountFundingTransactionType' => 'businessDisbursement',
+                'receiverAccountNumberType' => 'RTNAndBAN'
+            ),
+            'enhancedData' => array(
+                'customerReference' => 'cust ref sale1',
+                'salesTax' => '1000',
+                'discountAmount' => '0',
+                'shippingAmount' => '0',
+                'dutyAmount' => '0',
+                'lineItemData' => array(
+                    'itemSequenceNumber' => '1',
+                    'itemDescription' => 'Clothes',
+                    'productCode' => 'TB123',
+                    'quantity' => '1',
+                    'unitOfMeasure' => 'EACH',
+                    'lineItemTotal' => '9900',
+                    'lineItemTotalWithTax' => '10000',
+                    'itemDiscountAmount' => '0',
+                    'commodityCode' => '301',
+                    'unitCost' => '31.02',
+                    'itemCategory' => 'Aparel',
+                    'itemSubCategory' => 'Clothing',
+                    'shipmentId' => '12222222',
+                    'subscription' => array(
+                        'subscriptionId' => 'subscription',
+                        'nextDeliveryDate' => '2023-01-01',
+                        'periodUnit' => 'YEAR',
+                        'numberOfPeriods' => '123',
+                        'regularItemPrice' => '123',
+                        'currentPeriod' => '123',
+                    )
+                ),
+                'discountCode' => 'OneTimeDiscount11',
+                'discountPercent' => '11',
+                'fulfilmentMethodType' => 'DELIVERY',
+            ),
+            'lodgingInfo' => array(
+                'bookingID' => 'book1234512341',
+                'passengerName' => 'john cena',
+                'propertyAddress' => array(
+                    'name' => 'property1',
+                    'city' => 'nyc',
+                    'region' => 'KBA',
+                    'country' => 'USA',
+                ),
+                'travelPackageIndicator' => 'AirlineReservation',
+                'smokingPreference' => 'N',
+                'numberOfRooms' => '13',
+                'tollFreePhoneNumber' => '1981876578076548',
+            ),
+            'orderChannel' => 'PHONE',
+            'fraudCheckStatus' => 'CLOSE',
+            'overridePolicy' => 'merchantPolicyToDecline',
+            'fsErrorCode' => 'error123',
+            'merchantAccountStatus' => 'activeAccount',
+            'productEnrolled' => 'GUARPAY2',
+            'decisionPurpose' => 'INFORMATION_ONLY',
+            'fraudSwitchIndicator' => 'PRE',
+        );
+
+        $batch->addAuth($hash_in);
+
+        $hash_in = array(
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000001',
+                'expDate' => '1213',
+                'cardValidationNum' => '1213'
+            ),
+            'id' => '1211',
+            'orderId' => '2111',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'orderChannel' => 'SCAN_AND_GO',
+            'fraudCheckAction' => 'APPROVED_SKIP_FRAUD_CHECK',
+            'amount' => '123',
+            'businessIndicator'=>'businessToBusinessTransfer',
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Jon',
+                'receiverState' => 'CA',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '4356872257i',
+                'accountFundingTransactionType' => 'businessDisbursement',
+                'receiverAccountNumberType' => 'RTNAndBAN'
+            ),
+            'overridePolicy' => 'merchantPolicyToDecline',
+            'fsErrorCode' => 'error123',
+            'merchantAccountStatus' => 'activeAccount',
+            'productEnrolled' => 'GUARPAY2',
+            'decisionPurpose' => 'INFORMATION_ONLY',
+            'fraudSwitchIndicator' => 'PRE',
+    );
+
+        $batch->addSale($hash_in);
+
+        $hash_in = array('id' => 'id',
+            'orderId' => '12344',
+            'merchantId' => '101',
+            'version' => '8.8',
+            'reportGroup' => 'Planets',
+            'amount' => '106',
+            'orderSource' => 'ecommerce',
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000001',
+                'expDate' => '1213',
+                'cardValidationNum' => '1213'
+            ),
+            'enhancedData' => array(
+                'customerReference' => 'cust ref sale1',
+                'salesTax' => '10',
+                'discountAmount' => '0',
+                'shippingAmount' => '0',
+                'dutyAmount' => '0',
+                'discountCode' => 'OneTimeDiscount11',
+                'discountPercent' => '11',
+                'fulfilmentMethodType' => 'EXPEDITED_SHIPPING',
+                'shipmentId' => '12222222',
+                'lineItemData' => array(
+                    'itemSequenceNumber' => '1',
+                    'itemDescription' => 'Clothes',
+                    'productCode' => 'TB123',
+                    'quantity' => '1',
+                    'unitOfMeasure' => 'EACH',
+                    'lineItemTotal' => '9900',
+                    'lineItemTotalWithTax' => '10000',
+                    'itemDiscountAmount' => '0',
+                    'commodityCode' => '301',
+                    'unitCost' => '31.02',
+                    'itemCategory' => 'Aparel',
+                    'itemSubCategory' => 'Clothing',
+                    'shipmentId' => '12222222',
+                    'subscription' => array(
+                        'subscriptionId' => 'subscription',
+                        'nextDeliveryDate' => '2023-01-01',
+                        'periodUnit' => 'YEAR',
+                        'numberOfPeriods' => '123',
+                        'regularItemPrice' => '123',
+                        'currentPeriod' => '123',
+                    ))),
+                'passengerTransportData' =>array(
+                    'passengerName' =>'Mrs. Huxley234567890123456789',
+                    'ticketNumber' =>'ATL456789012345' ,
+                    'issuingCarrier' =>'AMTK',
+                    'carrierName' =>'AMTK',
+                    'restrictedTicketIndicator' =>'99999',
+                    'numberOfAdults' =>'2',
+                    'numberOfChildren' =>'0',
+                    'customerCode' =>'Railway',
+                    'arrivalDate' =>'2022-09-20',
+                    'issueDate' =>'2022-09-10',
+                    'travelAgencyCode' =>'12345678',
+                    'travelAgencyName' =>'Travel R Us23456789012345',
+                    'computerizedReservationSystem' =>'STRT',
+                    'creditReasonIndicator' =>'P',
+                    'ticketChangeIndicator' =>'C',
+                    'ticketIssuerAddress' =>'99 Second St',
+                    'exchangeTicketNumber' =>'123456789012346',
+                    'exchangeAmount' =>'500046',
+                    'exchangeFeeAmount' =>'5046',
+                    'tripLegData' =>array(
+                        'tripLegNumber' =>'10',
+                        'serviceClass' =>'First',
+                        'departureDate' =>'2022-09-20',
+                        'originCity' =>'BOS')),
+            'foreignRetailerIndicator' => 'F',
+            'processingType' => 'initialRecurring',
+            'merchantCategoryCode' => '6789',
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Smith',
+                'receiverState' => 'QC',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '1234567890',
+                'accountFundingTransactionType' => 'rapidMerchantSettlement',
+                'receiverAccountNumberType' => 'other'
+            ));
+        $batch->addForceCapture($hash_in);
+
+        $hash_in = array('id' => 'id',
+            'cnpTxnId' => '1234567891234567891',
+            'orderId' => '22@33123456789012345678901234567890',
+            'pin' => '2139',
+            'amount' => '1300',
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000001',
+                'expDate' => '1213',
+                'cardValidationNum' => '1213'
+            ),
+            'passengerTransportData' => array(
+                'passengerName' => 'Mrs. Huxley234567890123456789',
+                'ticketNumber' => 'ATL456789012345',
+                'issuingCarrier' => 'AMTK',
+                'carrierName' => 'AMTK',
+                'restrictedTicketIndicator' => '99999',
+                'numberOfAdults' => '2',
+                'numberOfChildren' => '0',
+                'customerCode' => 'Railway',
+                'arrivalDate' => '2022-09-20',
+                'issueDate' => '2022-09-10',
+                'travelAgencyCode' => '12345678',
+                'travelAgencyName' => 'Travel R Us23456789012345',
+                'computerizedReservationSystem' => 'STRT',
+                'creditReasonIndicator' => 'P',
+                'ticketChangeIndicator' => 'C',
+                'ticketIssuerAddress' => '99 Second St',
+                'exchangeTicketNumber' => '123456789012346',
+                'exchangeAmount' => '500046',
+                'exchangeFeeAmount' => '5046',
+                'tripLegData' => array(
+                    'tripLegNumber' => '10',
+                    'serviceClass' => 'First',
+                    'departureDate' => '2022-09-20',
+                    'originCity' => 'BOS')),
+            'foreignRetailerIndicator' => 'F',
+            'enhancedData' => array(
+                'detailTax0' => array(
+                    'taxAmount' => '200',
+                    'taxRate' => '0.06',
+                    'taxIncludedInTotal' => true
+                ),
+                'lineItemData0' => array(
+                    'itemSequenceNumber' => '1',
+                    'itemDescription' => 'product 1',
+                    'productCode' => '123',
+                    'quantity' => 3,
+                    'unitOfMeasure' => 'unit',
+                    'taxAmount' => 200,
+                    'detailTax' => array(
+                        'taxIncludedInTotal' => true,
+                        'taxAmount' => 200
+                    ),
+                    'itemCategory' => 'Aparel',
+                    'itemSubCategory' => 'Clothing',
+                    'productId' => '1001',
+                    'productName' => 'N1',
+                ),
+                'payPalOrderComplete' => 'true',
+                'salesTax' => '500',
+                'taxExempt' => false,
+                'fulfilmentMethodType' => 'EXPEDITED_SHIPPING'
+            ),
+        );
+
+        $batch->addCapture($hash_in);
+
+        $hash_in = array(
+            'id' => 'id',
+            'orderId' => '12344',
+            'amount' => '106',
+            'authInformation' => array(
+                'authDate' => '2002-10-09',
+                'authCode' => '543216',
+                'authAmount' => '12345'
+            ),
+            'billToAddress' => array('name' => 'Bob', 'city' => 'lowell', 'state' => 'MA', 'email' => 'vantiv.com'),
+            'processingInstructions' => array('bypassVelocityCheck' => 'true'),
+            'orderSource' => 'ecommerce',
+            'crypto' => 'true',
+            'billToAddress' => array(
+                'name' => 'David Berman A',
+                'addressLine1' => '10 Main Street',
+                'city' => 'San Jose',
+                'state' => 'ca',
+                'zip' => '95032',
+                'country' => 'USA',
+                'email' => 'dberman@phoenixProcessing.com',
+                'phone' => '781-270-1111',
+                'sellerId' => '21234234A1',
+                'url' => 'www.google.com',
+            ),
+            'shipToAddress' => array(
+                'name' => 'Raymond J. Johnson Jr. B',
+                'addressLine1' => '123 Main Street',
+                'city' => 'McLean',
+                'state' => 'VA',
+                'zip' => '22102',
+                'country' => 'USA',
+                'email' => 'ray@rayjay.com',
+                'phone' => '978-275-0000',
+                'sellerId' => '21234234A2',
+                'url' => 'www.google.com',
+            ),
+            'retailerAddress' => array(
+                'name' => 'John doe',
+                'addressLine1' => '123 Main Street',
+                'addressLine2' => '123 Main Street',
+                'addressLine3' => '123 Main Street',
+                'city' => 'Cincinnati',
+                'state' => 'OH',
+                'zip' => '45209',
+                'country' => 'USA',
+                'email' => 'noone@abc.com',
+                'phone' => '1234562783',
+                'sellerId' => '21234234A',
+                'companyName' => 'Google INC',
+                'url' => 'www.google.com',
+            ),
+            'additionalCOFData' => array(
+                'totalPaymentCount' => 'ND',
+                'paymentType' => 'Fixed Amount',
+                'uniqueId' => '234GTYH654RF13',
+                'frequencyOfMIT' => 'Annually',
+                'validationReference' => 'ANBH789UHY564RFC@EDB',
+                'sequenceIndicator' => '86',
+            ),
+            'businessIndicator'=>'agentCashOut',
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000001',
+                'expDate' => '1213',
+                'cardValidationNum' => '1213'
+            ),
+            'processingType' => 'initialRecurring',
+            'originalNetworkTransactionId' => 'abcdefghijklmnopqrstuvwxyz',
+            'originalTransactionAmount' => '1000',
+            'merchantCategoryCode' => '6770',
+            'passengerTransportData' =>array(
+                'passengerName' =>'Mrs. Huxley234567890123456789',
+                'ticketNumber' =>'ATL456789012345' ,
+                'issuingCarrier' =>'AMTK',
+                'carrierName' =>'AMTK',
+                'restrictedTicketIndicator' =>'99999',
+                'numberOfAdults' =>'2',
+                'numberOfChildren' =>'0',
+                'customerCode' =>'Railway',
+                'arrivalDate' =>'2022-09-20',
+                'issueDate' =>'2022-09-10',
+                'travelAgencyCode' =>'12345678',
+                'travelAgencyName' =>'Travel R Us23456789012345',
+                'computerizedReservationSystem' =>'STRT',
+                'creditReasonIndicator' =>'P',
+                'ticketChangeIndicator' =>'C',
+                'ticketIssuerAddress' =>'99 Second St',
+                'exchangeTicketNumber' =>'123456789012346',
+                'exchangeAmount' =>'500046',
+                'exchangeFeeAmount' =>'5046',
+                'tripLegData' =>array(
+                    'tripLegNumber' =>'10' ,
+                    'serviceClass' =>'First',
+                    'departureDate' =>'2022-09-20',
+                    'originCity' =>'BOS')
+            ),
+            'foreignRetailerIndicator' => 'F',
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Harry',
+                'receiverState' => 'NU',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '1234567890',
+                'accountFundingTransactionType' => 'personToPerson',
+                'receiverAccountNumberType' => 'email'
+            )
+        );
+
+        $batch->addCaptureGivenAuth($hash_in);
 
         $request->addBatchRequest($batch);
 
