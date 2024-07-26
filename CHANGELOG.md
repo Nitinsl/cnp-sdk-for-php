@@ -1,6 +1,6 @@
 = CnpOnline CHANGELOG
 
-==Version 12.37.0 (v12.37.0)(July 25, 2024)
+==Version 12.37.0 (v12.37.0)(July 29, 2024)
 * Change: [cnpAPI v12.37] New existing 'postCheckoutRedirectUrl' with min length '1' and maxlength '200'
 * Change: [cnpAPI v12.37] New enum 'provider' is added with value 'AFFIRM'
 * Change: [cnpAPI v12.37] New complex type 'inquiryResultType' is added with  simple element 'response' of 'responseType' and 'message' of 'messageType'.
