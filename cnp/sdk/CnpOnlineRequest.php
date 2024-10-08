@@ -148,7 +148,9 @@ class CnpOnlineRequest
                 'passengerTransportData' => XmlFields::passengerTransportData(XmlFields::returnArrayValue($hash_in, 'passengerTransportData')),
                 'authIndicator' => XmlFields::returnArrayValue($hash_in, 'authIndicator'),
                 'accountFundingTransactionData' => XmlFields::accountFundingTransactionData(XmlFields::returnArrayValue($hash_in, 'accountFundingTransactionData')),
-                'fraudCheckAction' => XmlFields::returnArrayValue($hash_in, 'fraudCheckAction')
+                'typeOfDigitalCurrency' => XmlFields::returnArrayValue($hash_in, 'typeOfDigitalCurrency'),
+                'conversionAffiliateId' => XmlFields::returnArrayValue($hash_in, 'conversionAffiliateId'),
+
             );
         }
         $choice_hash = array(XmlFields::returnArrayValue($hash_out, 'card'), XmlFields::returnArrayValue($hash_out, 'paypal'), XmlFields::returnArrayValue($hash_out, 'token'), XmlFields::returnArrayValue($hash_out, 'paypage'), XmlFields::returnArrayValue($hash_out, 'applepay'), XmlFields::returnArrayValue($hash_out, 'mpos'));
@@ -230,7 +232,10 @@ class CnpOnlineRequest
             'passengerTransportData' => XmlFields::passengerTransportData(XmlFields::returnArrayValue($hash_in, 'passengerTransportData')),
             'foreignRetailerIndicator' => XmlFields::returnArrayValue($hash_in, 'foreignRetailerIndicator'),
             'accountFundingTransactionData' => XmlFields::accountFundingTransactionData(XmlFields::returnArrayValue($hash_in, 'accountFundingTransactionData')),
-            'fraudCheckAction' => XmlFields::returnArrayValue($hash_in, 'fraudCheckAction')
+            'fraudCheckAction' => XmlFields::returnArrayValue($hash_in, 'fraudCheckAction'),
+            'typeOfDigitalCurrency' => XmlFields::returnArrayValue($hash_in, 'typeOfDigitalCurrency'),
+            'conversionAffiliateId' => XmlFields::returnArrayValue($hash_in, 'conversionAffiliateId'),
+
         );
 
         $choice_hash = array($hash_out['card'], $hash_out['paypal'], $hash_out['token'], $hash_out['paypage'], $hash_out['applepay'], $hash_out['mpos']);
@@ -468,7 +473,9 @@ class CnpOnlineRequest
             'lodgingInfo' => XmlFields::lodgingInfo(XmlFields::returnArrayValue($hash_in, 'lodgingInfo')),
             'pin' => XmlFields::returnArrayValue($hash_in, 'pin'),
             'passengerTransportData' => XmlFields::passengerTransportData(XmlFields::returnArrayValue($hash_in, 'passengerTransportData')),
-            'foreignRetailerIndicator' => XmlFields::returnArrayValue($hash_in, 'foreignRetailerIndicator')
+            'foreignRetailerIndicator' => XmlFields::returnArrayValue($hash_in, 'foreignRetailerIndicator'),
+            'partialCapture' => XmlFields::returnArrayValue($hash_in, 'partialCapture')
+
         );
         $captureResponse = $this->processRequest($hash_out, $hash_in, 'capture');
 
@@ -516,7 +523,10 @@ class CnpOnlineRequest
             'crypto' => XmlFields::returnArrayValue($hash_in, 'crypto'),
             'passengerTransportData' => XmlFields::passengerTransportData(XmlFields::returnArrayValue($hash_in, 'passengerTransportData')),
             'foreignRetailerIndicator' => XmlFields::returnArrayValue($hash_in, 'foreignRetailerIndicator'),
-            'accountFundingTransactionData' => XmlFields::accountFundingTransactionData(XmlFields::returnArrayValue($hash_in, 'accountFundingTransactionData'))
+            'accountFundingTransactionData' => XmlFields::accountFundingTransactionData(XmlFields::returnArrayValue($hash_in, 'accountFundingTransactionData')),
+            'typeOfDigitalCurrency' => XmlFields::returnArrayValue($hash_in, 'typeOfDigitalCurrency'),
+            'conversionAffiliateId' => XmlFields::returnArrayValue($hash_in, 'conversionAffiliateId'),
+
         );
 
         $choice_hash = array($hash_out['card'], $hash_out['token'], $hash_out['paypage'], $hash_out['mpos']);

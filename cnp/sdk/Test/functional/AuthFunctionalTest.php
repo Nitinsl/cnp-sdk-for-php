@@ -1320,4 +1320,81 @@ class AuthFunctionalTest extends \PHPUnit_Framework_TestCase
         $location = XmlParser::getNode($authorizationResponse, 'location');
         $this->assertEquals('sandbox', $location);
     }
+
+    public function test_simple_auth_with_DigitalCurrency()
+    {
+        $hash_in = array('id' => 'id',
+            'card' => array('type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1213',
+                'cardValidationNum' => '1213'),
+            'id' => '1211',
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Smith',
+                'receiverState' => 'AZ',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '1234567890',
+                'accountFundingTransactionType' => 'walletTransfer',
+                'receiverAccountNumberType' => 'socialNetworkID'
+            ),
+            'typeOfDigitalCurrency' => '1',
+            'conversionAffiliateId' => 'Test',
+            'orderId' => '22@33',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'orderChannel' => 'SCAN_AND_GO',
+            'fraudCheckAction' => 'DECLINED_NEED_FRAUD_CHECK',
+            'amount' => '0',
+            'enhancedData' => array(
+                'detailTax0' => array(
+                    'taxAmount' => '200',
+                    'taxRate' => '0.06',
+                    'taxIncludedInTotal' => true
+                ),
+                'detailTax1' => array(
+                    'taxAmount' => '300',
+                    'taxRate' => '0.10',
+                    'taxIncludedInTotal' => true
+                ),'lineItemData0' => array(
+                    'itemSequenceNumber' => '1',
+                    'itemDescription' => 'product 1',
+                    'productCode' => '123',
+                    'quantity' => 3,
+                    'unitOfMeasure' => 'unit',
+                    'taxAmount' => 200,
+                    'detailTax' => array(
+                        'taxIncludedInTotal' => true,
+                        'taxAmount' => 200
+                    ),
+                    'itemCategory' => 'Aparel',
+                    'itemSubCategory' => 'Clothing',
+                    'productId' => '1001',
+                    'productName' => 'N1',
+                ),
+                'lineItemData1' => array(
+                    'itemSequenceNumber' => '2',
+                    'itemDescription' => 'product 2',
+                    'productCode' => '456',
+                    'quantity' => 1,
+                    'unitOfMeasure' => 'unit',
+                    'taxAmount' => 300,
+                    'detailTax' => array(
+                        'taxIncludedInTotal' => true,
+                        'taxAmount' => 300
+                    )
+                ),
+                'salesTax' => '500',
+                'taxExempt' => false,
+                'fulfilmentMethodType' => 'STANDARD_SHIPPING'
+            ),
+        );
+
+        $initialize = new CnpOnlineRequest();
+        $authorizationResponse = $initialize->authorizationRequest($hash_in);
+        $response = XmlParser::getNode($authorizationResponse, 'response');
+        $this->assertEquals('000', $response);
+        $location = XmlParser::getNode($authorizationResponse, 'location');
+        $this->assertEquals('sandbox', $location);
+    }
+
 }
