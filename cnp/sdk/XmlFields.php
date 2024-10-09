@@ -1037,6 +1037,19 @@ class XmlFields
         }
     }
 
+    public static function partialCapture($hash_in)
+    {
+        if (isset($hash_in)) {
+            $hash_out = array(
+                "partialCaptureSequenceNumber"=>XmlFields::returnArrayValue($hash_in, "partialCaptureSequenceNumber", 100),
+                "partialCaptureTotalCount"=>XmlFields::returnArrayValue($hash_in, "partialCaptureTotalCount", 100),
+             );
+
+            return $hash_out;
+        }
+    }
+
+
     public static function sellerTagsType($hash_in)
     {
         if (isset($hash_in)) {
@@ -1120,5 +1133,7 @@ class XmlFields
             return $hash_out;
         }
     }
+
+
 
 }

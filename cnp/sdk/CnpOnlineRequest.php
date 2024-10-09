@@ -148,6 +148,7 @@ class CnpOnlineRequest
                 'passengerTransportData' => XmlFields::passengerTransportData(XmlFields::returnArrayValue($hash_in, 'passengerTransportData')),
                 'authIndicator' => XmlFields::returnArrayValue($hash_in, 'authIndicator'),
                 'accountFundingTransactionData' => XmlFields::accountFundingTransactionData(XmlFields::returnArrayValue($hash_in, 'accountFundingTransactionData')),
+                'fraudCheckAction' => XmlFields::returnArrayValue($hash_in, 'fraudCheckAction'),
                 'typeOfDigitalCurrency' => XmlFields::returnArrayValue($hash_in, 'typeOfDigitalCurrency'),
                 'conversionAffiliateId' => XmlFields::returnArrayValue($hash_in, 'conversionAffiliateId'),
 
@@ -474,7 +475,7 @@ class CnpOnlineRequest
             'pin' => XmlFields::returnArrayValue($hash_in, 'pin'),
             'passengerTransportData' => XmlFields::passengerTransportData(XmlFields::returnArrayValue($hash_in, 'passengerTransportData')),
             'foreignRetailerIndicator' => XmlFields::returnArrayValue($hash_in, 'foreignRetailerIndicator'),
-            'partialCapture' => XmlFields::returnArrayValue($hash_in, 'partialCapture')
+            'partialCapture' => XmlFields::partialCapture(XmlFields::returnArrayValue($hash_in, 'partialCapture')),
 
         );
         $captureResponse = $this->processRequest($hash_out, $hash_in, 'capture');

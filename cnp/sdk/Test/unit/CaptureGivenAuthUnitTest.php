@@ -651,4 +651,41 @@ class CaptureGivenAuthUnitTest extends \PHPUnit_Framework_TestCase
         $cnpTest->newXML = $mock;
         $cnpTest->captureGivenAuthRequest($hash_in);
     }
+
+    public function test_capture_given_auth_with_digitalCurrency()
+    {
+        $hash_in = array('id' => 'id',
+            'orderId' => '12344',
+            'amount' => '106',
+            'authInformation' => array(
+                'authDate' => '2002-10-09', 'authCode' => '543216',
+                'authAmount' => '12345'),
+            'orderSource' => 'ecommerce',
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1210'),
+            'businessIndicator' => 'consumerBillPayment',
+            'accountFundingTransactionData' => array(
+                'receiverFirstName' => 'abc',
+                'receiverLastName' => 'xyz',
+                'receiverState' => 'NY',
+                'receiverCountry' => 'US',
+                'receiverAccountNumberType' => 'email',
+                'receiverAccountNumber' => '12345',
+                'accountFundingTransactionType' => 'topUp'
+            ),
+            'typeOfDigitalCurrency' => '1',
+            'conversionAffiliateId' => 'Test',
+        );
+        $mock = $this->getMock('cnp\sdk\CnpXmlMapper');
+        $mock	->expects($this->once())
+            ->method('request')
+            ->with($this->matchesRegularExpression('/.*<accountFundingTransactionData>.*<receiverFirstName>abc.*<receiverLastName>xyz.*<receiverState>NY.*<receiverCountry>US.*<receiverAccountNumberType>email.*<receiverAccountNumber>12345.*<accountFundingTransactionType>topUp.*/'));
+
+        $cnpTest = new CnpOnlineRequest();
+        $cnpTest->newXML = $mock;
+        $cnpTest->captureGivenAuthRequest($hash_in);
+    }
+
 }

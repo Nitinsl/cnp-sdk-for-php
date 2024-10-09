@@ -664,4 +664,54 @@ class AuthUnitTest extends \PHPUnit_Framework_TestCase
         $cnpTest->authorizationRequest($hash_in);
     }
 
+    public function test_simple_auth_with_DigitalCurrency()
+    {
+        $hash_in = array('id' => 'id',
+            'card' => array('type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1213',
+                'cardValidationNum' => '1213'),
+            'orderId' => '22833',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'amount' => '1000',
+            'orderChannel' => 'SCAN_AND_GO',
+            'enhancedData' => array(
+                'detailTax0' => array(
+                    'taxAmount' => '200',
+                    'taxRate' => '0.06',
+                    'taxIncludedInTotal' => true
+                ),
+                'detailTax1' => array(
+                    'taxAmount' => '300',
+                    'taxRate' => '0.10',
+                    'taxIncludedInTotal' => true
+                ),
+                'fulfilmentMethodType' => 'STANDARD_SHIPPING',
+            ),
+
+            'accountFundingTransactionData' => array(
+                'receiverFirstName' => 'abc',
+                'receiverLastName' => 'xyz',
+                'receiverState' => 'AK',
+                'receiverCountry' => 'AD',
+                'receiverAccountNumberType' => 'BANAndBIC',
+                'receiverAccountNumber' => '12345',
+                'accountFundingTransactionType' => 'accountToAccount'
+            ),
+            'typeOfDigitalCurrency' => '1',
+            'conversionAffiliateId' => 'Test',
+        );
+
+        $mock = $this->getMock('cnp\sdk\CnpXmlMapper');
+        $mock	->expects($this->once())
+            ->method('request')
+            ->with($this->matchesRegularExpression('/.*<fulfilmentMethodType>STANDARD_SHIPPING.*<accountFundingTransactionData>.*<receiverFirstName>abc.*<receiverLastName>xyz.*<receiverState>AK.*<receiverCountry>AD.*<receiverAccountNumberType>BANAndBIC.*<receiverAccountNumber>123.*<accountFundingTransactionType>accountToAccount.*<typeOfDigitalCurrency>1.*<conversionAffiliateId>Test.*/'));
+
+        $cnpTest = new CnpOnlineRequest();
+        $cnpTest->newXML = $mock;
+        $cnpTest->authorizationRequest($hash_in);
+    }
+
+
 }

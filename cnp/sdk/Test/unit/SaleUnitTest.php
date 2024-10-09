@@ -1298,4 +1298,67 @@ class SaleUnitTest extends \PHPUnit_Framework_TestCase
         $cnpTest->newXML = $mock;
         $cnpTest->saleRequest($hash_in);
     }
+    public function test_sale_with_digitalCurrency()
+    {
+        $hash_in = array(
+            'id' => 'id',
+            'orderId' => '82364_cnpApiAuth',
+            'amount' => '1001',
+            'orderSource' => 'telephone',
+            'customerInfo' => array(
+                'accountUsername' => 'username123',
+                'userAccountNumber' => '7647326235897',
+                'userAccountEmail' => 'dummtemail@abc.com',
+                'membershipId' => '23874682304',
+                'membershipPhone' => '16818807607551094758',
+                'membershipEmail' => 'email@abc.com',
+                'membershipName' => 'member123',
+                'accountCreatedDate' => '2050-07-17',
+                'userAccountPhone' => '1392345678',
+            ),
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4005518220000002',
+                'expDate' => '0150',
+                'cardValidationNum' => '987',
+            ),
+            'orderChannel' => 'SMART_TV',
+            'enhancedData' => array(
+                'detailTax0' => array(
+                    'taxAmount' => '200',
+                    'taxRate' => '0.06',
+                    'taxIncludedInTotal' => true
+                ),
+                'detailTax1' => array(
+                    'taxAmount' => '300',
+                    'taxRate' => '0.10',
+                    'taxIncludedInTotal' => true
+                ),
+                'fulfilmentMethodType' => 'EXPEDITED_SHIPPING',
+            ),
+            'accountFundingTransactionData' => array(
+                'receiverFirstName' => 'abc',
+                'receiverLastName' => 'xyz',
+                'receiverState' => 'AK',
+                'receiverCountry' => 'AD',
+                'receiverAccountNumberType' => 'cardAccount',
+                'receiverAccountNumber' => '12345',
+                'accountFundingTransactionType' => 'bankInitiated'
+            ),
+            'fraudCheckAction' => 'DECLINED_NEED_FRAUD_CHECK',
+            'typeOfDigitalCurrency' => '1',
+            'conversionAffiliateId' => 'Test',
+
+        );
+
+        $mock = $this->getMock('cnp\sdk\CnpXmlMapper');
+        $mock	->expects($this->once())
+            ->method('request')
+            ->with($this->matchesRegularExpression('/.*<fulfilmentMethodType>EXPEDITED_SHIPPING.*<accountFundingTransactionData>.*<receiverFirstName>abc.*<receiverLastName>xyz.*<receiverState>AK.*<receiverCountry>AD.*<receiverAccountNumberType>cardAccount.*<receiverAccountNumber>12345.*<accountFundingTransactionType>bankInitiated.*<fraudCheckAction>DECLINED_NEED_FRAUD_CHECK.*/'));
+
+        $cnpTest = new CnpOnlineRequest();
+        $cnpTest->newXML = $mock;
+        $cnpTest->saleRequest($hash_in);
+    }
+
 }

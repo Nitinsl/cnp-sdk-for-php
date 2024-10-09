@@ -257,4 +257,28 @@ class CaptureFunctionalTest extends \PHPUnit_Framework_TestCase
         $location = XmlParser::getNode($captureResponse, 'location');
         $this->assertEquals('sandbox', $location);
     }
+
+    public function test_capture_digitalCurrency()
+    {
+        $hash_in = array('id' => 'id',
+            'cnpTxnId' => '1234567891234567891',
+            'amount' => '123', 'enhancedData' => array(
+                'customerReference' => 'Litle',
+                'salesTax' => '50',
+                'deliveryType' => 'TBD'),
+            'payPalOrderComplete' => 'true',
+            'partialCapture' => array(
+                'partialCaptureSequenceNumber' => '1',
+                'partialCaptureTotalCount' => '7'
+            )
+            );
+
+        $initialize = new CnpOnlineRequest();
+        $captureResponse = $initialize->captureRequest($hash_in);
+        $message = XmlParser::getAttribute($captureResponse, 'cnpOnlineResponse', 'response');
+        $this->assertEquals('0', $message);
+        $location = XmlParser::getNode($captureResponse, 'location');
+        $this->assertEquals('sandbox', $location);
+    }
+
 }
