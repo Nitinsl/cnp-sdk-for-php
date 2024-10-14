@@ -1555,4 +1555,30 @@ class CnpOnlineRequest
         return $cnpOnlineResponse;
     }
 
+    public function encryptionKeyRequest($hash_in)
+    {
+        $hash_out = (XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
+       // $hash_out = array('encryptionKeyRequest' => XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
+        $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptionKeyRequest');
+
+        return $encryptionKeyResponse;
+    }
+
+    /**
+     * @param $hash_in
+     * @return \DOMDocument|\SimpleXMLElement
+     * @throws exceptions\cnpSDKException
+     */
+    public function encryptedPayload($hash_in)
+    {
+        $hash_out = array(
+            'encryptionKeySequence' => (XmlFields::returnArrayValue($hash_in, 'encryptionKeySequence')),
+            'payload' => (XmlFields::returnArrayValue($hash_in, 'payload')),
+        );
+        $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptedPayload');
+
+        return $encryptionKeyResponse;
+    }
+
+
 }
