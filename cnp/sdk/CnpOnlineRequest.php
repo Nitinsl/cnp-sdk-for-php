@@ -1490,6 +1490,34 @@ class CnpOnlineRequest
 
     /**
      * @param $hash_in
+     * @return \DOMDocument|\SimpleXMLElement
+     * @throws exceptions\cnpSDKException
+     */
+    public function encryptionKeyRequest($hash_in)
+    {
+        $hash_out = array(XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
+        $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptionKeyRequest');
+        return $encryptionKeyResponse;
+    }
+
+    /**
+     * @param $hash_in
+     * @return \DOMDocument|\SimpleXMLElement
+     * @throws exceptions\cnpSDKException
+     */
+    public function encryptedPayload($hash_in)
+    {
+        $hash_out = array(
+            'encryptionKeySequence' => (XmlFields::returnArrayValue($hash_in, 'encryptionKeySequence')),
+            'payload' => (XmlFields::returnArrayValue($hash_in, 'payload')),
+        );
+        $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptedPayload');
+
+        return $encryptionKeyResponse;
+    }
+
+    /**
+     * @param $hash_in
      * @return array
      */
     private static function overrideConfig($hash_in)
@@ -1552,7 +1580,7 @@ class CnpOnlineRequest
             $request = str_replace("vendorCreditCtx", "vendorCredit", $request);
             $request = str_replace("vendorDebitCtx", "vendorDebit", $request);
             if ((int) $config['oltpEncryptionPayload']){
-                $request = CnpOnlineRequest::getPayloadElement($request);
+                $request = CnpOnlineRequest::getPayloadElement($request,$hash_config);
             }
             $cnpOnlineResponse = $this->newXML->request($request, $hash_config, $this->useSimpleXml);
         }
@@ -1560,39 +1588,14 @@ class CnpOnlineRequest
         return $cnpOnlineResponse;
     }
 
-    public function encryptionKeyRequest($hash_in)
-    {
-        $hash_out = array(XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
-        // $hash_out = array('encryptionKeyRequest' => XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
-        $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptionKeyRequest');
-
-        return $encryptionKeyResponse;
-    }
-
-    /**
-     * @param $hash_in
-     * @return \DOMDocument|\SimpleXMLElement
-     * @throws exceptions\cnpSDKException
-     */
-    public function encryptedPayload($hash_in)
-    {
-        $hash_out = array(
-            'encryptionKeySequence' => (XmlFields::returnArrayValue($hash_in, 'encryptionKeySequence')),
-            'payload' => (XmlFields::returnArrayValue($hash_in, 'payload')),
-        );
-        $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptedPayload');
-
-        return $encryptionKeyResponse;
-    }
-
-    public  function getPayloadElement($request)
+    public  function getPayloadElement($request,$hash_config)
     {
         try {
             $doc = new DOMDocument('1.0', 'UTF-8');
             $doc->loadXML($request);
             $root = $doc->documentElement;
             $payload = '';
-            $config= Obj2xml::getConfig($hash_config, $type);
+            $config= Obj2xml::getConfig($hash_config);
             $path = $config['oltpEncryptionKeyPath'];
 
             $secondChild = $root->childNodes->item(1);
@@ -1602,7 +1605,7 @@ class CnpOnlineRequest
                 $output = '';
 
                 if ($secondChild->nodeName === 'encryptionKeyRequest') {
-                    return $xmlRequest;
+                    return $request;
                 } else {
                     $output = $doc->saveXML($secondChild);
                     $output = trim($output);
