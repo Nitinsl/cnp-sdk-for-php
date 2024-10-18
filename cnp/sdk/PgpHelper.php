@@ -1,6 +1,7 @@
 <?php
 
 namespace cnp\sdk;
+use Exception;
 
 class PgpHelper
 {
@@ -55,5 +56,42 @@ class PgpHelper
         }
         $split = explode(" ", $output[0]);
         return rtrim($split[2], ":");
+    }
+
+    public static function onlineEncrypt($encryptInput, $publicKey) {
+        // Open a process to gpg with pipes
+       // $byte_array = unpack('C*', $encryptInput);
+       // $base64Encoded = base64_encode($encryptInput);
+        $descriptorspec = [
+            0 => ["pipe", "r"],  // stdin is a pipe that the child will read from
+            1 => ["pipe", "w"],  // stdout is a pipe that the child will write to
+            2 => ["pipe", "w"]   // stderr is a pipe that the child will write to
+        ];
+
+        $process = proc_open("gpg --batch --yes --quiet --no-secmem-warning --armor --trust-model always --recipient-file $publicKey --encrypt", $descriptorspec, $pipes);
+
+        if (is_resource($process)) {
+            // Write the input string to the stdin of the process
+            fwrite($pipes[0], $encryptInput);
+            fclose($pipes[0]);
+
+            // Read the encrypted content from the stdout of the process
+            $encryptedString = stream_get_contents($pipes[1]);
+            fclose($pipes[1]);
+
+            // Read any errors from the stderr of the process
+            $errors = stream_get_contents($pipes[2]);
+            fclose($pipes[2]);
+
+            // Close the process
+            $return_value = proc_close($process);
+
+            if ($return_value != 0) {
+                throw new \RuntimeException("The string could not be encrypted. Check the public key entered. " . $errors);
+            }
+            return $encryptedString;
+        } else {
+            throw new \RuntimeException("Failed to open process for encryption.");
+        }
     }
 }

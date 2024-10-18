@@ -25,11 +25,15 @@
  */
 
 namespace cnp\sdk;
+use DOMDocument;
+use XSLTProcessor;
+use SimpleXMLElement;
 require_once realpath(dirname(__FILE__)) . '/CnpOnline.php';
 
 class CnpOnlineRequest
 {
     private $useSimpleXml = false;
+    public $request_file;
 
     public function __construct($treeResponse = false)
     {
@@ -1541,14 +1545,15 @@ class CnpOnlineRequest
         $hash_config = CnpOnlineRequest::overrideConfig($hash_in);
         $hash = CnpOnlineRequest::getOptionalAttributes($hash_in, $hash_out);
         $request = Obj2xml::toXml($hash, $hash_config, $type);
-
-
+        $config= Obj2xml::getConfig($hash_config, $type);
         if (Checker::validateXML($request)) {
             $request = str_replace("submerchantDebitCtx", "submerchantDebit", $request);
             $request = str_replace("submerchantCreditCtx", "submerchantCredit", $request);
             $request = str_replace("vendorCreditCtx", "vendorCredit", $request);
             $request = str_replace("vendorDebitCtx", "vendorDebit", $request);
-
+            if ((int) $config['oltpEncryptionPayload']){
+                $request = CnpOnlineRequest::getPayloadElement($request);
+            }
             $cnpOnlineResponse = $this->newXML->request($request, $hash_config, $this->useSimpleXml);
         }
 
@@ -1557,8 +1562,8 @@ class CnpOnlineRequest
 
     public function encryptionKeyRequest($hash_in)
     {
-        $hash_out = (XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
-       // $hash_out = array('encryptionKeyRequest' => XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
+        $hash_out = array(XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
+        // $hash_out = array('encryptionKeyRequest' => XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
         $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptionKeyRequest');
 
         return $encryptionKeyResponse;
@@ -1580,5 +1585,62 @@ class CnpOnlineRequest
         return $encryptionKeyResponse;
     }
 
+    public  function getPayloadElement($request)
+    {
+        try {
+            $doc = new DOMDocument('1.0', 'UTF-8');
+            $doc->loadXML($request);
+            $root = $doc->documentElement;
+            $payload = '';
+            $config= Obj2xml::getConfig($hash_config, $type);
+            $path = $config['oltpEncryptionKeyPath'];
 
+            $secondChild = $root->childNodes->item(1);
+
+            if ($secondChild !== null) {
+                // Transform the second element to a string
+                $output = '';
+
+                if ($secondChild->nodeName === 'encryptionKeyRequest') {
+                    return $xmlRequest;
+                } else {
+                    $output = $doc->saveXML($secondChild);
+                    $output = trim($output);
+
+                    if ($secondChild !== null) {
+                        $root->removeChild($secondChild);
+                    }
+
+                    $payload = PgpHelper::onlineEncrypt($output, $path);
+
+                    $encryptedPayloadElement = $doc->createElement('encryptedPayload');
+
+                    // Create and append the encryptionKeySequence element
+                    $encryptionKeySequenceElement = $doc->createElement('encryptionKeySequence');
+
+                    if ((int) $config['oltpEncryptionKeySequence'] !== null){
+                        $encryptionKeySequenceElement->nodeValue = (int) $config['oltpEncryptionKeySequence'];
+
+                    }
+                    else{
+                        throw new Exception('Problem in reading the Encryption Key Sequence ...Provide the Encryption key Sequence');
+                    }
+                    $encryptedPayloadElement->appendChild($encryptionKeySequenceElement);
+
+                    // Create and append the payload element
+                    $payloadElement = $doc->createElement('payload');
+                    $payloadElement->nodeValue = $payload;
+                    $encryptedPayloadElement->appendChild($payloadElement);
+
+                    $root->appendChild($encryptedPayloadElement);
+                    $xmlRequest = $doc->saveHTML();
+                    return $xmlRequest;
+                }
+            }
+        } catch (Exception $e) {
+            throw new Exception('Error processing XML request. Please reach out to SDK Support team.', 0, $e);
+        }
+        return $xmlRequest;
+    }
 }
+
