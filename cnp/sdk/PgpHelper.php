@@ -58,9 +58,10 @@ class PgpHelper
         return rtrim($split[2], ":");
     }
 
-    public static function encryptPayload($encryptInput, $publicKey)
-    {
+    public static function onlineEncrypt($encryptInput, $publicKey) {
         // Open a process to gpg with pipes
+       // $byte_array = unpack('C*', $encryptInput);
+       // $base64Encoded = base64_encode($encryptInput);
         $descriptorspec = [
             0 => ["pipe", "r"],  // stdin is a pipe that the child will read from
             1 => ["pipe", "w"],  // stdout is a pipe that the child will write to
@@ -86,11 +87,11 @@ class PgpHelper
             $return_value = proc_close($process);
 
             if ($return_value != 0) {
-                throw new \RuntimeException("Encrypting the payload has failed" . $errors);
+                throw new \RuntimeException("The string could not be encrypted. Check the public key entered. " . $errors);
             }
             return $encryptedString;
         } else {
-            throw new \RuntimeException("Encrypting the payload has failed. Please check the Encryption key or key path, is correct!\n");
+            throw new \RuntimeException("Failed to open process for encryption.");
         }
     }
 }
