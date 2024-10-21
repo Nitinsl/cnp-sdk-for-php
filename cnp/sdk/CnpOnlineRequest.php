@@ -1545,7 +1545,7 @@ class CnpOnlineRequest
         $hash_config = CnpOnlineRequest::overrideConfig($hash_in);
         $hash = CnpOnlineRequest::getOptionalAttributes($hash_in, $hash_out);
         $request = Obj2xml::toXml($hash, $hash_config, $type);
-        $config= Obj2xml::getConfig($hash_config, $type);
+        $config= Obj2xml::getConfig(array());
         if (Checker::validateXML($request)) {
             $request = str_replace("submerchantDebitCtx", "submerchantDebit", $request);
             $request = str_replace("submerchantCreditCtx", "submerchantCredit", $request);
@@ -1585,14 +1585,14 @@ class CnpOnlineRequest
         return $encryptionKeyResponse;
     }
 
-    public  function getPayloadElement($request)
+    public function getPayloadElement($request)
     {
         try {
             $doc = new DOMDocument('1.0', 'UTF-8');
             $doc->loadXML($request);
             $root = $doc->documentElement;
             $payload = '';
-            $config= Obj2xml::getConfig($hash_config, $type);
+            $config = Obj2xml::getConfig(array());
             $path = $config['oltpEncryptionKeyPath'];
 
             $secondChild = $root->childNodes->item(1);
@@ -1604,6 +1604,15 @@ class CnpOnlineRequest
                 if ($secondChild->nodeName === 'encryptionKeyRequest') {
                     return $xmlRequest;
                 } else {
+                    if ($path == null) {
+                        throw new Exception('Problem in reading the Encryption Key path. Provide the Encryption key path.');
+                    } else {
+                        $path = new SplFileInfo($path);
+                        if (!$path->isFile()) {
+                            throw new VantivException("The provided path is not a valid file path or the file does not exist.");
+                        }
+                    }
+
                     $output = $doc->saveXML($secondChild);
                     $output = trim($output);
 
@@ -1611,18 +1620,16 @@ class CnpOnlineRequest
                         $root->removeChild($secondChild);
                     }
 
-                    $payload = PgpHelper::onlineEncrypt($output, $path);
+                    $payload = PgpHelper::encryptPayload($output, $path);
 
                     $encryptedPayloadElement = $doc->createElement('encryptedPayload');
 
                     // Create and append the encryptionKeySequence element
                     $encryptionKeySequenceElement = $doc->createElement('encryptionKeySequence');
 
-                    if ((int) $config['oltpEncryptionKeySequence'] !== null){
-                        $encryptionKeySequenceElement->nodeValue = (int) $config['oltpEncryptionKeySequence'];
-
-                    }
-                    else{
+                    if ((int)$config['oltpEncryptionKeySequence'] !== null) {
+                        $encryptionKeySequenceElement->nodeValue = (int)$config['oltpEncryptionKeySequence'];
+                    } else{
                         throw new Exception('Problem in reading the Encryption Key Sequence ...Provide the Encryption key Sequence');
                     }
                     $encryptedPayloadElement->appendChild($encryptionKeySequenceElement);
