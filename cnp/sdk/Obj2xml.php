@@ -43,7 +43,10 @@ class Obj2xml
         $authentication->addChild('user',$config["user"]);
         $authentication->addChild('password',$config["password"]);
 
-
+        if ($type === "encryptionKeyRequest"){
+            $xml->addChild($type,$data[0]);
+            return $xml->asXML();
+        }
 
         $transacType = $xml->addChild($type);
 

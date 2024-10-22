@@ -28,6 +28,8 @@ namespace cnp\sdk;
 use DOMDocument;
 use XSLTProcessor;
 use SimpleXMLElement;
+use SplFileInfo;
+use Exception;
 require_once realpath(dirname(__FILE__)) . '/CnpOnline.php';
 
 class CnpOnlineRequest
@@ -1545,13 +1547,14 @@ class CnpOnlineRequest
         $hash_config = CnpOnlineRequest::overrideConfig($hash_in);
         $hash = CnpOnlineRequest::getOptionalAttributes($hash_in, $hash_out);
         $request = Obj2xml::toXml($hash, $hash_config, $type);
-        $config= Obj2xml::getConfig(array());
+
         if (Checker::validateXML($request)) {
             $request = str_replace("submerchantDebitCtx", "submerchantDebit", $request);
             $request = str_replace("submerchantCreditCtx", "submerchantCredit", $request);
             $request = str_replace("vendorCreditCtx", "vendorCredit", $request);
             $request = str_replace("vendorDebitCtx", "vendorDebit", $request);
-            if ((int) $config['oltpEncryptionPayload']){
+            $config= Obj2xml::getConfig(array());
+            if ($config['oltpEncryptionPayload']){
                 $request = CnpOnlineRequest::getPayloadElement($request);
             }
             $cnpOnlineResponse = $this->newXML->request($request, $hash_config, $this->useSimpleXml);
@@ -1602,7 +1605,7 @@ class CnpOnlineRequest
                 $output = '';
 
                 if ($secondChild->nodeName === 'encryptionKeyRequest') {
-                    return $xmlRequest;
+                    return $request;
                 } else {
                     if ($path == null) {
                         throw new Exception('Problem in reading the Encryption Key path. Provide the Encryption key path.');
@@ -1626,8 +1629,7 @@ class CnpOnlineRequest
 
                     // Create and append the encryptionKeySequence element
                     $encryptionKeySequenceElement = $doc->createElement('encryptionKeySequence');
-
-                    if ((int)$config['oltpEncryptionKeySequence'] !== null) {
+                    if ($config['oltpEncryptionKeySequence']) {
                         $encryptionKeySequenceElement->nodeValue = (int)$config['oltpEncryptionKeySequence'];
                     } else{
                         throw new Exception('Problem in reading the Encryption Key Sequence ...Provide the Encryption key Sequence');
