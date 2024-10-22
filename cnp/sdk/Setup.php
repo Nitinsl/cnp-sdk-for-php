@@ -130,6 +130,22 @@ function initialize()
         $line['multiSiteErrorThreshold'] = '5';
         $line['maxHoursWithoutSwitch'] = '48';
         $line['deleteBatchFiles'] = "";
+
+        print "Please input your oltpEncryptionPayload (true/false) (No encryption by default): ";
+        $oltpEncryptionPayload = trim(fgets(STDIN));
+        $line['oltpEncryptionPayload'] = $oltpEncryptionPayload;
+        $booleanValue = filter_var(strtolower($oltpEncryptionPayload), FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
+        if  ($booleanValue){
+            print "Please input your oltpEncryptionKeySequence: ";
+            $line['oltpEncryptionKeySequence'] = formatConfigValue(STDIN);
+            print "Please input your oltpEncryptionKeyPath: ";
+            $line['oltpEncryptionKeyPath '] = formatConfigValue(STDIN);
+        }else{
+            $line['oltpEncryptionPayload'] = "";
+            $line['oltpEncryptionKeySequence'] = "";
+            $line['oltpEncryptionKeyPath '] = "";
+        }
+
         writeConfig($line,$handle);
         #default http timeout set to 500 ms
         fwrite($handle, "timeout =  500".  PHP_EOL);

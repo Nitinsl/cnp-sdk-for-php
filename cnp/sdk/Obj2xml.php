@@ -338,7 +338,7 @@ class Obj2xml
                 } elseif ($name == 'sftp_timeout') {
                     $config['sftp_timeout'] = isset($config_array['sftp_timeout'])? $config_array['sftp_timeout']:'720';
                 } else {
-                    if ((!isset($config_array[$name])) and ($name != 'proxy')) {
+                    if ((!isset($config_array[$name])) and ($name != 'proxy') and ($name != 'oltpEncryptionPayload')) {
                         throw new \InvalidArgumentException("Missing Field /$name/");
                     }
                     $config[$name] = $config_array[$name];

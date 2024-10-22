@@ -1545,6 +1545,7 @@ class CnpOnlineRequest
     private function processRequest($hash_out, $hash_in, $type, $choice1 = null, $choice2 = null)
     {
         $hash_config = CnpOnlineRequest::overrideConfig($hash_in);
+        $hash_config= Obj2xml::getConfig($hash_config);
         $hash = CnpOnlineRequest::getOptionalAttributes($hash_in, $hash_out);
         $request = Obj2xml::toXml($hash, $hash_config, $type);
 
@@ -1553,8 +1554,7 @@ class CnpOnlineRequest
             $request = str_replace("submerchantCreditCtx", "submerchantCredit", $request);
             $request = str_replace("vendorCreditCtx", "vendorCredit", $request);
             $request = str_replace("vendorDebitCtx", "vendorDebit", $request);
-            $config= Obj2xml::getConfig(array());
-            if ($config['oltpEncryptionPayload']){
+            if ($hash_config['oltpEncryptionPayload']){
                 $request = CnpOnlineRequest::getPayloadElement($request);
             }
             $cnpOnlineResponse = $this->newXML->request($request, $hash_config, $this->useSimpleXml);
