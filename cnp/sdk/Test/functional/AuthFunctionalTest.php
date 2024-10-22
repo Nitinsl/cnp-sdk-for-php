@@ -1397,4 +1397,36 @@ class AuthFunctionalTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('sandbox', $location);
     }
 
+    public function test_encrypted_auth()
+    {
+        $hash_in = array('id' => 'id',
+            'card' => array('type' => 'MC',
+                'number' => '5112000900000005',
+                'expDate' => '1213',
+                'cardValidationNum' => '1213'),
+            'id' => '1211',
+            'orderId' => '22@33',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'businessIndicator'=>'agentCashOut',
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Smith',
+                'receiverState' => 'AZ',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '1234567890',
+                'accountFundingTransactionType' => 'walletTransfer',
+                'receiverAccountNumberType' => 'cardAccount'
+            ),
+            'amount' => '1512',
+            'oltpEncryptionPayload' => true
+            );
+
+        $initialize = new CnpOnlineRequest();
+        $authorizationResponse = $initialize->authorizationRequest($hash_in);
+        $response = XmlParser::getNode($authorizationResponse, 'response');
+        $this->assertEquals('000', $response);
+        $location = XmlParser::getNode($authorizationResponse, 'location');
+        $this->assertEquals('sandbox', $location);
+    }
+
 }

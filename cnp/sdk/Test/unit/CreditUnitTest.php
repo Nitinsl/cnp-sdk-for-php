@@ -591,4 +591,31 @@ class CreditUnitTest extends \PHPUnit_Framework_TestCase
         $cnpTest->creditRequest($hash_in);;
     }
 
+    public function test_encrypted_credit()
+    {
+
+        $hash_in = array(
+            'reportGroup'=>'Planets',
+            'orderId'=>'12344',
+            'id' => 'id',
+            'amount'=>'106',
+            'orderSource'=>'ecommerce',
+            'merchantCategoryCode' => '3535',
+            'card'=>array(
+                'type'=>'VI',
+                'number' =>'4100000000000001',
+                'expDate' =>'1210'
+            ),
+            'oltpEncryptionPayload' => true);
+
+        $mock = $this->getMock('cnp\sdk\CnpXmlMapper');
+        $mock->expects($this->once())
+            ->method('request')
+            ->with($this->matchesRegularExpression('/.*<encryptedPayload.*<encryptionKeySequence>.*/'));
+
+        $cnpTest = new CnpOnlineRequest();
+        $cnpTest->newXML = $mock;
+        $cnpTest->creditRequest($hash_in);
+    }
+
 }

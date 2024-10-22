@@ -97,4 +97,35 @@ class BNPLAuthorizationRequestTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    public function test_encrypted_BNPL_Authorization_Request()
+    {
+        $hash_in = array(
+            'id' => '1211',
+            'orderId' => '2111',
+            'reportGroup' => 'Planets',
+            'amount' => '1000',
+            'provider' => 'AFFIRM',
+            'postCheckoutRedirectUrl' => 'www.abc.com',
+            'customerInfo' => array(
+                'accountUsername' => 'username123',
+                'userAccountNumber' => '7647326235897',
+                'userAccountEmail' => 'dummtemail@abc.com',
+                'membershipId' => '23874682304',
+                'membershipPhone' => '16818807607551094758',
+                'membershipEmail' => 'email@abc.com',
+                'membershipName' => 'member123',
+                'accountCreatedDate' => '2050-07-17',
+                'userAccountPhone' => '1392345678',
+            ),
+            'oltpEncryptionPayload' => true
+        );
+        $initialize = new CnpOnlineRequest();
+        $BNPLAuthorizationResponse = $initialize->BNPLAuthorizationRequest($hash_in);
+        $response = XmlParser::getNode($BNPLAuthorizationResponse, 'response');
+        $this->assertEquals('000', $response);
+        $location = XmlParser::getNode($BNPLAuthorizationResponse, 'location');
+        $this->assertEquals('sandbox', $location);
+
+    }
+
 }

@@ -281,4 +281,19 @@ class CaptureFunctionalTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('sandbox', $location);
     }
 
+    public function test_encrypted_capture()
+    {
+        $hash_in = array('id' => 'id',
+            'cnpTxnId' => '1234567891234567891',
+            'amount' => '123',
+            'oltpEncryptionPayload' => true);
+
+        $initialize = new CnpOnlineRequest();
+        $captureResponse = $initialize->captureRequest($hash_in);
+        $message = XmlParser::getAttribute($captureResponse, 'cnpOnlineResponse', 'response');
+        $this->assertEquals('0', $message);
+        $location = XmlParser::getNode($captureResponse, 'location');
+        $this->assertEquals('sandbox', $location);
+    }
+
 }

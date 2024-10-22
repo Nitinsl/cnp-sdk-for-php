@@ -180,4 +180,23 @@ class EcheckSaleFunctionalTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('sandbox', $location);
     }
 
+    public function test_encrypted_echeckSale_with_echeck()
+    {
+        $hash_in = array('id' => 'id',
+            'amount' => '123456',
+            'verify' => 'true',
+            'orderId' => '12345',
+            'orderSource' => 'ecommerce',
+            'echeck' => array('accType' => 'Checking', 'accNum' => '12345657890', 'routingNum' => '123456789', 'checkNum' => '123455','echeckCustomerId' => 'customer_v12.34','accountId' => 'account'),
+            'billToAddress' => array('name' => 'Bob', 'city' => 'lowell', 'state' => 'MA', 'email' => 'vantiv.com'),
+            'oltpEncryptionPayload' => true);
+
+        $initialize = new CnpOnlineRequest();
+        $echeckSaleResponse = $initialize->echeckSaleRequest($hash_in);
+        $response = XmlParser::getNode($echeckSaleResponse, 'response');
+        $this->assertEquals('000', $response);
+        $location = XmlParser::getNode($echeckSaleResponse, 'location');
+        $this->assertEquals('sandbox', $location);
+    }
+
 }

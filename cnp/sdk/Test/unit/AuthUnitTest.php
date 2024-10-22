@@ -713,5 +713,54 @@ class AuthUnitTest extends \PHPUnit_Framework_TestCase
         $cnpTest->authorizationRequest($hash_in);
     }
 
+    public function test_encrypted_auth_with_lineItemData0()
+    {
+        $hash_in = array('id' => 'id',
+            'card' => array('type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1213',
+                'cardValidationNum' => '1213'),
+            'id' => '1211',
+            'orderId' => '22@33',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'amount' => '0',
+            'enhancedData' => array(
+                'detailTax0' => array(
+                    'taxAmount' => '200',
+                    'taxRate' => '0.06',
+                    'taxIncludedInTotal' => true
+                ),
+                'detailTax1' => array(
+                    'taxAmount' => '300',
+                    'taxRate' => '0.10',
+                    'taxIncludedInTotal' => true
+                ),'lineItemData0' => array(
+                    'itemSequenceNumber' => '1',
+                    'itemDescription' => 'product 1',
+                    'productCode' => '123',
+                    'quantity' => 3,
+                    'unitOfMeasure' => 'unit',
+                    'taxAmount' => 200,
+                    'detailTax' => array(
+                        'taxIncludedInTotal' => true,
+                        'taxAmount' => 200
+                    ),
+                    'itemCategory' => 'Aparel',
+                    'itemSubCategory' => 'Clothing',
+                    'productId' => '1001',
+                    'productName' => 'N1',
+                )),
+            'oltpEncryptionPayload' => true);
+        $mock = $this->getMock('cnp\sdk\CnpXmlMapper');
+        $mock	->expects($this->once())
+            ->method('request')   #.*<cnpOnlineRequest.*<encryptedPayload.*</encryptedPayload>.*
+            ->with($this->matchesRegularExpression('/.*<encryptedPayload.*<encryptionKeySequence>.*/'));
+
+        $cnpTest = new CnpOnlineRequest();
+        $cnpTest->newXML = $mock;
+        $cnpTest->authorizationRequest($hash_in);
+    }
+
 
 }

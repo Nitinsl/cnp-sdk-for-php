@@ -263,4 +263,21 @@ class CaptureUnitTest extends \PHPUnit_Framework_TestCase
         $cnpTest->newXML = $mock;
         $cnpTest->captureRequest($hash_in);
     }
+
+    public function test_encrypted_capture()
+    {
+        $hash_in = array('cnpTxnId'=> '12312312',
+            'id' => 'id',
+            'merchantSdk'=>'PHP;10.1.0',
+            'amount'=>'123',
+            'oltpEncryptionPayload' => true);
+        $mock = $this->getMock('cnp\sdk\CnpXmlMapper');
+        $mock->expects($this->once())
+            ->method('request')
+            ->with($this->matchesRegularExpression('/.*<encryptedPayload.*<encryptionKeySequence>.*/'));
+
+        $cnpTest = new CnpOnlineRequest();
+        $cnpTest->newXML = $mock;
+        $cnpTest->captureRequest($hash_in);
+    }
 }

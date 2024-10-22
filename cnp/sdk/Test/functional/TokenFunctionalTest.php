@@ -145,4 +145,22 @@ class TokenFunctionalTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('sandbox', $location);
     }
 
+    public function test_encrypted_token()
+    {
+        $hash_in = array('id' => '1211',
+            'merchantId' => '101',
+            'version' => '8.8',
+            'reportGroup' => 'Planets',
+            'orderId' => '12344',
+            'accountNumber' => '1233456789103801',
+            'oltpEncryptionPayload' => true);
+
+        $initialize = new CnpOnlineRequest();
+        $registerTokenResponse = $initialize->registerTokenRequest($hash_in);
+        $message = XmlParser::getAttribute($registerTokenResponse, 'cnpOnlineResponse', 'message');
+        $this->assertEquals('Valid Format', $message);
+        $location = XmlParser::getNode($registerTokenResponse, 'location');
+        $this->assertEquals('sandbox', $location);
+    }
+
 }
