@@ -99,6 +99,7 @@ function initialize()
         # ssl should be usd by default
         $line['tcp_ssl'] = '1';
         $line['print_xml'] = '0';
+        $line['neuter_xml'] = '1';
         print "Use PGP encryption for batch files? (y/n) (No encryption by default): ";
         $useEncryption = formatConfigValue(STDIN);
         if(("y" == $useEncryption) || ("true" == $useEncryption) || ("yes" == $useEncryption)){

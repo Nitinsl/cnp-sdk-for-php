@@ -30,8 +30,9 @@ class Communication
         $config = Obj2xml::getConfig($hash_config);
 
 
-        if ((int) $config['print_xml']) {
-            echo $req;
+        if ((int)$config['print_xml']) {
+            Communication::print_xml($req, $config['neuter_xml']);
+            #echo $req;
         }
         $ch = curl_init();
 
@@ -55,7 +56,6 @@ class Communication
         $output = curl_exec($ch);
 
 
-
         $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if (! $output) {
             if ($responseCode == 'CURLE_OPERATION_TIMEDOUT'){
@@ -75,4 +75,32 @@ class Communication
         }
 
     }
+
+    public static function neuter_xml($xml)
+    {
+        $neuter_str = "NEUTERED";
+        if ($xml === null) {
+            return $xml;
+        }
+        $xml = preg_replace("/<accNum>.*?<\/accNum>/", "<accNum>$neuter_str</accNum>", $xml);
+        $xml = preg_replace("/<user>.*?<\/user>/", "<user>$neuter_str</user>", $xml);
+        $xml = preg_replace("/<password>.*?<\/password>/", "<password>$neuter_str</password>", $xml);
+        $xml = preg_replace("/<track>.*?<\/track>/", "<track>$neuter_str</track>", $xml);
+        $xml = preg_replace("/<number>.*?<\/number>/", "<number>$neuter_str</number>", $xml);
+        $xml = preg_replace("/<cardValidationNum>.*?<\/cardValidationNum>/", "<cardValidationNum>$neuter_str</cardValidationNum>", $xml);
+
+        return $xml;
+    }
+
+    public static function print_xml($xml_request, $neuter_xml_flag)
+    {
+        $xml_to_log = $xml_request;
+        if ($neuter_xml_flag) {
+            $xml_to_log = Communication::neuter_xml($xml_to_log);
+        }
+        echo "Request XML: $xml_to_log\n";
+
+        return $xml_to_log;
+    }
+
 }
