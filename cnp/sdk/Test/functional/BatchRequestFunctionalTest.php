@@ -3390,6 +3390,140 @@ class BatchRequestFunctionalTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    public function test_batch_12_40()
+    {
+        if(strtolower($this->preliveStatus) == 'down'){
+            $this->markTestSkipped('Prelive is not available');
+        }
+
+        $request = new CnpRequest();
+
+        $batch = new BatchRequest();
+        $hash_in = array('id' => '123',
+            'card' => array('type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1210'),
+            'cardholderAuthentication' => array(
+                'authenticationProtocolVersion' => 9),
+            'orderId' => '22@33',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'amount' => '1000',
+            'orderChannel' => 'SCAN_AND_GO',
+            'businessIndicator'=>'agentCashOut',
+            'passengerTransportData' =>array(
+                'passengerName' =>'Mrs. Abc',
+                'ticketNumber' =>'ATL456789010000' ,
+                'issuingCarrier' =>'AMTK',
+                'carrierName' =>'AMTK',
+                'restrictedTicketIndicator' =>'99999',
+                'numberOfAdults' =>'3',
+                'numberOfChildren' =>'0',
+                'customerCode' =>'Railway',
+                'arrivalDate' =>'2023-09-20',
+                'issueDate' =>'2023-09-10',
+                'travelAgencyCode' =>'12345678',
+                'travelAgencyName' =>'Travel R Us23456789054321',
+                'computerizedReservationSystem' =>'STRT',
+                'creditReasonIndicator' =>'P',
+                'ticketChangeIndicator' =>'C',
+                'ticketIssuerAddress' =>'99 Second St',
+                'exchangeTicketNumber' =>'123456789012346',
+                'exchangeAmount' =>'500006',
+                'exchangeFeeAmount' =>'5006',
+                'tripLegData' =>array(
+                    'tripLegNumber' =>'12' ,
+                    'serviceClass' =>'First',
+                    'departureDate' =>'2023-09-20',
+                    'originCity' =>'BOS')
+            ),
+            'fraudCheckAction' => 'APPROVED_SKIP_FRAUD_CHECK',
+            'typeOfDigitalCurrency' => 'BCoin',
+            'conversionAffiliateId' => 'DC12345'
+        );
+        $batch->addAuth($hash_in);
+
+        $hash_in = array(
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000001',
+                'expDate' => '1213',
+                'cardValidationNum' => '1213'
+            ),
+            'id' => '1211',
+            'orderId' => '2111',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'orderChannel' => 'SCAN_AND_GO',
+            'fraudCheckAction' => 'APPROVED_SKIP_FRAUD_CHECK',
+            'amount' => '123',
+            'businessIndicator'=>'businessToBusinessTransfer',
+            'accountFundingTransactionData' => array(
+                'receiverLastName' =>'Jon',
+                'receiverState' => 'CA',
+                'receiverCountry' => 'USA',
+                'receiverAccountNumber' => '4356872257i',
+                'accountFundingTransactionType' => 'businessDisbursement',
+                'receiverAccountNumberType' => 'RTNAndBAN'
+            ),
+            'overridePolicy' => 'merchantPolicyToDecline',
+            'fsErrorCode' => 'error123',
+            'merchantAccountStatus' => 'activeAccount',
+            'productEnrolled' => 'GUARPAY2',
+            'decisionPurpose' => 'INFORMATION_ONLY',
+            'fraudSwitchIndicator' => 'PRE',
+            'typeOfDigitalCurrency' => 'DCoin',
+            'conversionAffiliateId' => 'DC15345'
+        );
+        $batch->addSale($hash_in);
+
+        $hash_in = array(
+            'card' => array(
+                'type' => 'VI',
+                'number' => '4100000000000000',
+                'expDate' => '1213',
+                'cardValidationNum' => '1213'
+            ),
+            'id' => '1211',
+            'orderId' => '2111',
+            'cnpTxnId' => '12345678000',
+            'reportGroup' => 'Planets',
+            'orderSource' => 'ecommerce',
+            'amount' => '123'
+        );
+        $batch->addCapture($hash_in);
+
+        $hash_in = array('id' => 'id',
+            'reportGroup' => 'Planets',
+            'rtp' => 'true',
+            'fundingSubmerchantId' => '2111',
+            'submerchantName' => '001',
+            'fundsTransferId' => '12345678',
+            'amount' => '13',
+            'accountInfo' => array(
+                'accType' => 'Checking',
+                'accNum' => '12345657890',
+                'routingNum' => '123456789',
+                'checkNum' => '123455'
+            ),
+            'partialCapture' => array(
+                'partialCaptureSequenceNumber' => '3',
+                'partialCaptureTotalCount' => '5'
+            )
+        );
+        $batch->addSubmerchantCredit($hash_in);
+
+        $request->addBatchRequest($batch);
+
+        $resp = new CnpResponseProcessor($request->sendToCnp());
+
+        $message = $resp->getXmlReader()->getAttribute("message");
+        $response = $resp->getXmlReader()->getAttribute("response");
+        $this->assertEquals("Valid Format", $message);
+        $this->assertEquals(0, $response);
+
+    }
+
     public function tearDown()
     {
         $files = glob($this->direct . '/*'); // get all file names
