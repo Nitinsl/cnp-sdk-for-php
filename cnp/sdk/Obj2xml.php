@@ -341,7 +341,9 @@ class Obj2xml
                     if ((!isset($config_array[$name])) and ($name != 'proxy') and ($name != 'oltpEncryptionPayload') and ($name != 'oltpEncryptionKeySequence') and ($name != 'oltpEncryptionKeyPath') and ($name != 'neuter_xml')) {
                         throw new \InvalidArgumentException("Missing Field /$name/");
                     }
-                    $config[$name] = $config_array[$name];
+                    if(isset($config_array[$name])){
+                        $config[$name] = $config_array[$name];
+                    }
                 }
             }
         }

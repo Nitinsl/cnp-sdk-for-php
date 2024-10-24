@@ -1583,8 +1583,8 @@ class CnpOnlineRequest
             $request = str_replace("submerchantCreditCtx", "submerchantCredit", $request);
             $request = str_replace("vendorCreditCtx", "vendorCredit", $request);
             $request = str_replace("vendorDebitCtx", "vendorDebit", $request);
-            if ((int)$hash_config['oltpEncryptionPayload'] == 1){
-                $request = CnpOnlineRequest::getPayloadElement($request);
+            if (isset($hash_config['oltpEncryptionPayload']) and (int)$hash_config['oltpEncryptionPayload'] == 1){
+                $request = CnpOnlineRequest::getEncryptedPayload($request,$hash_config);
             }
             $cnpOnlineResponse = $this->newXML->request($request, $hash_config, $this->useSimpleXml);
         }
@@ -1592,25 +1592,26 @@ class CnpOnlineRequest
         return $cnpOnlineResponse;
     }
 
-    public function getPayloadElement($request)
+    public function getEncryptedPayload($request, $hash_config)
     {
         try {
             $doc = new DOMDocument('1.0', 'UTF-8');
             $doc->loadXML($request);
             $root = $doc->documentElement;
-            $payload = '';
-            $config = Obj2xml::getConfig(array());
-            $path = $config['oltpEncryptionKeyPath'];
 
             $secondChild = $root->childNodes->item(1);
 
             if ($secondChild !== null) {
                 // Transform the second element to a string
-                $output = '';
 
                 if ($secondChild->nodeName == 'encryptionKeyRequest') {
                     return $request;
+
                 } else {
+                    $path = null;
+                    if(isset($hash_config['oltpEncryptionKeyPath'])){
+                        $path = $hash_config['oltpEncryptionKeyPath'];
+                    }
                     if ($path == null) {
                         throw new Exception('Problem in reading the Encryption Key path. Provide the Encryption key path.');
                     } else {
@@ -1621,11 +1622,9 @@ class CnpOnlineRequest
                     }
 
                     $output = $doc->saveXML($secondChild);
-                    $output = trim($output);
 
-                    if ($secondChild !== null) {
-                        $root->removeChild($secondChild);
-                    }
+
+                    $root->removeChild($secondChild);
 
                     $payload = PgpHelper::encryptPayload($output, $path);
 
@@ -1633,13 +1632,12 @@ class CnpOnlineRequest
 
                     // Create and append the encryptionKeySequence element
                     $encryptionKeySequenceElement = $doc->createElement('encryptionKeySequence');
-                    if ($config['oltpEncryptionKeySequence']) {
-                        $encryptionKeySequenceElement->nodeValue = (int)$config['oltpEncryptionKeySequence'];
+                    if(isset($hash_config['oltpEncryptionKeySequence']) and $hash_config['oltpEncryptionKeySequence'] != null ) {
+                        $encryptionKeySequenceElement->nodeValue = (int)$hash_config['oltpEncryptionKeySequence'];
+                        $encryptedPayloadElement->appendChild($encryptionKeySequenceElement);
                     } else{
                         throw new Exception('Problem in reading the Encryption Key Sequence ...Provide the Encryption key Sequence');
                     }
-                    $encryptedPayloadElement->appendChild($encryptionKeySequenceElement);
-
                     // Create and append the payload element
                     $payloadElement = $doc->createElement('payload');
                     $payloadElement->nodeValue = $payload;
@@ -1653,7 +1651,6 @@ class CnpOnlineRequest
         } catch (Exception $e) {
             throw new Exception('Error processing XML request. Please reach out to SDK Support team.', 0, $e);
         }
-        return $xmlRequest;
     }
 }
 
