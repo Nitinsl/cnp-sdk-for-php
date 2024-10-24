@@ -43,7 +43,7 @@ class Obj2xml
         $authentication->addChild('user',$config["user"]);
         $authentication->addChild('password',$config["password"]);
 
-        if ($type === "encryptionKeyRequest"){
+        if ($type == "encryptionKeyRequest"){
             $xml->addChild($type,$data[0]);
             return $xml->asXML();
         }
@@ -338,7 +338,7 @@ class Obj2xml
                 } elseif ($name == 'sftp_timeout') {
                     $config['sftp_timeout'] = isset($config_array['sftp_timeout'])? $config_array['sftp_timeout']:'720';
                 } else {
-                    if ((!isset($config_array[$name])) and ($name != 'proxy') and ($name != 'oltpEncryptionPayload') and ($name != 'neuter_xml')) {
+                    if ((!isset($config_array[$name])) and ($name != 'proxy') and ($name != 'oltpEncryptionPayload') and ($name != 'oltpEncryptionKeySequence') and ($name != 'oltpEncryptionKeyPath') and ($name != 'neuter_xml')) {
                         throw new \InvalidArgumentException("Missing Field /$name/");
                     }
                     $config[$name] = $config_array[$name];

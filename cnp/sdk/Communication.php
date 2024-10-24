@@ -31,7 +31,7 @@ class Communication
 
 
         if ((int)$config['print_xml']) {
-            Communication::print_xml($req, $config['neuter_xml']);
+            Communication::print_xml($req, (int)$config['neuter_xml']);
             #echo $req;
         }
         $ch = curl_init();
@@ -95,7 +95,7 @@ class Communication
     public static function print_xml($xml_request, $neuter_xml_flag)
     {
         $xml_to_log = $xml_request;
-        if ($neuter_xml_flag) {
+        if ($neuter_xml_flag == 1) {
             $xml_to_log = Communication::neuter_xml($xml_to_log);
         }
         echo "Request XML: $xml_to_log\n";

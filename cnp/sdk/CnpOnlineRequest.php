@@ -1583,7 +1583,7 @@ class CnpOnlineRequest
             $request = str_replace("submerchantCreditCtx", "submerchantCredit", $request);
             $request = str_replace("vendorCreditCtx", "vendorCredit", $request);
             $request = str_replace("vendorDebitCtx", "vendorDebit", $request);
-            if ($hash_config['oltpEncryptionPayload']){
+            if ((int)$hash_config['oltpEncryptionPayload'] == 1){
                 $request = CnpOnlineRequest::getPayloadElement($request);
             }
             $cnpOnlineResponse = $this->newXML->request($request, $hash_config, $this->useSimpleXml);
@@ -1608,7 +1608,7 @@ class CnpOnlineRequest
                 // Transform the second element to a string
                 $output = '';
 
-                if ($secondChild->nodeName === 'encryptionKeyRequest') {
+                if ($secondChild->nodeName == 'encryptionKeyRequest') {
                     return $request;
                 } else {
                     if ($path == null) {
