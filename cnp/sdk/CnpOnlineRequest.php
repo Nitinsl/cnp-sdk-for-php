@@ -1492,6 +1492,35 @@ class CnpOnlineRequest
 
     /**
      * @param $hash_in
+     * @return \DOMDocument|\SimpleXMLElement
+     * @throws exceptions\cnpSDKException
+     */
+    public function encryptionKeyRequest($hash_in)
+    {
+        $hash_out = array(XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
+        $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptionKeyRequest');
+
+        return $encryptionKeyResponse;
+    }
+
+    /**
+     * @param $hash_in
+     * @return \DOMDocument|\SimpleXMLElement
+     * @throws exceptions\cnpSDKException
+     */
+    public function encryptedPayload($hash_in)
+    {
+        $hash_out = array(
+            'encryptionKeySequence' => (XmlFields::returnArrayValue($hash_in, 'encryptionKeySequence')),
+            'payload' => (XmlFields::returnArrayValue($hash_in, 'payload')),
+        );
+        $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptedPayload');
+
+        return $encryptionKeyResponse;
+    }
+
+    /**
+     * @param $hash_in
      * @return array
      */
     private static function overrideConfig($hash_in)
@@ -1563,31 +1592,6 @@ class CnpOnlineRequest
         return $cnpOnlineResponse;
     }
 
-    public function encryptionKeyRequest($hash_in)
-    {
-        $hash_out = array(XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
-        // $hash_out = array('encryptionKeyRequest' => XmlFields::returnArrayValue($hash_in,'encryptionKeyRequest'));
-        $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptionKeyRequest');
-
-        return $encryptionKeyResponse;
-    }
-
-    /**
-     * @param $hash_in
-     * @return \DOMDocument|\SimpleXMLElement
-     * @throws exceptions\cnpSDKException
-     */
-    public function encryptedPayload($hash_in)
-    {
-        $hash_out = array(
-            'encryptionKeySequence' => (XmlFields::returnArrayValue($hash_in, 'encryptionKeySequence')),
-            'payload' => (XmlFields::returnArrayValue($hash_in, 'payload')),
-        );
-        $encryptionKeyResponse = $this->processRequest($hash_out, $hash_in, 'encryptedPayload');
-
-        return $encryptionKeyResponse;
-    }
-
     public function getPayloadElement($request)
     {
         try {
@@ -1612,7 +1616,7 @@ class CnpOnlineRequest
                     } else {
                         $path = new SplFileInfo($path);
                         if (!$path->isFile()) {
-                            throw new VantivException("The provided path is not a valid file path or the file does not exist.");
+                            throw new Exception("The provided path is not a valid file path or the file does not exist.");
                         }
                     }
 
